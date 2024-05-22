@@ -1,0 +1,19 @@
+@use "global" as *;
+
+.blog-cards__item{
+  margin: 0 rem(6) rem(40);
+}
+
+@include mq (md){
+  .blog-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(40);
+    margin: 0 auto;
+  }
+
+  .blog-cards__item{
+    margin: 0;
+  }
+}

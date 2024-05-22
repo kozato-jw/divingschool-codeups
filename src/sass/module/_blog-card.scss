@@ -1,0 +1,45 @@
+@use "global" as *;
+
+.blog-card{
+  box-shadow: 2px 2px 10px 0px #00000040;
+}
+
+.blog-card__link{
+  padding: rem(16) rem(16) rem(24);
+  display: inline-block;
+}
+
+.blog-card__image{
+  margin-bottom: rem(24);
+}
+
+.blog-card__image img{
+  aspect-ratio: 301 / 201;
+}
+
+.blog-card__meta{
+  color: #0D2936;
+  line-height: 1.5;
+}
+
+.blog-card__date{
+  font-family: $english-font;
+  font-size: rem(12);
+  line-height: 1.5;
+  display: block;
+}
+
+.blog-card__title{
+  font-size: rem(16);
+  font-weight: $medium;
+  line-height: 1.5;
+  padding-bottom: rem(3.5);
+  margin-bottom: rem(15.5);
+  border-bottom: 1px solid $blue;
+}
+
+.blog-card__text{
+  font-size: rem(16);
+  color: #0D2936;
+  line-height: 1.5;
+}
