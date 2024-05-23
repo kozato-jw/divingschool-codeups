@@ -1,0 +1,40 @@
+@use "global" as *;
+
+@include mq (md){
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    display: none;
+
+  }
+  .swiper-button-prev,
+  .swiper-button-next{
+    width: rem(80);
+    height: rem(80);
+    border: 1px solid $blue;
+    border-radius: 50%;
+    position: static;
+    display: block;
+    margin: 0;
+    // position: absolute;
+    // top: rem(120);
+  }
+  
+  .swiper-button-prev{
+    // right: 23.6111vw;
+  }
+  
+  .swiper-button-next{
+    // right: 12.5vw;
+  }
+
+  .swiper-button-prev img,
+  .swiper-button-next img{
+    width: rem(40);
+    margin-top: rem(36);
+    margin-left: rem(20);
+  }
+
+  .swiper-button-prev img{
+    transform: scale(-1, 1);
+  }
+}

@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.global-nav{
+.gnav{
   display: grid;
   grid-template-columns: 1.04fr 1fr;
   grid-template-rows: repeat(2, 1fr);
@@ -8,56 +8,56 @@
   grid-row-gap: rem(32);
 }
 
-.global-nav__list{
+.gnav__list{
   color: $white;
   font-size: rem(16);
   line-height: 1.125;
 }
 
-.global-nav__item{
+.gnav__item{
   margin-bottom: rem(24);
 }
 
-.global-nav__item:last-of-type{
+.gnav__item:last-of-type{
   margin-bottom: 0;
 }
 
-.global-nav__item--main{
+.gnav__item--main{
   font-weight: $bold;
 }
 
-.global-nav__item--main a{
+.gnav__item--main a{
   display: flex;
   align-items: flex-start;
   gap: rem(4);
 }
 
-.global-nav__item--sub{
+.gnav__item--sub{
   margin-left: rem(22);
 
 }
 
-.global-nav__item--mb40{
+.gnav__item--mb40{
   margin-bottom: rem(40);
 }
 
-.global-nav__icon{
+.gnav__icon{
   width: rem(18);
 }
 
 @include mq (md){
-  .global-nav{
+  .gnav{
     display: flex;
     gap: rem(120);
   }
 
-  .global-nav__list:nth-of-type(3){
+  .gnav__list:nth-of-type(3){
     order: 1;
   }
-  .global-nav__list:nth-of-type(2){
+  .gnav__list:nth-of-type(2){
     order: 2;
   }
-  .global-nav__list:nth-of-type(4){
+  .gnav__list:nth-of-type(4){
     order: 3;
   }
 }
