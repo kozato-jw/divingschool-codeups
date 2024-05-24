@@ -1,10 +1,10 @@
 @use "global" as *;
 
 @include mq (md){
+  
   .swiper-button-next:after,
   .swiper-button-prev:after {
     display: none;
-
   }
   .swiper-button-prev,
   .swiper-button-next{
@@ -15,17 +15,8 @@
     position: static;
     display: block;
     margin: 0;
-    // position: absolute;
-    // top: rem(120);
   }
   
-  .swiper-button-prev{
-    // right: 23.6111vw;
-  }
-  
-  .swiper-button-next{
-    // right: 12.5vw;
-  }
 
   .swiper-button-prev img,
   .swiper-button-next img{
