@@ -21,7 +21,7 @@
 .campaign-card__title{
   font-size: rem(16);
   line-height: 1.5;
-  color: $title-black;
+  color: $dark-green;
   margin-bottom: rem(7.5);
   padding-bottom: rem(7.5);
   border-bottom: 1px solid $blue;
@@ -32,7 +32,7 @@
   font-weight: $medium;
   text-align: center;
   margin-bottom: rem(8);
-  color: $title-black;
+  color: $dark-green;
 }
 .campaign-card__price{
   font-size: rem(32);
@@ -44,7 +44,7 @@
 }
 .campaign-card__price--disabled{
   font-size: rem(20);
-  color: $title-black;
+  color: $dark-green;
   display: inline-block;
   padding: 0 1px;
   margin-right: rem(16);

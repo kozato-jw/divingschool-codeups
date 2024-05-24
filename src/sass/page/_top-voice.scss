@@ -1,0 +1,32 @@
+@use "global" as *;
+
+.top-voice{
+  padding-bottom: rem(80);
+}
+
+.top-voice__title{
+  margin-bottom: rem(40);
+}
+
+.top-voice__cards{
+  margin-bottom: rem(40);
+}
+
+.top-voice__btn-wrapper{
+  text-align: center;
+}
+
+@include mq (md){
+  .top-voice{
+    padding-bottom: rem(144);
+  }
+  
+  .top-voice__title{
+    margin-bottom: rem(30);
+  }
+  
+  .top-voice__cards{
+    margin-bottom: rem(80);
+  }
+  
+}

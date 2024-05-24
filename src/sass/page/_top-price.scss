@@ -1,0 +1,54 @@
+@use "global" as *;
+
+.top-price{
+  background-color: #DDF0F1;
+  padding-top: rem(80);
+  padding-bottom: rem(84);
+}
+
+.top-price__inner{
+}
+
+.top-price__title{
+  margin-bottom: rem(28);
+}
+
+.top-price__content{
+}
+
+.top-price__image{
+  margin-bottom: rem(40);
+}
+
+.top-price__list-wrapper{
+}
+.top-price__list{
+}
+
+.top-price__list dt{
+  font-size: rem(16);
+  font-weight: $bold;
+  padding-bottom: rem(3.5);
+  margin-bottom: rem(7.5);
+  border-bottom: 1px solid $blue;
+  color: $dark-green;
+}
+
+.top-price__list dd{
+  display: flex;
+  justify-content: space-between;
+  font-size: rem(14);
+  line-height: calc(24 / 14);
+  color: $dark-green;
+}
+
+.top-price__btn-wrapper{
+  text-align: center;
+}
+.top-price__btn{
+}
+
+
+@include mq (md){
+
+}
