@@ -23,9 +23,10 @@
 .top-price__list-wrapper{
 }
 .top-price__list{
+  margin-bottom: rem(40);
 }
 
-.top-price__list dt{
+.top-price__list-title{
   font-size: rem(16);
   font-weight: $bold;
   padding-bottom: rem(3.5);
@@ -34,21 +35,76 @@
   color: $dark-green;
 }
 
-.top-price__list dd{
+.top-price__list-item{
   display: flex;
   justify-content: space-between;
   font-size: rem(14);
   line-height: calc(24 / 14);
   color: $dark-green;
+  margin-bottom: rem(8);
+}
+
+.top-price__list-item:last-of-type{
+  margin-bottom: 0;
 }
 
 .top-price__btn-wrapper{
   text-align: center;
 }
-.top-price__btn{
-}
-
 
 @include mq (md){
 
+  .top-price{
+    padding-top: rem(100);
+    padding-bottom: rem(104);
+  }
+  
+  .top-price__inner{
+  }
+  
+  .top-price__title{
+    margin-bottom: rem(40);
+  }
+  
+  .top-price__content{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-bottom: rem(80);
+  }
+  
+  .top-price__image{
+    width: rem(492);
+    margin-bottom: 0;
+  }
+  
+  .top-price__list-wrapper{
+    width: rem(492);
+  }
+
+  .top-price__list-title{
+    font-size: rem(16);
+    font-weight: $bold;
+    padding-bottom: rem(3.5);
+    margin-bottom: rem(7.5);
+    border-bottom: 1px solid $blue;
+    color: $dark-green;
+  }
+  
+  .top-price__list-item{
+    display: flex;
+    justify-content: space-between;
+    font-size: rem(14);
+    line-height: calc(24 / 14);
+    color: $dark-green;
+    margin-bottom: rem(8);
+  }
+  
+  .top-price__list-item:last-of-type{
+    margin-bottom: 0;
+  }
+  
+  .top-price__btn-wrapper{
+    text-align: center;
+  }
 }
