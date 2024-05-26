@@ -26,6 +26,11 @@
     background-repeat: no-repeat;
     background-position: top;
     background-size: contain;
+    position: relative;
+  }
+
+  .top-blog__inner{
+    width: min(100%,100vw);
   }
   
   .top-blog__title{
@@ -40,4 +45,20 @@
     margin-bottom: rem(80);
   }
   
+  .top-blog__image--whitefish{
+    width: rem(437);
+    position: absolute;
+    top: rem(24);
+    left: 0;
+    left: calc(calc(50% - rem(30)) - min(43.0555vw,rem(620)));
+  }
+
+  .top-blog__image--bluefish{
+    width: rem(301);
+    transform: scale(-1,1);
+    position: absolute;
+    bottom: rem(-18);
+    left: calc(calc(50% - rem(30)) - min(43.0555vw,rem(620)));
+  }
+
 }

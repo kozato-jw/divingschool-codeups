@@ -28,9 +28,7 @@ $(function(){
 
 
 
-// /* swiperスライダー */
-
-// /* MVセクション */
+/* swiperスライダー・MVセクション */
 // const mvSwiper = new Swiper('.mv_swiper', {
 //   loop: true,
 //   speed: 1500,
@@ -42,24 +40,24 @@ $(function(){
 //   roundLengths: true,
 // });
 
-// /* キャンペーンセクション */
-// const campaignSwiper = new Swiper('.top-campaign__swiper', {
-//   loop: true,
-//   slidesPerView: 1.316,
-//   spaceBetween: 24,
-//   roundLengths: true,
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   },
-//   breakpoints: {
-//     // 768px以上の場合
-//     768: {
-//       slidesPerView: 3.3,
-//       spaceBetween: 40,
-//     },
-//   },
-// });
+/*  swiperスライダー・キャンペーンセクション */
+const campaignSwiper = new Swiper('.top-campaign__swiper', {
+  loop: true,
+  slidesPerView: 1.316,
+  spaceBetween: 24,
+  roundLengths: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    // 768px以上の場合
+    768: {
+      slidesPerView: 3.3,
+      spaceBetween: 40,
+    },
+  },
+});
 
 
 
@@ -100,16 +98,12 @@ $('#page-top').click(function () {
 
 
 
-
-
-
-
 /* 画像に色幕のアニメーション(inview.js使用) */
 var box = $('.js-colorbox'),
     speed = 700;  
 box.each(function(){
-    $(this).append('<div class="color"></div>')
-    var color = $(this).find($('.color')),
+    $(this).append('<div class="js-color"></div>')
+    var color = $(this).find($('.js-color')),
     image = $(this).find('img');
     var counter = 0;
 

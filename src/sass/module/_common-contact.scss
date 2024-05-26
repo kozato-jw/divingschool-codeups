@@ -15,11 +15,19 @@
 }
 
 .common-contact__logo{
-  width: rem(174);
+  // width: rem(174);
   margin: 0 auto rem(16);
   padding-bottom: rem(6);
   position: relative;
   filter: drop-shadow(0px 4px 4px #00000040);
+  text-align: center;
+  width: 100%;
+}
+
+.common-contact__logo img{
+  // width: rem(174);
+  width: 45.5%;
+  display: inline-block;
 }
 
 .common-contact__logo:after{
@@ -96,7 +104,8 @@
 }
 
 .common-contact__content{
-  width: rem(522);
+  // width: rem(522);
+  width: 48.3333%;
   margin-bottom: 0;
   padding-right: rem(78);
   margin-right: rem(80.5);
@@ -104,15 +113,19 @@
 }
 
 .common-contact__logo{
-  width: rem(200);
+  // width: rem(200);
   margin: 0 auto rem(25);
   padding-bottom: rem(7.5);
   position: relative;
   filter: none;
 }
 
+.common-contact__logo img{
+  width: rem(200);
+}
+
 .common-contact__logo:after{
-  width: rem(440);
+  width: 100%;
 }
 
 .common-contact__item{

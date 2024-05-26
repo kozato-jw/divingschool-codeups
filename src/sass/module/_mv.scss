@@ -2,7 +2,7 @@
 
 .mv{
   position: relative;
-  height: 100vh;
+  height: min(100% , 100vh);
 }
 
 .mv__title{
@@ -33,11 +33,21 @@
 }
 
 
+.mv__swiper{
+  margin-bottom: rem(42);
+}
+
+
 
 @include mq (md){
+
   .mv__title--big{
     font-size: rem(80);
     width: rem(496);
+  }
+
+  .mv__swiper{
+    margin-bottom: rem(120);
   }
   
 }

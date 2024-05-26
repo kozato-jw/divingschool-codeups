@@ -19,6 +19,11 @@
 @include mq (md){
   .top-voice{
     padding-bottom: rem(144);
+    position: relative;
+  }
+
+  .top-voice__inner{
+    width: min(100%,100vw);
   }
   
   .top-voice__title{
@@ -27,6 +32,13 @@
   
   .top-voice__cards{
     margin-bottom: rem(80);
+  }
+
+  .top-voice__image--seahorse{
+    width: rem(71);
+    position: absolute;
+    right: rem(30);
+    bottom: rem(73);
   }
   
 }
