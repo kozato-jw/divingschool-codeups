@@ -57,6 +57,16 @@
     width: rem(200);
     margin-bottom: 0;
   }
+
+  .footer__logo a,
+  .footer__sns a{
+    transition: 0.6s;
+  }
+
+  .footer__logo a:hover,
+  .footer__sns a:hover{
+    opacity: 0.6;
+  }
   
   .footer__sns{
     padding-bottom: rem(5);

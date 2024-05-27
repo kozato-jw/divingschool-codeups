@@ -1,16 +1,22 @@
 @use "global" as *;
 
 .voice-cards__item{
-  margin-bottom: rem(40);
+  max-width: rem(500);
+  width: 100%;
+  margin: 0 auto rem(40);
 }
 
 @include mq (md){
   .voice-cards{
-    display: flex;  
-    gap: rem(40);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: rem(40) 0;
   }
 
   .voice-cards__item{
-    margin-bottom: 0;
+    max-width: 100%;
+    width: calc((100% - rem(40)) / 2);
+    margin: 0;
   }
 }

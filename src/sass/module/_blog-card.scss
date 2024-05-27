@@ -7,7 +7,8 @@
 
 .blog-card__link{
   padding: rem(16) rem(16) rem(24);
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
 }
 
 .blog-card__image{
@@ -19,15 +20,18 @@
 }
 
 .blog-card__meta{
+  display: flex;
+  flex-direction: column;
   color: $dark-green;
   line-height: 1.5;
+  // flex-grow: 1;
 }
 
 .blog-card__date{
   font-family: $english-font;
   font-size: rem(12);
   line-height: 1.5;
-  display: block;
+  // display: block;
 }
 
 .blog-card__title{
@@ -37,6 +41,7 @@
   padding-bottom: rem(3.5);
   margin-bottom: rem(15.67);
   border-bottom: 1px solid $blue;
+  flex-grow: 1;
 }
 
 .blog-card__text{
@@ -44,4 +49,10 @@
   color: $dark-green;
   line-height: 1.5;
   text-align:justify;
+  // flex-grow: 1;
+}
+
+@include mq (md){
+  .blog-cards__item{
+  }
 }

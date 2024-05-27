@@ -1,13 +1,14 @@
 @use "global" as *;
 
-.btn-trigger {
+.hamburger {
   position: relative;
   width: rem(56);
   height: rem(24);
   cursor: pointer;
   z-index: 9999;
 }
-.btn-trigger span {
+
+.hamburger__bar {
   position: absolute;
   right: 0;
   width: rem(32);
@@ -15,35 +16,37 @@
   background-color: #fff;
   border-radius: 4px;
 }
-.btn-trigger, .btn-trigger span {
+
+.hamburger, .hamburger__bar {
   display: inline-block;
   transition: all .6s
 }
-.btn-trigger span:nth-of-type(1) {
+
+.hamburger__bar:nth-of-type(1) {
   top: 0;
 }
-.btn-trigger span:nth-of-type(2) {
+
+.hamburger__bar:nth-of-type(2) {
   top: 11px;
 }
-.btn-trigger span:nth-of-type(3) {
+
+.hamburger__bar:nth-of-type(3) {
   bottom: 0;
 }
 
-#btn02.active span:nth-of-type(1) {
+#hamburger.js-active .hamburger__bar:nth-of-type(1) {
   -webkit-transform: translateY(12px) rotate(45deg);
   transform: translateY(12px) rotate(45deg);
 }
-#btn02.active span:nth-of-type(2) {
+
+#hamburger.js-active .hamburger__bar:nth-of-type(2) {
   opacity: 0;
 }
-#btn02.active span:nth-of-type(3) {
+
+#hamburger.js-active .hamburger__bar:nth-of-type(3) {
   -webkit-transform: translateY(-12px) rotate(-45deg);
   transform: translateY(-12px) rotate(-45deg);
 }
 
 
 
-
-@include mq (md){
-
-}

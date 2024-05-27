@@ -2,6 +2,7 @@
 
 .blog-cards__item{
   margin: 0 rem(6) rem(40);
+  display: flex;
 }
 .blog-cards__item:last-of-type{
   margin-bottom: 0;
@@ -11,11 +12,11 @@
   .blog-cards{
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: rem(40.5);
   }
 
   .blog-cards__item{
+    width: calc(100% / 3);
     margin: 0;
   }
 }

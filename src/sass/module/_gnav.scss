@@ -18,6 +18,14 @@
   margin-bottom: rem(24);
 }
 
+.gnav__item a{
+  transition: 0.6s;
+}
+
+.gnav__item a:hover{
+  opacity: 0.6;
+}
+
 .gnav__item:last-of-type{
   margin-bottom: 0;
 }

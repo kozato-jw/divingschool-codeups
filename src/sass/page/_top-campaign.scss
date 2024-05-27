@@ -1,21 +1,11 @@
 @use "global" as *;
 
 .top-campaign{
-  // padding-top: rem(40);
   padding-bottom: rem(84);
 }
 
 .top-campaign__title{
   margin-bottom: rem(28);
-}
-
-.top-campaign__swiper{
-  padding-bottom: rem(40);
-}
-
-.top-campaign__swiper-wrapper{
-  margin-left: rem(15);
-  
 }
 
 .top-campaign__btn{
@@ -24,7 +14,6 @@
 
 @include mq (md){
   .top-campaign{
-    // padding-top: rem(120);
     padding-bottom: rem(140);
     position: relative;
   }
@@ -33,23 +22,5 @@
     margin-bottom: rem(40);
   }
   
-  .top-campaign__swiper{
-    padding-bottom: rem(80);
-    padding-left: 12.5vw;
-  }
-  
-  .top-campaign__swiper-wrapper{
-    margin-left: 0;
-  }
 
-  .top-campaign__swiper-btn{
-    width: rem(240);
-    height: rem(80);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    top: rem(120);
-    right: 12.5vw;
-  }
 }

@@ -1,8 +1,12 @@
 @use "global" as *;
 
-
-.js-colorbox{
+.colorbox{
   position: relative;
+}
+
+.colorbox img{
+  display: block;
+  width: 100%;
 }
 
 .js-color{
@@ -13,9 +17,4 @@
   height: 100%;
   z-index: 2;
   background-color: $blue;
-}
-
-.js-colorbox img{
-  display: block;
-  width: 100%;
 }
