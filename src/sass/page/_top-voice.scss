@@ -1,11 +1,11 @@
 @use "global" as *;
 
 .top-voice{
-  padding-bottom: rem(80);
+  padding-bottom: rem(78);
 }
 
 .top-voice__title{
-  margin-bottom: rem(40);
+  margin-bottom: rem(43);
 }
 
 .top-voice__cards{
@@ -18,7 +18,7 @@
 
 @include mq (md){
   .top-voice{
-    padding-bottom: rem(144);
+    padding-bottom: rem(139);
     position: relative;
   }
 

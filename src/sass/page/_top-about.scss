@@ -1,11 +1,11 @@
 @use "global" as *;
 
 .top-about{
-  padding-bottom: rem(70);
+  padding-bottom: rem(69);
 }
 
 .top-about__title{
-  margin-bottom: rem(24);
+  margin-bottom: rem(28);
 }
 
 .top-about__image{
@@ -60,14 +60,14 @@
     gap: rem(40);
     position: absolute;
     top: rem(306);
-    right: rem(71);
+    right: rem(42);
   }
   
   .top-about__head{
     font-size: rem(80);
     color: $white;
     margin-bottom: 0;
-    line-height: 1.2;
+    line-height: 1.25;
   }
   
   .top-about__inner{
@@ -86,7 +86,7 @@
   .top-about__image--pc{
     width: rem(194);
     position: absolute;
-    right: calc(calc(50% - rem(30)) - min(44.2361vw,rem(637)));
+    right: calc(50% - min(44.2361vw,rem(637)));
     bottom: rem(74);
   }
   

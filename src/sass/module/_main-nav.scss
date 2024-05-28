@@ -10,7 +10,7 @@
 
 .main-nav__link{
   display: inline-block;
-  padding: 0 rem(20) rem(9.5);
+  padding: 0 rem(20.1) rem(9.5);
   position: relative;
 }
 
@@ -40,7 +40,8 @@
   font-family: $english-font;
   line-height: 1;
   padding-top: rem(2);
-  margin-bottom: rem(5);
+  margin-top: rem(4);
+  margin-bottom: rem(6);
 }
 
 .main-nav__link--ja{

@@ -1,9 +1,12 @@
 @use "global" as *;
 
 .blog-cards__item{
-  margin: 0 rem(6) rem(40);
+  margin: 0 auto rem(40);
   display: flex;
+  max-width: rem(500);
+  width: min(88.6463vw,100%);
 }
+
 .blog-cards__item:last-of-type{
   margin-bottom: 0;
 }

@@ -11,7 +11,7 @@
 }
 
 .footer__head{
-  margin-bottom: rem(41);
+  margin-bottom: rem(39);
 }
 
 .footer__logo{
@@ -34,6 +34,12 @@
   color: $white;
   line-height: 1.5;
   text-align: center;
+}
+
+.footer__nav{
+  grid-template-columns: 1.04fr 1fr;
+  grid-column-gap: rem(16);
+  grid-row-gap: rem(41);
 }
 
 @include mq (md){

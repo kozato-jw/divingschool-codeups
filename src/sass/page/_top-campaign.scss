@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .top-campaign{
-  padding-bottom: rem(84);
+  padding-bottom: rem(79);
 }
 
 .top-campaign__title{
@@ -14,7 +14,7 @@
 
 @include mq (md){
   .top-campaign{
-    padding-bottom: rem(140);
+    padding-bottom: rem(139);
     position: relative;
   }
   

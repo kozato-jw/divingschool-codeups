@@ -48,24 +48,25 @@ $(function() {
 
 
 /* swiperスライダー・MVセクション */
-const mvSwiper = new Swiper('.mv_swiper', {
-  loop: true,
-  speed: 1500,
-  effect: 'fade',
-  autoplay: {
-    delay: 2000,
-},
-  slidesPerView: 1,
-  roundLengths: true,
-});
+// const mvSwiper = new Swiper('.mv__swiper', {
+//   loop: true,
+//   speed: 1500,
+//   effect: 'fade',
+//   autoplay: {
+//     delay: 2000,
+//   },
+//   slidesPerView: 1,
+//   roundLengths: true,
+// });
 
 /*  swiperスライダー・キャンペーンセクション */
 const campaignSwiper = new Swiper('.top-campaign__swiper', {
   loop: true,
-  slidesPerView: 1.263,
+  slidesPerView: 1.266,
   spaceBetween: 24,
-  roundLengths: true,
-  speed: 600,
+  freeMode:true,
+  enabled:true,
+  speed:600,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -74,17 +75,15 @@ const campaignSwiper = new Swiper('.top-campaign__swiper', {
     768: {
       slidesPerView: 2.5,
       spaceBetween: 32,
-      simulateTouch: false,
     },
     1024:{
       slidesPerView: 2.8,
       spaceBetween: 32,
-      simulateTouch: false,
     },
     1440: {
-      slidesPerView: 3.485,
+      // slidesPerView: 3.5,
+      slidesPerView: 3.4852,
       spaceBetween: 40,
-      simulateTouch: false,
     },
   },
 });

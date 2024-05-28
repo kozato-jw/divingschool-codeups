@@ -6,9 +6,6 @@
   padding-left: rem(15);
 }
 
-.top-campaign__swiper-wrapper{
-  margin-left: rem(15);
-}
 
 @include mq (md){
   
@@ -53,6 +50,7 @@
 
   .top-campaign__swiper .swiper-slide {
     transition: transform 0.6s ease;
+    // max-width: rem(333);
   }
 
   .top-campaign__swiper .swiper-slide-duplicate {

@@ -2,11 +2,11 @@
 
 .top-blog{
   padding-top: rem(80);
-  padding-bottom: rem(80);
+  padding-bottom: rem(78);
 }
 
 .top-blog__title{
-  margin-bottom: rem(24);
+  margin-bottom: rem(28);
 }
 
 .top-blog__cards{
@@ -22,12 +22,12 @@
 
 @include mq (md){
   .top-blog{
-    padding-top: rem(100);
-    padding-bottom: rem(140);
+    padding-top: rem(101);
+    padding-bottom: rem(138);
     background-image: url("/assets/images/common/top-blog-bg.jpg");
     background-repeat: no-repeat;
     background-position: top;
-    background-size: contain;
+    background-size: 100vw clamp(340px,34.7222vw,500px);
     position: relative;
   }
 
@@ -36,7 +36,7 @@
   }
   
   .top-blog__title{
-    margin-bottom: rem(80);
+    margin-bottom: rem(81);
   }
 
   .top-blog__title--pc{
@@ -49,11 +49,10 @@
   }
   
   .top-blog__image--whitefish{
-    width: rem(437);
+    width: min(30.3472vw,rem(437));
     position: absolute;
     top: rem(24);
-    left: 0;
-    left: calc(calc(50% - rem(30)) - min(43.0555vw,rem(620)));
+    left: calc(50% - min(43.0555vw,rem(620)));
   }
 
   .top-blog__image--bluefish{
@@ -61,7 +60,7 @@
     transform: scale(-1,1);
     position: absolute;
     bottom: rem(-18);
-    left: calc(calc(50% - rem(30)) - min(43.0555vw,rem(620)));
+    left: calc(50% - min(43.0555vw,rem(620)));
   }
 
 }
