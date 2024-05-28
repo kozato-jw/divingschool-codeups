@@ -1,0 +1,117 @@
+@use "global" as *;
+
+.top-price{
+  background-color: #DDF0F1;
+  padding-top: rem(80);
+  padding-bottom: rem(79);
+}
+
+
+.top-price__title{
+  margin-bottom: rem(28);
+}
+
+
+.top-price__image{
+  margin-bottom: rem(40);
+}
+
+.top-price__list-wrapper{
+}
+.top-price__list{
+  max-width: rem(500);
+  width: 100%;
+  margin: 0 auto rem(40);
+}
+
+.top-price__list-title{
+  font-size: rem(16);
+  font-weight: $bold;
+  padding-bottom: rem(3.5);
+  margin-bottom: rem(7.5);
+  border-bottom: 1px solid $blue;
+  color: $dark-green;
+}
+
+.top-price__list-item{
+  display: flex;
+  justify-content: space-between;
+  font-size: rem(14);
+  line-height: calc(24 / 14);
+  color: $dark-green;
+  margin-bottom: rem(8);
+}
+
+.top-price__list-item:last-of-type{
+  margin-bottom: 0;
+}
+
+.top-price__btn-wrapper{
+  text-align: center;
+}
+
+@include mq (md){
+
+  .top-price{
+    padding-top: rem(100);
+    padding-bottom: rem(98);
+    position: relative;
+  }
+  
+  .top-price__title{
+    margin-bottom: rem(40);
+  }
+  
+  .top-price__content{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-bottom: rem(80);
+  }
+  
+  .top-price__image{
+    width: 45.5556%;
+    margin-bottom: 0;
+  }
+  
+  .top-price__list-wrapper{
+    width: 45.5556%;
+  }
+
+  .top-price__list-title{
+    font-size: rem(16);
+    font-weight: $bold;
+    padding-bottom: rem(3.5);
+    margin-bottom: rem(7.5);
+    border-bottom: 1px solid $blue;
+    color: $dark-green;
+  }
+  
+  .top-price__list-item{
+    display: flex;
+    justify-content: space-between;
+    font-size: rem(16);
+    line-height: 1.5;
+    color: $dark-green;
+    margin-bottom: rem(8);
+  }
+  
+  .top-price__list-item:last-of-type{
+    margin-bottom: 0;
+  }
+
+  .top-price__list-item:last-of-type p:first-of-type{
+    letter-spacing: 0.01em;
+  }
+
+  .top-price__btn-wrapper{
+    text-align: center;
+  }
+
+  .top-price__image--bluefish{
+    width: min(30.3472vw,rem(437));
+    position: absolute;
+    left: calc(50% - min(43.0555vw,rem(620)));
+    bottom: rem(60);
+  }
+}

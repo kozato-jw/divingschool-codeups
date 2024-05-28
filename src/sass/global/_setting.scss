@@ -16,7 +16,7 @@ $padding-sp: 15px;
 $main-font: "Noto Sans JP", sans-serif;
 $sub-font: "Noto Serif JP", serif;
 $english-font: "Gotu", sans-serif;
-$number: "Lato", sans-serif;
+$english-sub-font: "Lato", sans-serif;
 // ※検証ツールでしっかり反映されているか確認する
 
 body {
@@ -34,6 +34,6 @@ $bold: 700;
 
 //色指定（共通性のあるものは出来る限り指定すると良い）
 $text-black: #000000;
-$title-black: #0D2936;
+$dark-green: #0D2936;
 $white: #ffffff;
 $blue: #408F95;

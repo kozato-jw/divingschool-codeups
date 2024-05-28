@@ -2,61 +2,156 @@
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
 
 /* ハンバーガーメニュー */
-$(function(){
-  // ハンバーガーメニューのトリガー
-  $('.btn-trigger').on('click', function() {
-    $(this).toggleClass('active');
-    $('.header__nav-wrapper').toggleClass('active');
+$(function() {
+  function addGlobalStyle(css) {
+    var head, style;
+    head = document.getElementsByTagName('head')[0];
+    if (!head) { return; }
+    style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = css;
+    head.appendChild(style);
+  }
+
+  const css = `
+    body.hidden > *:not(header) {
+      opacity : 0;
+      transition: opacity 0.6s;
+    }
+  `;
+  addGlobalStyle(css);
+
+
+  $('.hamburger').on('click', function() {
+    $(this).toggleClass('js-active');
+    $('.header__nav-wrapper').toggleClass('js-active');
     
-    if ($(this).hasClass('active')) {
-      // .activeクラスがついたらheader以外の要素を非表示にする
-      $('body > *:not(header)').hide();
-      // bodyのスクロールを禁止する
+    if ($(this).hasClass('js-active')) {
+      $('body').addClass('hidden');
       $('body').css('overflow', 'hidden');
     } else {
-      // .activeクラスが外れたらheader以外の要素を再表示する
-      $('body > *:not(header)').show();
-      // bodyのスクロールを許可する
+      $('body').removeClass('hidden');
       $('body').css('overflow', '');
     }
     
     return false;
   });
 
-  // ナビゲーションリンクのクリックイベント
   $('.header__nav-wrapper a').on('click', function() {
-    // .activeクラスを外してナビゲーションを非表示にする
-    $('.header__nav-wrapper').removeClass('active');
-    // ハンバーガーメニューの.activeクラスを外す
-    $('.btn-trigger').removeClass('active');
-    // header以外の要素を再表示する
-    $('body > *:not(header)').show();
-    // bodyのスクロールを許可する
+    $('.header__nav-wrapper').removeClass('js-active');
+    $('.hamburger').removeClass('js-active');
+    $('body').removeClass('hidden');
     $('body').css('overflow', '');
   });
 });
 
 
 
-/* swiperスライダー */
-const mySwiper = new Swiper('.swiper', {
+/* swiperスライダー・MVセクション */
+// const mvSwiper = new Swiper('.mv__swiper', {
+//   loop: true,
+//   speed: 1500,
+//   effect: 'fade',
+//   autoplay: {
+//     delay: 2000,
+//   },
+//   slidesPerView: 1,
+//   roundLengths: true,
+// });
+
+/*  swiperスライダー・キャンペーンセクション */
+const campaignSwiper = new Swiper('.top-campaign__swiper', {
   loop: true,
-  slidesPerView: 1.316,
+  slidesPerView: 1.266,
   spaceBetween: 24,
-  roundLengths: true,
+  freeMode:true,
+  enabled:true,
+  speed:600,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
   breakpoints: {
-    // 768px以上の場合
     768: {
-      slidesPerView: 3.3,
+      slidesPerView: 2.5,
+      spaceBetween: 32,
+    },
+    1024:{
+      slidesPerView: 2.8,
+      spaceBetween: 32,
+    },
+    1440: {
+      // slidesPerView: 3.5,
+      slidesPerView: 3.4852,
       spaceBetween: 40,
-    }
+    },
   },
 });
 
 
+
+
+//ページトップリンク
+function PageTopAnime() {
+  var scroll = $(window).scrollTop();
+  var wH = window.innerHeight;
+  var footerPos = $('#footer').offset().top;
+
+  if (scroll >= 200) {
+    $('#page-top').removeClass('RightOut').addClass('RightIn');
+  } else {
+    if ($('#page-top').hasClass('RightIn')) {
+      $('#page-top').removeClass('RightIn').addClass('RightOut');
+    }
+  }
+
+  if (scroll + wH >= footerPos + 16) {
+    var pos = (scroll + wH) - footerPos + 16;
+    $('#page-top').css('bottom', pos).removeClass('RightIn').addClass('RightOut');
+  } else {
+    if ($('#page-top').hasClass('RightIn')) {
+      $('#page-top').css('bottom', '16px');
+    }
+  }
+}
+
+$(window).scroll(function () {
+  PageTopAnime();
 });
+
+$('#page-top').click(function () {
+  $('body,html').animate({
+    scrollTop: 0
+  }, 500);
+  return false;
+});
+
+
+
+/* 画像に色幕のアニメーション(inview.js使用) */
+var box = $('.colorbox'),
+    speed = 700;  
+box.each(function(){
+    $(this).append('<div class="js-color"></div>')
+    var color = $(this).find($('.js-color')),
+    image = $(this).find('img');
+    var counter = 0;
+
+    image.css('opacity','0');
+    color.css('width','0%');
+    color.on('inview', function(){
+        if(counter == 0){
+        $(this).delay(200).animate({'width':'100%'},speed,function(){
+                  image.css('opacity','1');
+                  $(this).css({'left':'0' , 'right':'auto'});
+                  $(this).animate({'width':'0%'},speed);
+                })
+            counter = 1;
+          }
+    });
+});
+
+
+});
+
 

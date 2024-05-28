@@ -1,11 +1,15 @@
 @use "global" as *;
 
-.gnav{
-  display: grid;
-  grid-template-columns: 1.04fr 1fr;
+.header__nav{
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: rem(16);
-  grid-row-gap: rem(32);
+  // grid-column-gap: rem(16);
+  // grid-row-gap: rem(32);
+}
+
+.gnav{
+  justify-items: start;
+  display: grid;
 }
 
 .gnav__list{
@@ -16,6 +20,14 @@
 
 .gnav__item{
   margin-bottom: rem(24);
+}
+
+.gnav__item a{
+  transition: 0.6s;
+}
+
+.gnav__item a:hover{
+  opacity: 0.6;
 }
 
 .gnav__item:last-of-type{
