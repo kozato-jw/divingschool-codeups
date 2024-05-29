@@ -2,6 +2,7 @@
 
 .campaign-card{
   box-shadow: 2px 2px 10px 0px #00000040;
+  aspect-ratio: 280 / 366;
 }
 
 
@@ -38,12 +39,17 @@
 }
 
 .campaign-card__price{
-  font-size: rem(32);
+  // font-size: rem(32);
   font-family: $english-sub-font;
   font-weight: $bold;
-  line-height: 1;
-  color: $blue;
-  text-align: center;
+  // line-height: 1;
+  // color: $blue;
+  // text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  gap: rem(16);
 }
 
 .campaign-card__price--disabled{
@@ -51,9 +57,11 @@
   color: $dark-green;
   display: inline-block;
   padding: 0 1px;
-  margin-right: rem(16);
+  // margin-right: rem(16);
   position: relative;
+  line-height: 1.1;
 }
+
 .campaign-card__price--disabled::before{
   content: "";
   display: inline-block;
@@ -61,11 +69,20 @@
   height: rem(3);
   background-color: #C94800;
   position: absolute;
-  bottom: rem(8.5);
+  bottom: rem(11);
+}
+
+.campaign-card__price--current{
+  font-size: rem(32);
+  color: $blue;
+  line-height: 1;
 }
 
 
 @include mq (md){
+  .campaign-card{
+    aspect-ratio: 333 / 445;
+  }
 
   .campaign-card__image{
   }
@@ -85,15 +102,23 @@
   margin-bottom: rem(6.5);
   }
   .campaign-card__price{
-    font-size: rem(40);
+    // font-size: rem(40);
+  gap: rem(25);
+
   }
   .campaign-card__price--disabled{
     font-size: rem(24);
-    margin-right: rem(25);
+    // line-height: 1;
+    // margin-right: rem(25);
   }
   .campaign-card__price--disabled::before{
     width: rem(90);
-    bottom: rem(10.5);
+    bottom: rem(12);
   }
+
+  .campaign-card__price--current{
+    font-size: rem(40);
+  }
+  
   
 }
