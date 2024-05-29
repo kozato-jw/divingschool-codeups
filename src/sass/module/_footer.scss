@@ -39,7 +39,7 @@
 .footer__nav{
   grid-template-columns: 1.04fr 1fr;
   grid-column-gap: rem(16);
-  grid-row-gap: rem(41);
+  grid-row-gap: rem(40);
 }
 
 @include mq (md){

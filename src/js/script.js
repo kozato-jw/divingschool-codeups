@@ -21,7 +21,6 @@ $(function() {
   `;
   addGlobalStyle(css);
 
-
   $('.hamburger').on('click', function() {
     $(this).toggleClass('js-active');
     $('.header__nav-wrapper').toggleClass('js-active');
@@ -29,9 +28,13 @@ $(function() {
     if ($(this).hasClass('js-active')) {
       $('body').addClass('hidden');
       $('body').css('overflow', 'hidden');
+      $('.header').css('background-color', '#408F95');
+      $('.header').css('transition', '0.6s');
     } else {
       $('body').removeClass('hidden');
       $('body').css('overflow', '');
+      $('.header').css('background-color', '');
+
     }
     
     return false;
@@ -42,22 +45,22 @@ $(function() {
     $('.hamburger').removeClass('js-active');
     $('body').removeClass('hidden');
     $('body').css('overflow', '');
+    $('.header').css('background-color', '');
   });
 });
 
 
-
 /* swiperスライダー・MVセクション */
-// const mvSwiper = new Swiper('.mv__swiper', {
-//   loop: true,
-//   speed: 1500,
-//   effect: 'fade',
-//   autoplay: {
-//     delay: 2000,
-//   },
-//   slidesPerView: 1,
-//   roundLengths: true,
-// });
+const mvSwiper = new Swiper('.mv__swiper', {
+  loop: true,
+  speed: 1500,
+  effect: 'fade',
+  autoplay: {
+    delay: 2000,
+  },
+  slidesPerView: 1,
+  roundLengths: true,
+});
 
 /*  swiperスライダー・キャンペーンセクション */
 const campaignSwiper = new Swiper('.top-campaign__swiper', {
@@ -72,6 +75,14 @@ const campaignSwiper = new Swiper('.top-campaign__swiper', {
     prevEl: '.swiper-button-prev',
   },
   breakpoints: {
+    480: {
+      slidesPerView: 1.8,
+      spaceBetween: 32,
+    },
+    624: {
+      slidesPerView: 2.2,
+      spaceBetween: 32,
+    },
     768: {
       slidesPerView: 2.5,
       spaceBetween: 32,
@@ -81,15 +92,15 @@ const campaignSwiper = new Swiper('.top-campaign__swiper', {
       spaceBetween: 32,
     },
     1440: {
-      // slidesPerView: 3.5,
       slidesPerView: 3.4852,
+      spaceBetween: 40,
+    },
+    1620: {
+      slidesPerView: 4.2,
       spaceBetween: 40,
     },
   },
 });
-
-
-
 
 //ページトップリンク
 function PageTopAnime() {
