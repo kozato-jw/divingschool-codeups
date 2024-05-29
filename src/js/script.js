@@ -75,6 +75,14 @@ const campaignSwiper = new Swiper('.top-campaign__swiper', {
     prevEl: '.swiper-button-prev',
   },
   breakpoints: {
+    480: {
+      slidesPerView: 1.8,
+      spaceBetween: 32,
+    },
+    624: {
+      slidesPerView: 2.2,
+      spaceBetween: 32,
+    },
     768: {
       slidesPerView: 2.5,
       spaceBetween: 32,
@@ -84,12 +92,10 @@ const campaignSwiper = new Swiper('.top-campaign__swiper', {
       spaceBetween: 32,
     },
     1440: {
-      // slidesPerView: 3.5,
       slidesPerView: 3.4852,
       spaceBetween: 40,
     },
     1620: {
-      // slidesPerView: 3.5,
       slidesPerView: 4.2,
       spaceBetween: 40,
     },

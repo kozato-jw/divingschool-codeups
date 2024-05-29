@@ -65,7 +65,7 @@
 .campaign-card__price--disabled::before{
   content: "";
   display: inline-block;
-  width: rem(76);
+  width: 100%;
   height: rem(3);
   background-color: #C94800;
   position: absolute;
