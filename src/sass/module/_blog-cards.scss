@@ -1,24 +1,24 @@
 @use "global" as *;
 
-.blog-cards__item{
+.blog-cards__item {
   margin: 0 auto rem(40);
   display: flex;
   max-width: rem(500);
-  width: min(88.6463vw,100%);
+  width: min(88.6463vw, 100%);
 }
 
-.blog-cards__item:last-of-type{
+.blog-cards__item:last-of-type {
   margin-bottom: 0;
 }
 
-@include mq (md){
-  .blog-cards{
+@include mq (md) {
+  .blog-cards {
     display: flex;
     justify-content: center;
     gap: rem(40.5);
   }
 
-  .blog-cards__item{
+  .blog-cards__item {
     width: calc(100% / 3);
     margin: 0;
   }

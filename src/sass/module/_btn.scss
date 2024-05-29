@@ -17,7 +17,6 @@
 }
 
 .btn__inner {
-  // margin-right: rem(6.5);
   display: inline-block;
   font-size: rem(14);
   font-family: $english-font;
@@ -32,7 +31,7 @@
   overflow: hidden;
 }
 
-.btn__inner::after{
+.btn__inner::after {
   background-color: $white;
   position: absolute;
   top: 0;
@@ -51,7 +50,7 @@
   border: 1px solid $blue;
 }
 
-.btn__inner:hover::after{
+.btn__inner:hover::after {
   transform: scale(1, 1);
 }
 
@@ -79,4 +78,3 @@
 .btn__inner:hover .btn__arrow--back {
   opacity: 1;
 }
-

@@ -1,20 +1,19 @@
 @use "global" as *;
 
-.main-nav__list{
+.main-nav__list {
   display: flex;
   color: $white;
   text-align: center;
   text-transform: capitalize;
-  
 }
 
-.main-nav__link{
+.main-nav__link {
   display: inline-block;
   padding: 0 rem(20.1) rem(9.5);
   position: relative;
 }
 
-.main-nav__link::after{
+.main-nav__link::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -31,11 +30,7 @@
   transform: translateX(-50%) scale(1, 1);
 }
 
-// .main-nav__link--contact{
-//   padding-right: 0;
-// }
-
-.main-nav__link--en{
+.main-nav__link--en {
   font-size: rem(18);
   font-family: $english-font;
   line-height: 1;
@@ -44,15 +39,15 @@
   margin-bottom: rem(6);
 }
 
-.main-nav__link--ja{
+.main-nav__link--ja {
   font-size: rem(10);
   line-height: 1;
 }
 
-.main-nav__link--initial{
+.main-nav__link--initial {
   text-transform: none;
 }
 
-.main-nav__link--faq{
+.main-nav__link--faq {
   text-transform: uppercase;
 }
