@@ -1,11 +1,11 @@
 @use "global" as *;
 
-.mv{
+.mv {
   position: relative;
-  height: min(100% , 100vh);
+  height: min(100%, 100vh);
 }
 
-.mv__title{
+.mv__title {
   text-align: center;
   position: absolute;
   top: 49%;
@@ -16,43 +16,39 @@
   z-index: 2;
 }
 
-.mv__title--big{
+.mv__title--big {
   font-size: rem(40);
   font-family: $english-sub-font;
   font-weight: $regular;
   letter-spacing: 0.54em;
   width: rem(248);
-  text-align:center;
+  text-align: center;
   color: $white;
   text-transform: uppercase;
 }
-.mv__title--small{
+
+.mv__title--small {
   font-size: rem(20);
   font-family: $english-font;
   color: $white;
   line-height: 1;
 }
 
-
-.mv__swiper{
+.mv__swiper {
   margin-bottom: rem(40);
 }
 
-
-
-@include mq (md){
-
-  .mv__title--big{
+@include mq (md) {
+  .mv__title--big {
     font-size: rem(80);
     width: rem(496);
   }
 
-  .mv__title--small{
+  .mv__title--small {
     margin-top: rem(-2);
   }
 
-  .mv__swiper{
+  .mv__swiper {
     margin-bottom: rem(120);
   }
-  
 }

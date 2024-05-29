@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.header{
+.header {
   width: 100%;
   position: fixed;
   top: 0;
@@ -9,32 +9,31 @@
   z-index: 9997;
 }
 
-.header__inner{
+.header__inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: rem(80);
 }
 
-.header__logo{
+.header__logo {
   width: rem(102);
   position: relative;
   z-index: 10000;
   transition: 0.6s;
 }
 
-.header__logo a:hover{
+.header__logo a:hover {
   opacity: 0.6;
 }
 
-.header__nav-wrapper{
+.header__nav-wrapper {
   opacity: 0;
   visibility: hidden;
   transition: 0.6s;
-
 }
 
-.header__nav-wrapper.js-active{
+.header__nav-wrapper.js-active {
   opacity: 1;
   visibility: visible;
   transition: 0.6s;
@@ -45,33 +44,29 @@
   background-color: $blue;
 }
 
-.header__nav{
+.header__nav {
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  // height: 100vh;
   padding-top: rem(104);
   padding-bottom: rem(78);
-  // background-color: $blue;
   z-index: 9999;
   gap: rem(33) 0;
 }
 
-
-
-@include mq (md){
-  .header__inner{
-    height: rem(90); 
+@include mq (md) {
+  .header__inner {
+    height: rem(90);
   }
 
-  .header__inner.inner{
+  .header__inner.inner {
     max-width: rem(1440);
     width: 100%;
     padding: 0 rem(19) 0 rem(40);
   }
 
-  .header__logo{
+  .header__logo {
     width: rem(133);
   }
 }
