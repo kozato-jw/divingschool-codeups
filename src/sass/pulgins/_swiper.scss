@@ -5,6 +5,11 @@
   padding-left: rem(15);
 }
 
+.top-campaign__swiper .swiper-slide{
+  display: flex;
+  height: auto;
+}
+
 @include mq (md) {
 
   .swiper-button-next:after,
