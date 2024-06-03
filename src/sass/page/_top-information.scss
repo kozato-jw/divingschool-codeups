@@ -13,8 +13,13 @@
   margin-bottom: rem(27);
 }
 
-.top-information__image {
+.top-information__image{
   margin-bottom: rem(24);
+}
+
+.top-information__image img {
+  aspect-ratio: 345 / 227;
+  object-fit: cover;
 }
 
 .top-information__head {
@@ -48,8 +53,11 @@
   }
 
   .top-information__image {
-    width: 50%;
+    width: 51%;
     margin-bottom: 0;
+  }
+  .top-information__image img{
+    aspect-ratio: 540 / 356;
   }
 
   .top-information__content {

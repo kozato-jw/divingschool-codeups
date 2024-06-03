@@ -1,8 +1,6 @@
 @use "global" as *;
 
 .voice-cards__item {
-  max-width: rem(500);
-  width: 100%;
   margin: 0 auto rem(39);
 }
 
@@ -12,15 +10,13 @@
 
 @include mq (md) {
   .voice-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: rem(40) 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 80px;
   }
 
   .voice-cards__item {
-    max-width: 100%;
-    width: calc((100% - rem(40)) / 2);
     margin: 0;
   }
 

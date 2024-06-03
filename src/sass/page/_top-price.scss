@@ -15,8 +15,8 @@
 }
 
 .top-price__list {
-  max-width: rem(500);
-  width: 100%;
+  // max-width: rem(500);
+  // width: 100%;
   margin: 0 auto rem(40);
 }
 
@@ -32,6 +32,7 @@
 .top-price__list-item {
   display: flex;
   justify-content: space-between;
+  gap: rem(20);
   font-size: rem(14);
   line-height: calc(24 / 14);
   color: $dark-green;
@@ -83,12 +84,9 @@
   }
 
   .top-price__list-item {
-    display: flex;
-    justify-content: space-between;
+    gap: rem(40);
     font-size: rem(16);
     line-height: 1.5;
-    color: $dark-green;
-    margin-bottom: rem(8);
   }
 
   .top-price__list-item:last-of-type {

@@ -5,18 +5,20 @@
   color: $white;
   text-align: center;
   text-transform: capitalize;
+  height: 100%;
 }
 
+
 .main-nav__link {
-  display: inline-block;
-  padding: 0 rem(20.1) rem(9.5);
   position: relative;
+  display: inline-block;
+  padding: rem(27) rem(20.1) rem(26);
 }
 
 .main-nav__link::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: rem(22);
   left: 50%;
   width: calc(100% - rem(40));
   height: 1px;
@@ -34,14 +36,12 @@
   font-size: rem(18);
   font-family: $english-font;
   line-height: 1;
-  padding-top: rem(2);
-  margin-top: rem(4);
-  margin-bottom: rem(6);
+  margin-bottom: rem(4);
 }
 
 .main-nav__link--ja {
   font-size: rem(10);
-  line-height: 1;
+  line-height: 1.5;
 }
 
 .main-nav__link--initial {
