@@ -2,9 +2,6 @@
 
 .blog-cards__item {
   margin: 0 auto rem(40);
-  display: flex;
-  max-width: rem(500);
-  width: min(88.6463vw, 100%);
 }
 
 .blog-cards__item:last-of-type {
@@ -13,13 +10,16 @@
 
 @include mq (md) {
   .blog-cards {
-    display: flex;
-    justify-content: center;
-    gap: rem(40.5);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: rem(40.5);
+    grid-row-gap: rem(80);
+
   }
 
   .blog-cards__item {
-    width: calc(100% / 3);
     margin: 0;
   }
+
+
 }

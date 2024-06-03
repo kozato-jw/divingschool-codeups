@@ -43,16 +43,16 @@ jQuery(function($) { // この中であればWordpressでも「$」が使用可�
         });
     });
     /* swiperスライダー・MVセクション */
-    const mvSwiper = new Swiper('.mv__swiper', {
-        loop: true,
-        speed: 1500,
-        effect: 'fade',
-        autoplay: {
-            delay: 2000,
-        },
-        slidesPerView: 1,
-        roundLengths: true,
-    });
+    // const mvSwiper = new Swiper('.mv__swiper', {
+    //     loop: true,
+    //     speed: 1500,
+    //     effect: 'fade',
+    //     autoplay: {
+    //         delay: 2000,
+    //     },
+    //     slidesPerView: 1,
+    //     roundLengths: true,
+    // });
     /*  swiperスライダー・キャンペーンセクション */
     const campaignSwiper = new Swiper('.top-campaign__swiper', {
         loop: true,
@@ -67,8 +67,8 @@ jQuery(function($) { // この中であればWordpressでも「$」が使用可�
         },
         breakpoints: {
             480: {
-                slidesPerView: 1.8,
-                spaceBetween: 32,
+                slidesPerView: 1.4,
+                spaceBetween: 24,
             },
             624: {
                 slidesPerView: 2.2,
@@ -150,4 +150,5 @@ jQuery(function($) { // この中であればWordpressでも「$」が使用可�
             }
         });
     });
+
 });
