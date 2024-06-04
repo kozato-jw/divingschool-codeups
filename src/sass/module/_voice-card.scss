@@ -73,12 +73,10 @@
   line-height: 1.5;
   margin: 0;
   font-weight: $regular;
-  flex-grow: 2;
-
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 7; 
+  -webkit-line-clamp: 10; 
 }
 
 @include mq (md) {
@@ -95,7 +93,8 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: rem(8);
+    // margin-bottom: rem(8);
+    flex-grow: 3;
   }
 
   .voice-card__category {
@@ -116,4 +115,7 @@
     object-fit: cover;
   }
   
+  .voice-card__text {
+    -webkit-line-clamp: 7; 
+  }
 }

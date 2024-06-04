@@ -42,18 +42,42 @@ jQuery(function($) { // この中であればWordpressでも「$」が使用可�
             $('.header').css('background-color', '');
         });
     });
-    /* swiperスライダー・MVセクション */
-    // const mvSwiper = new Swiper('.mv__swiper', {
-    //     loop: true,
-    //     speed: 1500,
-    //     effect: 'fade',
-    //     autoplay: {
-    //         delay: 2000,
-    //     },
-    //     slidesPerView: 1,
-    //     roundLengths: true,
-    // });
-    /*  swiperスライダー・キャンペーンセクション */
+    /* (MV)ローディングアニメーションとswiper */
+    $(document).ready(function() {
+        const $title = $('.mv__title');
+        const $animationContainer = $('.mv__loading-inner');
+
+        function showTitle() {
+            setTimeout(() => {
+                $title.addClass('visible');
+            }, 1000);
+        }
+
+        function hideAnimationContainer() {
+            setTimeout(() => {
+                $animationContainer.fadeOut(500, function() {
+                    $animationContainer.remove();
+                    startSwiper();
+                });
+            }, 3000);
+        }
+
+        function startSwiper() {
+            const mvSwiper = new Swiper('.mv__swiper', {
+                loop: true,
+                speed: 1500,
+                effect: 'fade',
+                autoplay: {
+                    delay: 2000,
+                },
+                slidesPerView: 1,
+                roundLengths: true,
+            });
+        }
+        $('.mv__loading-image--right').on('animationend', showTitle);
+        $title.on('transitionend', hideAnimationContainer);
+    });
+    /* swiper・キャンペーンセクション */
     const campaignSwiper = new Swiper('.top-campaign__swiper', {
         loop: true,
         slidesPerView: 1.266,
@@ -150,5 +174,4 @@ jQuery(function($) { // この中であればWordpressでも「$」が使用可�
             }
         });
     });
-
 });

@@ -4,6 +4,61 @@
   position: relative;
 }
 
+.mv__loading {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 1;
+  transition: opacity 2s;
+}
+
+.mv__loading-inner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: $blue;
+}
+
+.mv__loading-image {
+  flex: 1;
+  background-size: cover;
+}
+
+.mv__loading-image--left {
+  background-image: url('../images/common/mv-sp_1-left.jpg');
+  transform: translateY(100%);
+  animation: slideUpLeft 2s forwards;
+  background-position: right;
+}
+
+.mv__loading-image--right {
+  background-image: url('../images/common/mv-sp_1-right.jpg');
+  transform: translateY(100%);
+  animation: slideUpRight 2s 0.2s forwards;
+  background-position: left;
+}
+
+@keyframes slideUpLeft {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpRight {
+  to {
+    transform: translateY(0);
+  }
+}
+
 .mv__title {
   text-align: center;
   position: absolute;
@@ -13,6 +68,12 @@
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   z-index: 2;
+  opacity: 0;
+}
+
+.mv__title.visible {
+  transition: opacity 2s;
+  opacity: 1;
 }
 
 .mv__title--big {
@@ -35,15 +96,25 @@
 
 .mv__swiper {
   height: 100vh;
+  position: relative;
+  z-index: 1;
 }
 
-.mv__swiper img{
+.mv__swiper img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-
 @include mq (md) {
+  .mv__loading-image--left {
+    background-image: url('../images/common/mv-pc_1-left.jpg');
+  }
+
+  .mv__loading-image--right {
+    background-image: url('../images/common/mv-pc_1-right.jpg');
+  }
+
   .mv__title--big {
     font-size: rem(80);
     width: rem(496);
