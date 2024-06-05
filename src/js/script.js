@@ -47,19 +47,27 @@ jQuery(function($) { // この中であればWordpressでも「$」が使用可�
         const $title = $('.mv__title');
         const $animationContainer = $('.mv__loading-inner');
 
+        function initialShowAndHideTitle() {
+            $title.addClass('js-visible--loading');
+            setTimeout(() => {
+                $title.removeClass('js-visible--loading').addClass('js-hidden');
+                setTimeout(hideAnimationContainer, 300);
+            }, 3000);
+        }
+
         function showTitle() {
             setTimeout(() => {
-                $title.addClass('visible');
+                $title.removeClass('js-hidden').addClass('js-visible');
             }, 1000);
         }
 
         function hideAnimationContainer() {
             setTimeout(() => {
-                $animationContainer.fadeOut(500, function() {
+                $animationContainer.fadeOut(2000, function() {
                     $animationContainer.remove();
                     startSwiper();
                 });
-            }, 3000);
+            }, 2000);
         }
 
         function startSwiper() {
@@ -74,8 +82,13 @@ jQuery(function($) { // この中であればWordpressでも「$」が使用可�
                 roundLengths: true,
             });
         }
+        initialShowAndHideTitle();
         $('.mv__loading-image--right').on('animationend', showTitle);
-        $title.on('transitionend', hideAnimationContainer);
+        $title.on('transitionend', function() {
+            if ($title.hasClass('visible')) {
+                hideAnimationContainer();
+            }
+        });
     });
     /* swiper・キャンペーンセクション */
     const campaignSwiper = new Swiper('.top-campaign__swiper', {

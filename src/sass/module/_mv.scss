@@ -25,25 +25,25 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  background-color: $blue;
+  background-color: $white;
+  overflow: hidden;
 }
 
 .mv__loading-image {
   flex: 1;
   background-size: cover;
+  transform: translateY(100%);
 }
 
 .mv__loading-image--left {
   background-image: url('../images/common/mv-sp_1-left.jpg');
-  transform: translateY(100%);
-  animation: slideUpLeft 2s forwards;
+  animation: slideUpLeft 2s 3.2s forwards;
   background-position: right;
 }
 
 .mv__loading-image--right {
   background-image: url('../images/common/mv-sp_1-right.jpg');
-  transform: translateY(100%);
-  animation: slideUpRight 2s 0.2s forwards;
+  animation: slideUpRight 2s 3.4s forwards;
   background-position: left;
 }
 
@@ -61,6 +61,7 @@
 
 .mv__title {
   text-align: center;
+  color: $white;
   position: absolute;
   top: 49%;
   left: 50%;
@@ -69,11 +70,7 @@
   -ms-transform: translate(-50%, -50%);
   z-index: 2;
   opacity: 0;
-}
-
-.mv__title.visible {
-  transition: opacity 2s;
-  opacity: 1;
+  transition: all 0.8s;
 }
 
 .mv__title--big {
@@ -83,15 +80,28 @@
   letter-spacing: 0.54em;
   width: rem(248);
   text-align: center;
-  color: $white;
   text-transform: uppercase;
 }
 
 .mv__title--small {
   font-size: rem(20);
   font-family: $english-font;
-  color: $white;
   line-height: 1;
+}
+
+.mv__title.js-visible--loading {
+  transition: opacity 2s;
+  opacity: 1;
+  color: $blue;
+}
+
+.mv__title.js-visible {
+  transition: opacity 2s;
+  opacity: 1;
+}
+
+.mv__title.js-hidden {
+  opacity: 0;
 }
 
 .mv__swiper {
