@@ -13,7 +13,7 @@
   margin-bottom: rem(27);
 }
 
-.top-information__image{
+.top-information__image {
   margin-bottom: rem(24);
 }
 
@@ -56,7 +56,8 @@
     width: 51%;
     margin-bottom: 0;
   }
-  .top-information__image img{
+
+  .top-information__image img {
     aspect-ratio: 540 / 356;
   }
 
@@ -69,6 +70,7 @@
     justify-content: space-between;
     align-items: center;
     gap: rem(48);
+    margin-right: rem(10);
   }
 
   .top-information__head {

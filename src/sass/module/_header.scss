@@ -7,11 +7,13 @@
   left: 0;
   background-color: #0D2936AD;
   z-index: 9997;
+  display: flex;
 }
 
 .header__inner {
   display: flex;
   justify-content: space-between;
+  width: 100%;
   align-items: center;
   height: rem(80);
   padding: 0 rem(15);
@@ -21,7 +23,7 @@
 .header__logo {
   width: rem(102);
   position: relative;
-  z-index: 10000;
+  z-index: 9999;
   transition: 0.6s;
 }
 
@@ -40,34 +42,30 @@
   visibility: visible;
   transition: 0.6s;
   position: fixed;
-  z-index: 9999;
+  z-index: 9998;
   width: 100%;
   height: 100vh;
   background-color: $blue;
-
 }
 
 .header__nav-wrapper.js-active .header__nav{
   overflow-y: auto;
   max-height: 100vh;
-  padding-top: rem(24);
-
+  padding-top: rem(105);
 }
 
 .header__nav {
   width: 100%;
-  // position: fixed;
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
-  // padding-top: rem(104);
   padding-top: rem(104);
   padding-bottom: rem(120);
   z-index: 9999;
-  gap: rem(33) 0;
+  gap: rem(40) 0;
 }
 
 @include mq (md) {

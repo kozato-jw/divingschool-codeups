@@ -6,9 +6,10 @@
 }
 
 .blog-card__link {
-  padding: rem(16) rem(16) rem(24);
+  height: 100%;
   display: flex;
   flex-direction: column;
+  padding: rem(16) rem(16) rem(24);
 }
 
 .blog-card__image {
@@ -25,6 +26,7 @@
   flex-direction: column;
   color: $dark-green;
   line-height: 1.5;
+  flex-grow: 1;
 }
 
 .blog-card__date {
@@ -41,6 +43,8 @@
   margin-bottom: rem(15.67);
   border-bottom: 1px solid $blue;
   flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
 }
 
 .blog-card__text {
