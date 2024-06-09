@@ -78,7 +78,7 @@
   font-family: $english-sub-font;
   font-weight: $regular;
   letter-spacing: 0.54em;
-  width: rem(248);
+  text-indent: 0.5em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -127,7 +127,6 @@
 
   .mv__title--big {
     font-size: rem(80);
-    width: rem(496);
   }
 
   .mv__title--small {

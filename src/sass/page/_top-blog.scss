@@ -64,7 +64,7 @@
     width: min(30.3472vw, rem(437));
     position: absolute;
     top: rem(24);
-    left: calc(50% - min(43.0555vw, rem(620)));
+    left: calc(50% - min(48vw, rem(620)));
   }
 
   .top-blog__image--bluefish {
@@ -72,6 +72,6 @@
     transform: scale(-1, 1);
     position: absolute;
     bottom: rem(-18);
-    left: calc(50% - min(43.0555vw, rem(620)));
+    left: calc(50% - min(48vw, rem(620)));
   }
 }
