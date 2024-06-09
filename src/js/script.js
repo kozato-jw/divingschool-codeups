@@ -46,21 +46,22 @@ jQuery(function($) { // この中であればWordpressでも「$」が使用可�
     $(document).ready(function() {
         const $title = $('.mv__title');
         const $animationContainer = $('.mv__loading-inner');
-
+        const $header = $('.header');
+    
         function initialShowAndHideTitle() {
             $title.addClass('js-visible--loading');
             setTimeout(() => {
                 $title.removeClass('js-visible--loading').addClass('js-hidden');
-                setTimeout(hideAnimationContainer, 300);
+
             }, 3000);
         }
-
+    
         function showTitle() {
             setTimeout(() => {
                 $title.removeClass('js-hidden').addClass('js-visible');
             }, 1000);
         }
-
+    
         function hideAnimationContainer() {
             setTimeout(() => {
                 $animationContainer.fadeOut(2000, function() {
@@ -69,7 +70,7 @@ jQuery(function($) { // この中であればWordpressでも「$」が使用可�
                 });
             }, 2000);
         }
-
+    
         function startSwiper() {
             const mvSwiper = new Swiper('.mv__swiper', {
                 loop: true,
@@ -82,11 +83,21 @@ jQuery(function($) { // この中であればWordpressでも「$」が使用可�
                 roundLengths: true,
             });
         }
+    
+        function showHeader() {
+            $header.addClass('js-visible').fadeIn(1000);
+        }
+    
         initialShowAndHideTitle();
-        $('.mv__loading-image--right').on('animationend', showTitle);
+    
+        $('.mv__loading-image--right').on('animationend', function() {
+            showTitle();
+        });
+    
         $title.on('transitionend', function() {
-            if ($title.hasClass('visible')) {
+            if ($title.hasClass('js-visible')) {
                 hideAnimationContainer();
+                showHeader();
             }
         });
     });
