@@ -108,6 +108,7 @@
   height: 100vh;
   position: relative;
   z-index: 1;
+  margin-bottom: rem(40);
 }
 
 .mv__swiper img {
@@ -131,5 +132,9 @@
 
   .mv__title--small {
     margin-top: rem(-2);
+  }
+
+  .mv__swiper {
+    margin-bottom: rem(120);
   }
 }

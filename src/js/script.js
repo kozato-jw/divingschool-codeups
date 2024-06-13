@@ -47,21 +47,20 @@ jQuery(function($) { // この中であればWordpressでも「$」が使用可�
         const $title = $('.mv__title');
         const $animationContainer = $('.mv__loading-inner');
         const $header = $('.header');
-    
+
         function initialShowAndHideTitle() {
             $title.addClass('js-visible--loading');
             setTimeout(() => {
                 $title.removeClass('js-visible--loading').addClass('js-hidden');
-
             }, 3000);
         }
-    
+
         function showTitle() {
             setTimeout(() => {
                 $title.removeClass('js-hidden').addClass('js-visible');
             }, 1000);
         }
-    
+
         function hideAnimationContainer() {
             setTimeout(() => {
                 $animationContainer.fadeOut(2000, function() {
@@ -70,7 +69,7 @@ jQuery(function($) { // この中であればWordpressでも「$」が使用可�
                 });
             }, 2000);
         }
-    
+
         function startSwiper() {
             const mvSwiper = new Swiper('.mv__swiper', {
                 loop: true,
@@ -83,17 +82,14 @@ jQuery(function($) { // この中であればWordpressでも「$」が使用可�
                 roundLengths: true,
             });
         }
-    
+
         function showHeader() {
             $header.addClass('js-visible').fadeIn(1000);
         }
-    
         initialShowAndHideTitle();
-    
         $('.mv__loading-image--right').on('animationend', function() {
             showTitle();
         });
-    
         $title.on('transitionend', function() {
             if ($title.hasClass('js-visible')) {
                 hideAnimationContainer();
@@ -104,7 +100,7 @@ jQuery(function($) { // この中であればWordpressでも「$」が使用可�
     /* swiper・キャンペーンセクション */
     const campaignSwiper = new Swiper('.top-campaign__swiper', {
         loop: true,
-        slidesPerView: 1.266,
+        slidesPerView: 1.217,
         spaceBetween: 24,
         freeMode: true,
         enabled: true,
@@ -127,11 +123,11 @@ jQuery(function($) { // この中であればWordpressでも「$」が使用可�
                 spaceBetween: 32,
             },
             1024: {
-                slidesPerView: 2.8,
+                slidesPerView: 2.7,
                 spaceBetween: 32,
             },
             1440: {
-                slidesPerView: 3.4852,
+                slidesPerView: 3,
                 spaceBetween: 40,
             },
             1620: {

@@ -1,11 +1,10 @@
 @use "global" as *;
 
-.top-blog {
-  padding-top: rem(80);
-  padding-bottom: rem(78);
+.top-blog__inner {
+  margin-bottom: rem(80);
 }
 
-.top-blog__inner.inner{
+.top-blog__inner.inner {
   padding-left: rem(21);
   padding-right: rem(21);
 }
@@ -24,25 +23,28 @@
 
 @include mq (md) {
   .top-blog {
-    padding-top: rem(101);
-    padding-bottom: rem(138);
     position: relative;
   }
 
-  .top-blog__inner {
-    width: min(100%, 100vw);
-  }
-
-  .top-blog__inner.inner{
+  .top-blog__inner.inner {
     padding-left: rem(30);
     padding-right: rem(30);
   }
 
+  .top-blog__inner {
+    padding-top: rem(101);
+    margin-bottom: rem(138);
+  }
+
   .top-blog__title {
-    margin-bottom: rem(81);
+    margin-bottom: rem(79);
   }
 
   .top-blog__title--pc {
+    color: $white;
+  }
+
+  .top-blog__title--pc::first-letter {
     color: $white;
   }
 
@@ -51,7 +53,7 @@
     max-width: 100%;
   }
 
-  .top-blog__bg{
+  .top-blog__bg {
     height: rem(500);
     position: absolute;
     top: 0;
@@ -71,7 +73,7 @@
     width: rem(301);
     transform: scale(-1, 1);
     position: absolute;
-    bottom: rem(-18);
+    bottom: rem(-155);
     left: calc(50% - min(48vw, rem(620)));
   }
 }

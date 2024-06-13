@@ -12,22 +12,21 @@
   margin-bottom: rem(4);
 }
 
+.section-title__en::first-letter {
+  color: $blue;
+  text-transform: uppercase;
+}
+
 .section-title__ja {
   font-size: rem(12);
   line-height: 1.5;
   color: $blue;
 }
 
-.section-title__initial {
-  color: $blue;
-  text-transform: uppercase;
-}
-
 .section-title__text {
   font-size: rem(14);
   color: $blue;
   line-height: calc(18 / 14);
-  margin-top: rem(8);
   margin-bottom: rem(40);
   filter: drop-shadow(0px 4px 4px #00000040);
 }
@@ -39,11 +38,17 @@
   display: inline-block;
 }
 
+.section-title__en--contact::first-letter {
+  color: $blue;
+  text-transform: uppercase;
+}
+
 .section-title__ja--contact {
   font-weight: $regular;
   filter: drop-shadow(0px 4px 4px #00000040);
   display: block;
   margin-top: rem(-10);
+  margin-bottom: rem(8);
 }
 
 @include mq (md) {
@@ -64,5 +69,9 @@
   .section-title__en--contact {
     line-height: 1;
     margin-bottom: rem(-3);
+  }
+
+  .section-title__text {
+    margin-bottom: rem(39);
   }
 }

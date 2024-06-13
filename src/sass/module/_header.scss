@@ -12,7 +12,7 @@
   transition: 0.6s;
 }
 
-.header.js-visible{
+.header.js-visible {
   opacity: 1;
 }
 
@@ -54,10 +54,9 @@
   background-color: $blue;
 }
 
-.header__nav-wrapper.js-active .header__nav{
+.header__nav-wrapper.js-active .header__nav {
   overflow-y: auto;
   max-height: 100vh;
-  padding-top: rem(105);
 }
 
 .header__nav {
@@ -68,7 +67,8 @@
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
-  padding-top: rem(104);
+  margin-top: rem(80);
+  padding-top: rem(24);
   padding-bottom: rem(120);
   z-index: 9999;
   gap: rem(40) 0;
@@ -76,7 +76,7 @@
 
 @include mq (md) {
   .header__inner {
-    padding: 0 rem(19.9) 0 min(2.777%,rem(40));
+    padding: 0 rem(19.9) 0 min(2.777%, rem(40));
     height: rem(90);
   }
 
@@ -84,7 +84,7 @@
     width: rem(133);
   }
 
-  .header__menu{
+  .header__menu {
     height: 100%;
   }
 }
