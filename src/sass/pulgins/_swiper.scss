@@ -1,11 +1,11 @@
 @use "global" as *;
 
 .top-campaign__swiper {
-  padding-bottom: rem(39);
-  padding-left: rem(15);
+  margin-bottom: rem(40);
+  overflow: visible;
 }
 
-.top-campaign__swiper .swiper-slide{
+.top-campaign__swiper .swiper-slide {
   display: flex;
   height: auto;
 }
@@ -46,8 +46,7 @@
   }
 
   .top-campaign__swiper {
-    padding-bottom: rem(80);
-    padding-left: 12.5vw;
+    margin-bottom: rem(80);
   }
 
   .top-campaign__swiper .swiper-slide {
