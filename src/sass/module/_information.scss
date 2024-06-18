@@ -1,34 +1,30 @@
 @use "global" as *;
 
-.top-information {
-  padding-top: rem(79);
-  padding-bottom: rem(79);
+.information {
+  padding-top: rem(80);
+  padding-bottom: rem(78);
   background-color: #DDF0F1;
 }
 
-.top-information--mb {
-  margin-bottom: rem(80);
-}
-
-.top-information__inner {
+.information__inner {
   display: inline-block;
   width: 100%;
 }
 
-.top-information__title {
+.information__title {
   margin-bottom: rem(29);
 }
 
-.top-information__image {
+.information__image {
   margin-bottom: rem(24);
 }
 
-.top-information__image img {
+.information__image img {
   aspect-ratio: 345 / 227;
   object-fit: cover;
 }
 
-.top-information__head {
+.information__head {
   font-size: rem(20);
   line-height: 1.2;
   color: $dark-green;
@@ -37,49 +33,41 @@
   border-bottom: 1px solid $blue;
 }
 
-.top-information__text {
+.information__text {
   font-size: rem(16);
   line-height: 1.5;
   color: $dark-green;
   margin-bottom: rem(40);
 }
 
-.top-information__btn-wrapper {
+.information__btn-wrapper {
   text-align: center;
 }
 
 @include mq (md) {
-  .top-information {
+  .information {
     padding-top: rem(99);
     padding-bottom: rem(72);
   }
 
-  .top-information--mb {
-    margin-bottom: 0;
-  }
-
-  .top-information__inner {
-    padding-bottom: 0;
-  }
-
-  .top-information__title {
+  .information__title {
     margin-bottom: rem(40);
   }
 
-  .top-information__image {
+  .information__image {
     width: 51%;
     margin-bottom: 0;
   }
 
-  .top-information__image img {
+  .information__image img {
     aspect-ratio: 540 / 356;
   }
 
-  .top-information__content {
+  .information__content {
     width: 46%;
   }
 
-  .top-information__content-wrapper {
+  .information__content-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -87,14 +75,13 @@
     margin-right: rem(10);
   }
 
-  .top-information__head {
+  .information__head {
     font-size: rem(24);
     padding-bottom: rem(6);
     margin-bottom: rem(9);
   }
 
-  .top-information__text {
+  .information__text {
     margin-bottom: rem(40);
-    margin-right: rem(3);
   }
 }

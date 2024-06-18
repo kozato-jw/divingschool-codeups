@@ -1,0 +1,93 @@
+@use "global" as *;
+
+.campaign {
+  overflow: hidden;
+}
+
+.campaign__title {
+  margin-bottom: rem(28);
+}
+
+.campaign__btn-wrapper {
+  text-align: center;
+}
+
+.campaign__swiper {
+  margin-bottom: rem(40);
+  overflow: visible;
+}
+
+.campaign__swiper .swiper-slide {
+  display: flex;
+  height: auto;
+}
+
+@include mq (md) {
+  .campaign {
+    position: relative;
+  }
+
+  .campaign__title {
+    margin-bottom: rem(40);
+  }
+
+  .campaign__swiper {
+    margin-bottom: rem(80);
+  }
+
+  .campaign__swiper .swiper-slide {
+    transition: transform 0.6s ease;
+  }
+
+  .campaign__swiper .swiper-slide-duplicate {
+    visibility: visible;
+  }
+
+  .campaign__swiper-wrapper {
+    margin-left: 0;
+  }
+
+  .campaign__swiper-btn {
+    width: rem(240);
+    height: rem(80);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 12.5vw;
+  }
+
+  .campaign__swiper-btn .swiper-button-next:after,
+  .campaign__swiper-btn .swiper-button-prev:after {
+    display: none;
+  }
+
+  .campaign__swiper-btn .swiper-button-prev,
+  .campaign__swiper-btn .swiper-button-next {
+    width: rem(80);
+    height: rem(80);
+    border: 1px solid $blue;
+    border-radius: 50%;
+    position: static;
+    display: block;
+    margin: 0;
+    transition: 0.6s;
+  }
+
+  .campaign__swiper-btn .swiper-button-prev:hover,
+  .campaign__swiper-btn .swiper-button-next:hover {
+    opacity: 0.6;
+  }
+
+  .campaign__swiper-btn .swiper-button-prev img,
+  .campaign__swiper-btn .swiper-button-next img {
+    width: rem(40);
+    margin-top: rem(36);
+    margin-left: rem(20);
+  }
+
+  .campaign__swiper-btn .swiper-button-prev img {
+    transform: scale(-1, 1);
+  }
+}

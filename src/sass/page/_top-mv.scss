@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.top-mv{
+  margin-bottom: rem(40);
+}
+
+@include mq (md) {
+  .top-mv{
+    margin-bottom: rem(120);
+  }
+}

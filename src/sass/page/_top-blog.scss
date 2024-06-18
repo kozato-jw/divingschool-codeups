@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.top-blog{
+  margin-bottom: rem(79);
+}
+
+@include mq (md) {
+  .top-blog{
+    margin-bottom: rem(138);
+  }
+}

@@ -1,28 +1,29 @@
 @use "global" as *;
 
-.top-price {
+.price {
   background-color: #DDF0F1;
   padding-top: rem(80);
   padding-bottom: rem(79);
 }
 
-.top-price--mb {
-  margin-bottom: rem(80);
-}
-
-.top-price__title {
+.price__title {
   margin-bottom: rem(28);
 }
 
-.top-price__image {
+.price__image {
   margin-bottom: rem(40);
 }
 
-.top-price__list {
+.price__image img{
+  aspect-ratio: 345 / 227;
+  object-fit: cover;
+}
+
+.price__list {
   margin: 0 auto rem(40);
 }
 
-.top-price__list-title {
+.price__list-title {
   font-size: rem(16);
   font-weight: $bold;
   padding-bottom: rem(3.5);
@@ -31,7 +32,7 @@
   color: $dark-green;
 }
 
-.top-price__list-item {
+.price__list-item {
   display: flex;
   justify-content: space-between;
   gap: rem(20);
@@ -41,69 +42,69 @@
   margin-bottom: rem(8);
 }
 
-.top-price__list-item:last-of-type {
+.price__list-item:last-of-type {
   margin-bottom: 0;
 }
 
-.top-price__btn-wrapper {
+.price__btn-wrapper {
   text-align: center;
 }
 
 @include mq (md) {
-  .top-price {
+  .price {
     position: relative;
     padding-top: rem(100);
     padding-bottom: rem(98);
   }
 
-  .top-price--mb {
-    margin-bottom: rem(140);
-  }
-
-  .top-price__title {
+  .price__title {
     margin-bottom: rem(40);
   }
 
-  .top-price__content {
+  .price__content {
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
     margin-bottom: rem(80);
   }
 
-  .top-price__image {
+  .price__image {
     width: 45.5556%;
     margin-bottom: 0;
   }
 
-  .top-price__list-wrapper {
+  .price__image img{
+    aspect-ratio: 492 / 746;
+  }
+
+  .price__list-wrapper {
     width: 45.5556%;
   }
 
-  .top-price__list-title {
+  .price__list-title {
     font-size: rem(16);
     font-weight: $bold;
-    padding-bottom: rem(3.5);
+    padding-bottom: rem(3);
     margin-bottom: rem(8.1);
     border-bottom: 1px solid $blue;
     color: $dark-green;
   }
 
-  .top-price__list-item {
+  .price__list-item {
     gap: rem(40);
     font-size: rem(16);
     line-height: 1.5;
   }
 
-  .top-price__list-item:last-of-type {
+  .price__list-item:last-of-type {
     margin-bottom: 0;
   }
 
-  .top-price__list-item:last-of-type p:first-of-type {
+  .price__list-item:last-of-type p:first-of-type {
     letter-spacing: 0.01em;
   }
 
-  .top-price__image--bluefish {
+  .price__image--bluefish {
     width: min(30.3472vw, rem(437));
     position: absolute;
     left: calc(50% - min(48vw, rem(620)));

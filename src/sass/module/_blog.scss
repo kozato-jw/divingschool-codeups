@@ -1,59 +1,50 @@
 @use "global" as *;
 
-.top-blog__inner {
-  margin-bottom: rem(80);
-}
-
-.top-blog__inner.inner {
+.blog__inner.inner {
   padding-left: rem(21);
   padding-right: rem(21);
 }
 
-.top-blog__title {
+.blog__title {
   margin-bottom: rem(28);
 }
 
-.top-blog__cards {
-  margin: 0 auto rem(40);
+.blog__card-wrapper {
+  margin-bottom: rem(40);
 }
 
-.top-blog__btn-wrapper {
+.blog__btn-wrapper {
   text-align: center;
 }
 
 @include mq (md) {
-  .top-blog {
+  .blog {
     position: relative;
+    padding-top: rem(101);
   }
 
-  .top-blog__inner.inner {
+  .blog__inner.inner {
     padding-left: rem(30);
     padding-right: rem(30);
   }
 
-  .top-blog__inner {
-    padding-top: rem(101);
-    margin-bottom: rem(138);
-  }
-
-  .top-blog__title {
+  .blog__title {
     margin-bottom: rem(79);
   }
 
-  .top-blog__title--pc {
+  .blog__title--pc {
     color: $white;
   }
 
-  .top-blog__title--pc::first-letter {
+  .blog__title--pc::first-letter {
     color: $white;
   }
 
-  .top-blog__cards {
-    margin: 0 0 rem(80);
-    max-width: 100%;
+  .blog__card-wrapper {
+    margin-bottom: rem(80);
   }
 
-  .top-blog__bg {
+  .blog__bg {
     height: rem(500);
     position: absolute;
     top: 0;
@@ -62,14 +53,14 @@
     z-index: -1;
   }
 
-  .top-blog__image--whitefish {
+  .blog__image--whitefish {
     width: min(30.3472vw, rem(437));
     position: absolute;
     top: rem(24);
     left: calc(50% - min(48vw, rem(620)));
   }
 
-  .top-blog__image--bluefish {
+  .blog__image--bluefish {
     width: rem(301);
     transform: scale(-1, 1);
     position: absolute;
