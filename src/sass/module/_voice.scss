@@ -1,39 +1,31 @@
 @use "global" as *;
 
-.top-voice__inner {
-  margin-bottom: rem(78);
-}
-
-.top-voice__title {
+.voice__title {
   margin-bottom: rem(42);
 }
 
-.top-voice__cards {
+.voice__card-wrapper {
   margin-bottom: rem(40);
 }
 
-.top-voice__btn-wrapper {
+.voice__btn-wrapper {
   text-align: center;
 }
 
 @include mq (md) {
-  .top-voice {
+  .voice {
     position: relative;
   }
 
-  .top-voice__inner {
-    margin-bottom: rem(139);
-  }
-
-  .top-voice__title {
+  .voice__title {
     margin-bottom: rem(30);
   }
 
-  .top-voice__cards {
+  .voice__card-wrapper {
     margin-bottom: rem(80);
   }
 
-  .top-voice__image--seahorse {
+  .voice__image--seahorse {
     width: rem(71);
     position: absolute;
     right: calc(50% - min(48vw, rem(540)));

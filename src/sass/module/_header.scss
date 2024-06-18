@@ -22,7 +22,8 @@
   width: 100%;
   align-items: center;
   height: rem(80);
-  padding: 0 rem(15);
+  padding-right: rem(15);
+  padding-left: rem(15);
   position: relative;
 }
 
@@ -30,7 +31,7 @@
   width: rem(102);
   position: relative;
   z-index: 9999;
-  transition: 0.6s;
+  transition: 0.3s;
 }
 
 .header__logo a:hover {
@@ -76,7 +77,8 @@
 
 @include mq (md) {
   .header__inner {
-    padding: 0 rem(19.9) 0 min(2.777%, rem(40));
+    padding-right: rem(19.9);
+    padding-left: min(2.777%, rem(40));
     height: rem(90);
   }
 
