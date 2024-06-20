@@ -2,10 +2,7 @@
 
 .top-voice{
   margin-bottom: rem(78);
-}
-
-@include mq (md) {
-  .top-voice{
+  @include mq ("md"){
     margin-bottom: rem(139);
   }
 }

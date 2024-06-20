@@ -2,10 +2,7 @@
 
 .top-campaign{
   margin-bottom: rem(79);
-}
-
-@include mq (md) {
-  .top-campaign{
+  @include mq ("md"){
     margin-bottom: rem(139);
   }
 }

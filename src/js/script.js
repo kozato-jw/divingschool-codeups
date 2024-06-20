@@ -100,39 +100,16 @@ jQuery(function ($) {
   });
   /* swiper・キャンペーンセクション */
   const campaignSwiper = new Swiper(".campaign__swiper", {
-    loop: true,
-    slidesPerView: 1.217,
+    slidesPerView: "auto",
     spaceBetween: 24,
+    loop: true,
     freeMode: true,
-    enabled: true,
-    speed: 600,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
     breakpoints: {
-      480: {
-        slidesPerView: 1.4,
-        spaceBetween: 24,
-      },
-      624: {
-        slidesPerView: 2.2,
-        spaceBetween: 32,
-      },
       768: {
-        slidesPerView: 2.5,
-        spaceBetween: 32,
-      },
-      1024: {
-        slidesPerView: 2.7,
-        spaceBetween: 32,
-      },
-      1440: {
-        slidesPerView: 3,
-        spaceBetween: 40,
-      },
-      1620: {
-        slidesPerView: 4.2,
         spaceBetween: 40,
       },
     },

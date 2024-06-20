@@ -2,10 +2,7 @@
 
 .top-blog{
   margin-bottom: rem(79);
-}
-
-@include mq (md) {
-  .top-blog{
-    margin-bottom: rem(138);
+  @include mq ("md"){
+    margin-bottom: rem(139);
   }
 }

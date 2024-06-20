@@ -2,10 +2,18 @@
 
 .campaign {
   overflow: hidden;
+
+  @include mq ("md") {
+    position: relative;
+  }
 }
 
 .campaign__title {
   margin-bottom: rem(28);
+
+  @include mq ("md") {
+    margin-bottom: rem(40);
+  }
 }
 
 .campaign__btn-wrapper {
@@ -15,39 +23,35 @@
 .campaign__swiper {
   margin-bottom: rem(40);
   overflow: visible;
+
+  @include mq ("md") {
+    margin-bottom: rem(80);
+  }
 }
 
 .campaign__swiper .swiper-slide {
   display: flex;
-  height: auto;
-}
+  width: auto;
 
-@include mq (md) {
-  .campaign {
-    position: relative;
-  }
-
-  .campaign__title {
-    margin-bottom: rem(40);
-  }
-
-  .campaign__swiper {
-    margin-bottom: rem(80);
-  }
-
-  .campaign__swiper .swiper-slide {
+  @include mq ("md") {
     transition: transform 0.6s ease;
   }
+}
 
-  .campaign__swiper .swiper-slide-duplicate {
+.campaign__swiper .swiper-slide-duplicate {
+  @include mq ("md") {
     visibility: visible;
   }
+}
 
-  .campaign__swiper-wrapper {
+.campaign__swiper-wrapper {
+  @include mq ("md") {
     margin-left: 0;
   }
+}
 
-  .campaign__swiper-btn {
+.campaign__swiper-btn {
+  @include mq ("md") {
     width: rem(240);
     height: rem(80);
     display: flex;
@@ -57,14 +61,18 @@
     top: 0;
     right: 12.5vw;
   }
+}
 
-  .campaign__swiper-btn .swiper-button-next:after,
-  .campaign__swiper-btn .swiper-button-prev:after {
+.campaign__swiper-btn .swiper-button-next:after,
+.campaign__swiper-btn .swiper-button-prev:after {
+  @include mq ("md") {
     display: none;
   }
+}
 
-  .campaign__swiper-btn .swiper-button-prev,
-  .campaign__swiper-btn .swiper-button-next {
+.campaign__swiper-btn .swiper-button-prev,
+.campaign__swiper-btn .swiper-button-next {
+  @include mq ("md") {
     width: rem(80);
     height: rem(80);
     border: 1px solid $blue;
@@ -74,20 +82,26 @@
     margin: 0;
     transition: 0.6s;
   }
+}
 
-  .campaign__swiper-btn .swiper-button-prev:hover,
-  .campaign__swiper-btn .swiper-button-next:hover {
+.campaign__swiper-btn .swiper-button-prev:hover,
+.campaign__swiper-btn .swiper-button-next:hover {
+  @include mq ("md") {
     opacity: 0.6;
   }
+}
 
-  .campaign__swiper-btn .swiper-button-prev img,
-  .campaign__swiper-btn .swiper-button-next img {
+.campaign__swiper-btn .swiper-button-prev img,
+.campaign__swiper-btn .swiper-button-next img {
+  @include mq ("md") {
     width: rem(40);
     margin-top: rem(36);
     margin-left: rem(20);
   }
+}
 
-  .campaign__swiper-btn .swiper-button-prev img {
+.campaign__swiper-btn .swiper-button-prev img {
+  @include mq ("md") {
     transform: scale(-1, 1);
   }
 }

@@ -1,31 +1,31 @@
 @use "global" as *;
 
+.voice {
+  @include mq ("md"){
+    position: relative;
+  }
+}
+
 .voice__title {
   margin-bottom: rem(42);
+  @include mq ("md"){
+    margin-bottom: rem(30);
+  }
 }
 
 .voice__card-wrapper {
   margin-bottom: rem(40);
+  @include mq ("md"){
+    margin-bottom: rem(80);
+  }
 }
 
 .voice__btn-wrapper {
   text-align: center;
 }
 
-@include mq (md) {
-  .voice {
-    position: relative;
-  }
-
-  .voice__title {
-    margin-bottom: rem(30);
-  }
-
-  .voice__card-wrapper {
-    margin-bottom: rem(80);
-  }
-
-  .voice__image--seahorse {
+.voice__image--seahorse {
+  @include mq ("md"){
     width: rem(71);
     position: absolute;
     right: calc(50% - min(48vw, rem(540)));

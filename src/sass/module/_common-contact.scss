@@ -4,8 +4,38 @@
   position: relative;
 }
 
+.common-contact__inner {
+  @include mq ("md"){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 4px 10px 0px #00000040;
+    padding-top: rem(80);
+    padding-bottom: rem(79);
+  }
+}
+
 .common-contact__content {
   margin-bottom: rem(34.5);
+  @include mq ("md"){
+    width: 52.96%;
+    margin-bottom: 0;
+    position: relative;
+    padding-right: 7.6%;
+    padding-left: 4.63%;
+  }
+}
+
+.common-contact__content::after {
+  @include mq ("md"){
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: $blue;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 .common-contact__logo {
@@ -14,11 +44,20 @@
   filter: drop-shadow(0px 4px 4px #00000040);
   text-align: center;
   width: 100%;
+  @include mq ("md"){
+    margin: 0 auto rem(23);
+    padding-bottom: rem(4.5);
+    position: relative;
+    filter: none;
+  }
 }
 
 .common-contact__logo img {
   width: 50%;
   display: inline-block;
+  @include mq ("md"){
+    width: rem(200);
+  }
 }
 
 .common-contact__logo::after {
@@ -33,35 +72,71 @@
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
+  @include mq ("md"){
+    width: 100%;
+    bottom: rem(2);
+  }
 }
 
 .common-contact__item {
   text-align: center;
+  @include mq ("md"){
+    display: flex;
+    justify-content: center;
+    gap: 4.7%;
+  }
 }
 
 .common-contact__address {
   font-size: rem(16);
   color: $dark-green;
+  @include mq ("md"){
+    text-align: left;
+    flex-shrink: 0;
+  }
 }
 
 .common-contact__address-item {
   margin-bottom: rem(4);
   filter: drop-shadow(0px 4px 4px #00000040);
+  @include mq ("md"){
+    margin-bottom: rem(3.5);
+    filter: none;
+  }
 }
 
 .common-contact__address-item:last-child {
   margin-bottom: rem(16);
+  @include mq ("md"){
+    margin-bottom: 0;
+  }
 }
 
 .common-contact__map {
   width: rem(295);
   aspect-ratio: 295 / 160;
   filter: drop-shadow(0px 4px 4px #00000040);
+  @include mq ("md"){
+    width: min(22vw, 273px);
+    aspect-ratio: 273 / 148;
+    filter: none;
+  }
+}
+
+.common-contact__title-area {
+  @include mq ("md"){
+    width: 47.04%;
+    padding-right: rem(112);
+    padding-left: rem(81);
+  }
 }
 
 .common-contact__btn-wrapper {
   text-align: center;
   filter: drop-shadow(0px 4px 4px #00000040);
+  @include mq ("md"){
+    filter: none;
+  }
 }
 
 .common-contact__image {
@@ -70,97 +145,7 @@
   top: rem(-26);
   right: calc(50% - min(48vw, rem(172.5)));
   filter: drop-shadow(0px 4px 4px #00000040);
-}
-
-@include mq (md) {
-  .common-contact__inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 4px 4px 10px 0px #00000040;
-  }
-
-  .common-contact__inner--padding{
-    padding-top: rem(80);
-    padding-bottom: rem(79);
-  }
-
-  .common-contact__content {
-    width: 52.96%;
-    margin-bottom: 0;
-    position: relative;
-    padding-right: rem(82);
-    padding-left: rem(50);
-    padding-right: 7.6%;
-    padding-left: 4.63%;
-  }
-
-  .common-contact__content::after {
-    content: "";
-    width: 1px;
-    height: 100%;
-    background-color: $blue;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-
-  .common-contact__logo {
-    margin: 0 auto rem(23);
-    padding-bottom: rem(4.5);
-    position: relative;
-    filter: none;
-  }
-
-  .common-contact__logo img {
-    width: rem(200);
-  }
-
-  .common-contact__logo::after {
-    width: 100%;
-    bottom: rem(2);
-  }
-
-  .common-contact__item {
-    display: flex;
-    justify-content: center;
-    // gap: rem(21);
-    gap: 4.7%;
-  }
-
-  .common-contact__address {
-    text-align: left;
-    flex-shrink: 0;
-  }
-
-  .common-contact__address-item {
-    margin-bottom: rem(3.5);
-    filter: none;
-  }
-
-  .common-contact__address-item:last-child {
-    margin-bottom: 0;
-  }
-
-  .common-contact__map {
-    // width: rem(273);
-    // width: 62%;
-    width: min(22vw, 273px);
-    aspect-ratio: 273 / 148;
-    filter: none;
-  }
-
-  .common-contact__title-area {
-    width: 47.04%;
-    padding-right: rem(112);
-    padding-left: rem(81);
-  }
-
-  .common-contact__btn-wrapper {
-    filter: none;
-  }
-
-  .common-contact__image {
+  @include mq ("md"){
     width: rem(301);
     top: rem(-41);
     right: calc(50% - min(48vw, rem(670)))

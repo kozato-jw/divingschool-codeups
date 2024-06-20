@@ -2,6 +2,8 @@
 
 .section-title {
   text-align: center;
+  @include mq ("md"){
+  }
 }
 
 .section-title__en {
@@ -10,6 +12,11 @@
   line-height: 1.25;
   color: $dark-green;
   margin-bottom: rem(4);
+  @include mq ("md"){
+    font-size: rem(40);
+    line-height: 1;
+    margin-bottom: rem(8);
+  }
 }
 
 .section-title__en::first-letter {
@@ -36,6 +43,9 @@
   line-height: 1;
   filter: drop-shadow(0px 4px 4px #00000040);
   display: inline-block;
+  @include mq ("md"){
+    margin-bottom: rem(-3);
+  }
 }
 
 .section-title__en--contact::first-letter {
@@ -49,29 +59,4 @@
   display: block;
   margin-top: rem(-10);
   margin-bottom: rem(8);
-}
-
-@include mq (md) {
-  .section-title {
-    text-align: center;
-  }
-
-  .section-title__en {
-    font-size: rem(40);
-    line-height: 1;
-    margin-bottom: rem(8);
-  }
-
-  .section-title__ja {
-    font-size: rem(12);
-  }
-
-  .section-title__en--contact {
-    line-height: 1;
-    margin-bottom: rem(-3);
-  }
-
-  .section-title__text {
-    margin-bottom: rem(39);
-  }
 }

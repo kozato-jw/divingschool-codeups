@@ -73,9 +73,10 @@
   padding-bottom: rem(120);
   z-index: 9999;
   gap: rem(40) 0;
+  grid-template-columns: 1fr 1fr;
 }
 
-@include mq (md) {
+@include mq ("md") {
   .header__inner {
     padding-right: rem(19.9);
     padding-left: min(2.777%, rem(40));
