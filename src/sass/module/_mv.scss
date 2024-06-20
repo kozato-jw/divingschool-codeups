@@ -39,12 +39,18 @@
   background-image: url('../images/common/mv-sp_1-left.jpg');
   animation: slideUpLeft 2s 3.2s forwards;
   background-position: right;
+  @include mq ("md"){
+    background-image: url('../images/common/mv-pc_1-left.jpg');
+  }
 }
 
 .mv__loading-image--right {
   background-image: url('../images/common/mv-sp_1-right.jpg');
   animation: slideUpRight 2s 3.4s forwards;
   background-position: left;
+  @include mq ("md"){
+    background-image: url('../images/common/mv-pc_1-right.jpg');
+  }
 }
 
 @keyframes slideUpLeft {
@@ -81,12 +87,18 @@
   text-indent: 0.5em;
   text-align: center;
   text-transform: uppercase;
+  @include mq ("md"){
+    font-size: rem(80);
+  }
 }
 
 .mv__title--small {
   font-size: rem(20);
   font-family: $english-font;
   line-height: 1;
+  @include mq ("md"){
+    margin-top: rem(-2);
+  }
 }
 
 .mv__title.js-visible--loading {
@@ -114,22 +126,4 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-@include mq (md) {
-  .mv__loading-image--left {
-    background-image: url('../images/common/mv-pc_1-left.jpg');
-  }
-
-  .mv__loading-image--right {
-    background-image: url('../images/common/mv-pc_1-right.jpg');
-  }
-
-  .mv__title--big {
-    font-size: rem(80);
-  }
-
-  .mv__title--small {
-    margin-top: rem(-2);
-  }
 }

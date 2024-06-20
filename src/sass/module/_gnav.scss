@@ -1,13 +1,12 @@
 @use "global" as *;
 
-.header__nav {
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(2, 1fr);
-}
-
 .gnav {
   justify-items: start;
   display: grid;
+  @include mq ("md"){
+    display: flex;
+    gap: 11.1%;
+  }
 }
 
 .gnav__list {
@@ -54,21 +53,20 @@
   width: rem(18);
 }
 
-@include mq (md) {
-  .gnav {
-    display: flex;
-    gap: 11.1%;
-  }
-
-  .gnav__list:nth-of-type(3) {
+.gnav__list:nth-of-type(3) {
+  @include mq ("md"){
     order: 1;
   }
+}
 
-  .gnav__list:nth-of-type(2) {
+.gnav__list:nth-of-type(2) {
+  @include mq ("md"){
     order: 2;
   }
+}
 
-  .gnav__list:nth-of-type(4) {
+.gnav__list:nth-of-type(4) {
+  @include mq ("md"){
     order: 3;
   }
 }

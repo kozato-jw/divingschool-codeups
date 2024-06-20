@@ -2,10 +2,7 @@
 
 .top-price{
   margin-bottom: rem(80);
-}
-
-@include mq (md) {
-  .top-price{
+  @include mq ("md"){
     margin-bottom: rem(140);
   }
 }

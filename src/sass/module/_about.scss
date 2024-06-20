@@ -1,18 +1,40 @@
 @use "global" as *;
 
+.about {
+  @include mq ("md"){
+    position: relative;
+  }
+}
+
+.about__inner {
+  @include mq ("md"){
+    position: relative;
+  }
+}
+
 .about__title {
   margin-bottom: rem(28);
+  @include mq ("md"){
+    margin-bottom: rem(40);
+  }
 }
 
 .about__image {
   margin-bottom: rem(41);
   position: relative;
+  @include mq ("md"){
+    margin-bottom: 0;
+  }
 }
 
 .about__image--small {
   width: 37.1%;
   aspect-ratio: 128 / 194;
   object-fit: cover;
+  @include mq ("md"){
+    width: 37.04%;
+    aspect-ratio: 400 / 606;
+  }
 }
 
 .about__image--big {
@@ -22,7 +44,22 @@
   z-index: -1;
   position: relative;
   margin-left: auto;
-  margin-top: rem(-170);
+  margin-top: clamp(rem(-270), -45.3vw, rem(-170));
+  @include mq ("md"){
+    width: 81.48%;
+    aspect-ratio: 880 / 581;
+    margin-top: clamp(rem(-527), -36.6vw, rem(-500));
+  }
+}
+
+.about__content {
+  @include mq ("md"){
+    display: flex;
+    gap: rem(40);
+    position: absolute;
+    top: rem(306);
+    right: rem(71);
+  }
 }
 
 .about__head {
@@ -32,10 +69,22 @@
   line-height: 1;
   color: $blue;
   margin-bottom: rem(15.5);
+  @include mq ("md"){
+    font-size: rem(80);
+    color: $white;
+    margin-bottom: 0;
+    line-height: 1.25;
+  }
 }
 
 .about__initial {
   text-transform: uppercase;
+}
+
+.about__text-wrapper {
+  @include mq ("md"){
+    width: rem(400);
+  }
 }
 
 .about__text {
@@ -43,65 +92,18 @@
   line-height: 1.5;
   color: $dark-green;
   margin-bottom: rem(50);
+  @include mq ("md"){
+    color: $white;
+    margin-bottom: rem(40);
+  }
 }
 
 .about__btn-wrapper {
   text-align: center;
 }
 
-@include mq (md) {
-  .about {
-    position: relative;
-  }
-
-  .about__inner {
-    position: relative;
-  }
-
-  .about__title {
-    margin-bottom: rem(40);
-  }
-
-  .about__image {
-    margin-bottom: 0;
-  }
-
-  .about__image--small {
-    width: 37.04%;
-    aspect-ratio: 400 / 606;
-  }
-
-  .about__image--big {
-    width: 81.48%;
-    aspect-ratio: 880 / 581;
-    margin-top: rem(-527);
-  }
-
-  .about__content {
-    display: flex;
-    gap: rem(40);
-    position: absolute;
-    top: rem(306);
-    right: rem(71);
-  }
-
-  .about__head {
-    font-size: rem(80);
-    color: $white;
-    margin-bottom: 0;
-    line-height: 1.25;
-  }
-
-  .about__text-wrapper {
-    width: rem(400);
-  }
-
-  .about__text {
-    color: $white;
-    margin-bottom: rem(40);
-  }
-
-  .about__image--pc {
+.about__image--pc {
+  @include mq ("md"){
     width: rem(194);
     position: absolute;
     right: calc(50% - min(48vw, rem(637)));

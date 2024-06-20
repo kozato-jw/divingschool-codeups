@@ -11,7 +11,7 @@
 .hamburger__bar {
   position: absolute;
   right: 0;
-  width: rem(32);
+  width: rem(34);
   height: 1px;
   background-color: #fff;
   border-radius: 4px;
@@ -35,8 +35,8 @@
 }
 
 #hamburger.js-active .hamburger__bar:nth-of-type(1) {
-  -webkit-transform: translateY(rem(12)) rotate(38deg);
-  transform: translateY(rem(12)) rotate(38deg) scale(1.3);
+  -webkit-transform: translateY(rem(12)) rotate(37deg);
+  transform: translateY(rem(12)) rotate(38deg) scale(1.2);
 }
 
 #hamburger.js-active .hamburger__bar:nth-of-type(2) {
@@ -44,6 +44,6 @@
 }
 
 #hamburger.js-active .hamburger__bar:nth-of-type(3) {
-  -webkit-transform: translateY(rem(-12)) rotate(-38deg);
-  transform: translateY(rem(-12)) rotate(-38deg) scale(1.3);
+  -webkit-transform: translateY(rem(-12)) rotate(-37deg);
+  transform: translateY(rem(-12)) rotate(-38deg) scale(1.2);
 }

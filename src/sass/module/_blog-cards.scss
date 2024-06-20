@@ -1,22 +1,21 @@
 @use "global" as *;
 
-.blog-cards__item {
-  margin: 0 auto rem(40);
-}
-
-.blog-cards__item:last-of-type {
-  margin-bottom: 0;
-}
-
-@include mq (md) {
-  .blog-cards {
+.blog-cards {
+  @include mq ("md"){
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: rem(40.5);
     grid-row-gap: rem(80);
   }
+}
 
-  .blog-cards__item {
+.blog-cards__item {
+  margin: 0 auto rem(40);
+  @include mq ("md"){
     margin: 0;
   }
+}
+
+.blog-cards__item:last-of-type {
+  margin-bottom: 0;
 }

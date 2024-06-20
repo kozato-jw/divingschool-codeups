@@ -1,26 +1,24 @@
 @use "global" as *;
 
-.voice-cards__item {
-  margin: 0 auto rem(39);
-}
-
-.voice-cards__item:last-of-type {
-  margin-bottom: rem(42);
-}
-
-@include mq (md) {
-  .voice-cards {
+.voice-cards {
+  @include mq ("md"){
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 40px;
     grid-row-gap: 80px;
   }
+}
 
-  .voice-cards__item {
+.voice-cards__item {
+  margin: 0 auto rem(39);
+  @include mq ("md"){
     margin: 0;
   }
+}
 
-  .voice-cards__item:last-of-type {
+.voice-cards__item:last-of-type {
+  margin-bottom: rem(42);
+  @include mq ("md"){
     margin-bottom: 0;
   }
 }
