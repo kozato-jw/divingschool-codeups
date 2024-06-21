@@ -39,7 +39,7 @@
   background-image: url('../images/common/mv-sp_1-left.jpg');
   animation: slideUpLeft 2s 3.2s forwards;
   background-position: right;
-  @include mq ("md"){
+  @include mq(md){
     background-image: url('../images/common/mv-pc_1-left.jpg');
   }
 }
@@ -48,7 +48,7 @@
   background-image: url('../images/common/mv-sp_1-right.jpg');
   animation: slideUpRight 2s 3.4s forwards;
   background-position: left;
-  @include mq ("md"){
+  @include mq(md){
     background-image: url('../images/common/mv-pc_1-right.jpg');
   }
 }
@@ -87,7 +87,7 @@
   text-indent: 0.5em;
   text-align: center;
   text-transform: uppercase;
-  @include mq ("md"){
+  @include mq(md){
     font-size: rem(80);
   }
 }
@@ -96,7 +96,7 @@
   font-size: rem(20);
   font-family: $english-font;
   line-height: 1;
-  @include mq ("md"){
+  @include mq(md){
     margin-top: rem(-2);
   }
 }

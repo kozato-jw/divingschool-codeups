@@ -4,7 +4,7 @@
   background-color: #DDF0F1;
   padding-top: rem(80);
   padding-bottom: rem(79);
-  @include mq ("md"){
+  @include mq(md){
     position: relative;
     padding-top: rem(100);
     padding-bottom: rem(98);
@@ -13,13 +13,13 @@
 
 .price__title {
   margin-bottom: rem(28);
-  @include mq ("md"){
+  @include mq(md){
     margin-bottom: rem(40);
   }
 }
 
 .price__content {
-  @include mq ("md"){
+  @include mq(md){
     justify-content: space-between;
     flex-direction: row-reverse;
     margin-bottom: rem(80);
@@ -29,7 +29,7 @@
 
 .price__image {
   margin-bottom: rem(40);
-  @include mq ("md"){
+  @include mq(md){
     width: 45.5556%;
     margin-bottom: 0;
   }
@@ -38,13 +38,13 @@
 .price__image img{
   aspect-ratio: 345 / 227;
   object-fit: cover;
-  @include mq ("md"){
+  @include mq(md){
     aspect-ratio: 492 / 746;
   }
 }
 
 .price__list-wrapper {
-  @include mq ("md"){
+  @include mq(md){
     width: 45.5556%;
   }
 }
@@ -60,7 +60,7 @@
   margin-bottom: rem(7.5);
   border-bottom: 1px solid $blue;
   color: $dark-green;
-  @include mq ("md"){
+  @include mq(md){
     font-size: rem(16);
     font-weight: $bold;
     padding-bottom: rem(3);
@@ -78,7 +78,7 @@
   line-height: calc(24 / 14);
   color: $dark-green;
   margin-bottom: rem(8);
-  @include mq ("md"){
+  @include mq(md){
     gap: rem(40);
     font-size: rem(16);
     line-height: 1.5;
@@ -94,13 +94,13 @@
 }
 
 .price__list-item:last-of-type p:first-of-type {
-  @include mq ("md"){
+  @include mq(md){
     letter-spacing: 0.01em;
   }
 }
 
 .price__image--bluefish {
-  @include mq ("md"){
+  @include mq(md){
     width: min(30.3472vw, rem(437));
     position: absolute;
     left: calc(50% - min(48vw, rem(620)));

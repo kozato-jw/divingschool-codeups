@@ -5,7 +5,7 @@
   box-shadow: 2px 2px 10px 0px #00000040;
   display: flex;
   flex-direction: column;
-  @include mq ("md"){
+  @include mq(md){
     padding: rem(24);
   }
 }
@@ -17,7 +17,7 @@
   gap: rem(13);
   align-items: flex-end;
   margin-bottom: rem(16);
-  @include mq ("md"){
+  @include mq(md){
     gap: rem(16);
     margin-bottom: rem(40);
   }
@@ -39,7 +39,7 @@
 
 .voice-card__inner {
   font-size: rem(12);
-  @include mq ("md"){
+  @include mq(md){
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -59,7 +59,7 @@
   border: 1px solid $blue;
   padding: rem(8) rem(11.3);
   margin-bottom: rem(4.2);
-  @include mq ("md"){
+  @include mq(md){
     padding: rem(10) rem(16);
     margin-bottom: 0;
   }
@@ -72,7 +72,7 @@
   line-height: 1.46;
   padding-bottom: rem(3.6);
   border-bottom: 1px solid $blue;
-  @include mq ("md"){
+  @include mq(md){
     font-size: rem(24);
   }
 }
@@ -80,7 +80,7 @@
 .voice-card__image {
   width: 101%;
   flex-grow: 1;
-  @include mq ("md"){
+  @include mq(md){
     width: 65.2%;
   }
 }
@@ -88,7 +88,7 @@
 .voice-card__image img {
   aspect-ratio: 151 / 117;
   object-fit: cover;
-  @include mq ("md"){
+  @include mq(md){
     aspect-ratio: 180 / 140;
     object-fit: cover;
   }
@@ -104,7 +104,7 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 10;
-  @include mq ("md"){
+  @include mq(md){
     -webkit-line-clamp: 7; 
   }
 }

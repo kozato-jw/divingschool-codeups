@@ -3,7 +3,7 @@
 .gnav {
   justify-items: start;
   display: grid;
-  @include mq ("md"){
+  @include mq(md){
     display: flex;
     gap: 11.1%;
   }
@@ -54,19 +54,19 @@
 }
 
 .gnav__list:nth-of-type(3) {
-  @include mq ("md"){
+  @include mq(md){
     order: 1;
   }
 }
 
 .gnav__list:nth-of-type(2) {
-  @include mq ("md"){
+  @include mq(md){
     order: 2;
   }
 }
 
 .gnav__list:nth-of-type(4) {
-  @include mq ("md"){
+  @include mq(md){
     order: 3;
   }
 }

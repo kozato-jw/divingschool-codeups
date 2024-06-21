@@ -1,20 +1,20 @@
 @use "global" as *;
 
 .about {
-  @include mq ("md"){
+  @include mq(md){
     position: relative;
   }
 }
 
 .about__inner {
-  @include mq ("md"){
+  @include mq(md){
     position: relative;
   }
 }
 
 .about__title {
   margin-bottom: rem(28);
-  @include mq ("md"){
+  @include mq(md){
     margin-bottom: rem(40);
   }
 }
@@ -22,7 +22,7 @@
 .about__image {
   margin-bottom: rem(41);
   position: relative;
-  @include mq ("md"){
+  @include mq(md){
     margin-bottom: 0;
   }
 }
@@ -31,7 +31,7 @@
   width: 37.1%;
   aspect-ratio: 128 / 194;
   object-fit: cover;
-  @include mq ("md"){
+  @include mq(md){
     width: 37.04%;
     aspect-ratio: 400 / 606;
   }
@@ -45,7 +45,7 @@
   position: relative;
   margin-left: auto;
   margin-top: clamp(rem(-270), -45.3vw, rem(-170));
-  @include mq ("md"){
+  @include mq(md){
     width: 81.48%;
     aspect-ratio: 880 / 581;
     margin-top: clamp(rem(-527), -36.6vw, rem(-500));
@@ -53,7 +53,7 @@
 }
 
 .about__content {
-  @include mq ("md"){
+  @include mq(md){
     display: flex;
     gap: rem(40);
     position: absolute;
@@ -69,7 +69,7 @@
   line-height: 1;
   color: $blue;
   margin-bottom: rem(15.5);
-  @include mq ("md"){
+  @include mq(md){
     font-size: rem(80);
     color: $white;
     margin-bottom: 0;
@@ -82,7 +82,7 @@
 }
 
 .about__text-wrapper {
-  @include mq ("md"){
+  @include mq(md){
     width: rem(400);
   }
 }
@@ -92,7 +92,7 @@
   line-height: 1.5;
   color: $dark-green;
   margin-bottom: rem(50);
-  @include mq ("md"){
+  @include mq(md){
     color: $white;
     margin-bottom: rem(40);
   }
@@ -103,7 +103,7 @@
 }
 
 .about__image--pc {
-  @include mq ("md"){
+  @include mq(md){
     width: rem(194);
     position: absolute;
     right: calc(50% - min(48vw, rem(637)));
