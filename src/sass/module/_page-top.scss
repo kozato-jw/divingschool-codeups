@@ -6,7 +6,7 @@
   z-index: 2;
   opacity: 0;
   transform: translateX(rem(150));
-  @include mq ("md"){
+  @include mq(md){
     position: fixed;
     right: rem(20);
   }
@@ -19,7 +19,7 @@
   border-radius: 50%;
   width: rem(48);
   height: rem(48);
-  @include mq ("md"){
+  @include mq(md){
     background-color: $white;
     box-shadow: 0px 4px 4px 0px #00000040;
     width: rem(80);
@@ -33,7 +33,7 @@
   width: rem(7);
   margin-top: rem(9);
   margin-right: rem(5);
-  @include mq ("md"){
+  @include mq(md){
     height: rem(41);
     margin-top: rem(20);
     margin-right: rem(5);

@@ -13,20 +13,20 @@
 }
 
 .blog-card__link img{
-  @include mq ("md"){
+  @include mq(md){
     transition: 0.6s;
   }
 }
 
 .blog-card__link:hover img {
-  @include mq ("md"){
+  @include mq(md){
     transform: scale(1.35);
   }
 }
 
 .blog-card__image {
   margin-bottom: rem(24);
-  @include mq ("md"){
+  @include mq(md){
     overflow: hidden;
   }
 }
@@ -60,7 +60,7 @@
   flex-grow: 1;
   display: flex;
   align-items: flex-end;
-  @include mq ("md"){
+  @include mq(md){
     padding-bottom: rem(3);
   }
 }

@@ -1,20 +1,15 @@
 @use "global" as *;
 
 .campaign-card {
-  width: rem(280);
   display: flex;
   flex-direction: column;
-  // height: auto;
   box-shadow: 2px 2px 10px 0px #00000040;
-  @include mq ("md"){
-    width: rem(333);
-  }
 }
 
 .campaign-card__image img {
   aspect-ratio: 280 / 188;
   object-fit: cover;
-  @include mq ("md"){
+  @include mq(md){
     aspect-ratio: 333 / 223;
   }
 }
@@ -25,7 +20,7 @@
   align-items: flex-start;
   height: 100%;
   padding: rem(16) rem(16) rem(24);
-  @include mq ("md"){
+  @include mq(md){
     padding: rem(24) rem(16) rem(40);
   }
 }
@@ -38,7 +33,7 @@
   margin-bottom: rem(4);
   border: 1px solid $blue;
   display: inline-block;
-  @include mq ("md"){
+  @include mq(md){
     padding: rem(10) rem(15.3);
   }
 }
@@ -54,7 +49,7 @@
   align-items: flex-end;
   width: 100%;
   flex-grow: 2;
-  @include mq ("md"){
+  @include mq(md){
     margin-bottom: rem(17);
   }
 }
@@ -67,7 +62,7 @@
   margin-bottom: rem(8);
   color: $dark-green;
   width: 100%;
-  @include mq ("md"){
+  @include mq(md){
     font-size: rem(16);
     line-height: 1.5;
     margin-right: rem(16);
@@ -84,7 +79,7 @@
   flex-wrap: nowrap;
   gap: rem(16);
   width: 100%;
-  @include mq ("md"){
+  @include mq(md){
     gap: rem(25);
   }
 }
@@ -96,7 +91,7 @@
   padding: 0 1px;
   position: relative;
   line-height: 1.1;
-  @include mq ("md"){
+  @include mq(md){
     font-size: rem(24);
   }
 }
@@ -109,7 +104,7 @@
   background-color: #C94800;
   position: absolute;
   bottom: rem(11);
-  @include mq ("md"){
+  @include mq(md){
     width: rem(90);
     bottom: rem(12);
   }
@@ -119,7 +114,7 @@
   font-size: rem(32);
   color: $blue;
   line-height: 1;
-  @include mq ("md"){
+  @include mq(md){
     font-size: rem(40);
   }
 }

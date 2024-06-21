@@ -4,22 +4,22 @@
   background-color: $blue;
   padding-top: rem(48);
   padding-bottom: rem(56);
-  @include mq ("md"){
+  @include mq(md){
     padding-top: rem(80);
     padding-bottom: rem(80);
   }
 }
 
 .footer__inner{
-  margin-bottom: rem(39);
-  @include mq ("md"){
+  margin-bottom: rem(40);
+  @include mq(md){
     margin-bottom: rem(81);
   }
 }
 
 .footer__head{
   margin-bottom: rem(41);
-  @include mq ("md"){
+  @include mq(md){
     display: flex;
     align-items: flex-end;
     gap: rem(40);
@@ -30,7 +30,7 @@
 .footer__logo{
   width: rem(120);
   margin-bottom: rem(16);
-  @include mq ("md"){
+  @include mq(md){
     width: rem(200);
     margin-bottom: 0;
   }
@@ -38,14 +38,14 @@
 
 .footer__logo a,
 .footer__sns a{
-  @include mq ("md"){
+  @include mq(md){
     transition: 0.3s;
   }
 }
 
 .footer__logo a:hover,
 .footer__sns a:hover{
-  @include mq ("md"){
+  @include mq(md){
     opacity: 0.6;
   }
 }
@@ -53,14 +53,14 @@
 .footer__sns{
   display: flex;
   gap: rem(16);
-  @include mq ("md"){
+  @include mq(md){
     padding-bottom: rem(5);
   }
 }
 
 .footer__sns img{
   width: rem(24);
-  @include mq ("md"){
+  @include mq(md){
     width: rem(32);
   }
 }
@@ -71,7 +71,7 @@
   color: $white;
   line-height: 1.5;
   text-align: center;
-  @include mq ("md"){
+  @include mq(md){
     font-size: rem(14);
     line-height: calc(18 / 14);
   }
