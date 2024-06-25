@@ -20,11 +20,7 @@
   }
 }
 
-.voice__btn-wrapper {
-  text-align: center;
-}
-
-.voice__image--seahorse {
+.voice__image-seahorse {
   @include mq(md){
     width: rem(71);
     position: absolute;

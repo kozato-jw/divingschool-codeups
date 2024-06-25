@@ -89,17 +89,13 @@
   margin-bottom: 0;
 }
 
-.price__btn-wrapper {
-  text-align: center;
-}
-
 .price__list-item:last-of-type p:first-of-type {
   @include mq(md){
     letter-spacing: 0.01em;
   }
 }
 
-.price__image--bluefish {
+.price__image-bluefish {
   @include mq(md){
     width: min(30.3472vw, rem(437));
     position: absolute;

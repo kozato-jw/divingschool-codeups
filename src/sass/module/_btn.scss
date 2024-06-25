@@ -1,5 +1,9 @@
 @use "global" as *;
 
+.btn__wrapper{
+  text-align: center;
+}
+
 .btn {
   display: inline-block;
   position: relative;
@@ -56,6 +60,20 @@
   transform: scale(0, 1);
   transform-origin: left top;
   transition: transform 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+  z-index: -1;
+}
+
+.btn__inner::after{
+  border-bottom: 1px solid $white;
+  border-right: 1px solid $white;
+  content: "";
+  height: rem(6);
+  margin-left: rem(6);
+  margin-top: rem(2);
+  position: absolute;
+  transform: skew(47deg);
+  transition: 0.6s;
+  width: rem(40);
 }
 
 .btn:hover .btn__inner {
@@ -66,29 +84,7 @@
   transform: scale(1, 1);
 }
 
-.btn:hover .btn__text {
-  z-index: 2;
-  position: relative;
-}
-
-.btn__arrow {
-  position: absolute;
-  top: rem(20);
-  right: rem(38.7);
-  width: rem(41);
-  padding-top: rem(1);
-  display: inline-block;
-  transition: opacity 0.6s;
-}
-
-.btn__arrow--back{
-  opacity: 0;
-}
-
-.btn:hover .btn__arrow--front {
-  opacity: 0;
-}
-
-.btn:hover .btn__arrow--back {
-  opacity: 1;
+.btn:hover .btn__inner::after{
+  border-bottom: 1px solid $blue;
+  border-right: 1px solid $blue;
 }

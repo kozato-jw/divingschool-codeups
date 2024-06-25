@@ -25,13 +25,23 @@
   padding-right: rem(15);
   padding-left: rem(15);
   position: relative;
+  @include mq(md){
+    padding-right: rem(19.9);
+    padding-left: min(2.777%, rem(40));
+    height: rem(90);
+  }
 }
 
 .header__logo {
   width: rem(102);
+  filter: drop-shadow(0px 4px 4px #00000040);
   position: relative;
   z-index: 9999;
   transition: 0.3s;
+
+  @include mq(md){
+    width: rem(133);
+  }
 }
 
 .header__logo a:hover {
@@ -74,20 +84,4 @@
   z-index: 9999;
   gap: rem(40) 0;
   grid-template-columns: 1fr 1fr;
-}
-
-@include mq(md) {
-  .header__inner {
-    padding-right: rem(19.9);
-    padding-left: min(2.777%, rem(40));
-    height: rem(90);
-  }
-
-  .header__logo {
-    width: rem(133);
-  }
-
-  .header__menu {
-    height: 100%;
-  }
 }
