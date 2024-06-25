@@ -23,13 +23,13 @@
   }
 }
 
-.blog__title--pc {
+.blog__title-pc {
   @include mq(md){
     color: $white;
   }
 }
 
-.blog__title--pc::first-letter {
+.blog__title-pc::first-letter {
   @include mq(md){
     color: $white;
   }
@@ -40,10 +40,6 @@
   @include mq(md){
     margin-bottom: rem(80);
   }
-}
-
-.blog__btn-wrapper {
-  text-align: center;
 }
 
 .blog__bg {
@@ -57,7 +53,7 @@
   }
 }
 
-.blog__image--whitefish {
+.blog__image-whitefish {
   @include mq(md){
     width: min(30.3472vw, rem(437));
     position: absolute;
@@ -66,7 +62,7 @@
   }
 }
 
-.blog__image--bluefish {
+.blog__image-bluefish {
   @include mq(md){
     width: rem(301);
     transform: scale(-1, 1);

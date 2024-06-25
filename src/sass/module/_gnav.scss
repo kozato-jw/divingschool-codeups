@@ -9,7 +9,7 @@
   }
 }
 
-.gnav__list {
+.gnav__items {
   color: $white;
   font-size: rem(16);
   line-height: 1.125;
@@ -31,14 +31,17 @@
   margin-bottom: 0;
 }
 
-.gnav__item--main {
+.gnav__item--main{
   font-weight: $bold;
+  position: relative;
+  padding-left: rem(22);
 }
 
-.gnav__item--main a {
-  display: flex;
-  align-items: flex-start;
-  gap: rem(4);
+.gnav__item--main::before{
+  content: url(../images/common/starfish.svg);
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .gnav__item--sub {
@@ -53,19 +56,19 @@
   width: rem(18);
 }
 
-.gnav__list:nth-of-type(3) {
+.gnav__items:nth-of-type(3) {
   @include mq(md){
     order: 1;
   }
 }
 
-.gnav__list:nth-of-type(2) {
+.gnav__items:nth-of-type(2) {
   @include mq(md){
     order: 2;
   }
 }
 
-.gnav__list:nth-of-type(4) {
+.gnav__items:nth-of-type(4) {
   @include mq(md){
     order: 3;
   }

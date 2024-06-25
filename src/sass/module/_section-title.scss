@@ -2,8 +2,6 @@
 
 .section-title {
   text-align: center;
-  @include mq(md){
-  }
 }
 
 .section-title__en {
@@ -38,7 +36,7 @@
   filter: drop-shadow(0px 4px 4px #00000040);
 }
 
-.section-title__en--contact {
+.section-title__en-contact {
   font-size: rem(80);
   line-height: 1;
   filter: drop-shadow(0px 4px 4px #00000040);
@@ -48,12 +46,12 @@
   }
 }
 
-.section-title__en--contact::first-letter {
+.section-title__en-contact::first-letter {
   color: $blue;
   text-transform: uppercase;
 }
 
-.section-title__ja--contact {
+.section-title__ja-contact {
   font-weight: $regular;
   filter: drop-shadow(0px 4px 4px #00000040);
   display: block;

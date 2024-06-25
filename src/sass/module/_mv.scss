@@ -79,20 +79,19 @@
   transition: all 0.8s;
 }
 
-.mv__title--big {
+.mv__title-big {
   font-size: rem(40);
   font-family: $english-sub-font;
   font-weight: $regular;
   letter-spacing: 0.54em;
   text-indent: 0.5em;
-  text-align: center;
   text-transform: uppercase;
   @include mq(md){
     font-size: rem(80);
   }
 }
 
-.mv__title--small {
+.mv__title-small {
   font-size: rem(20);
   font-family: $english-font;
   line-height: 1;

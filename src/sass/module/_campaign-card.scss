@@ -84,7 +84,7 @@
   }
 }
 
-.campaign-card__price--disabled {
+.campaign-card__price-disabled {
   font-size: rem(20);
   color: $dark-green;
   display: inline-block;
@@ -96,7 +96,7 @@
   }
 }
 
-.campaign-card__price--disabled::before {
+.campaign-card__price-disabled::before {
   content: "";
   display: inline-block;
   width: 100%;
@@ -110,7 +110,7 @@
   }
 }
 
-.campaign-card__price--current {
+.campaign-card__price-current {
   font-size: rem(32);
   color: $blue;
   line-height: 1;

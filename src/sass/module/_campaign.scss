@@ -16,16 +16,16 @@
   }
 }
 
-.campaign__btn-wrapper {
-  text-align: center;
+.campaign .swiper-wrapper{
+  margin-bottom: rem(15);
 }
 
 .campaign__swiper {
-  margin-bottom: rem(40);
-  overflow: visible;
-
+  margin-bottom: rem(25);
+  
   @include mq(md) {
-    margin-bottom: rem(80);
+    margin-right: calc(50% - 50vw);
+    margin-bottom: rem(65);
   }
 }
 
@@ -36,19 +36,7 @@
   }
 }
 
-.campaign__swiper .swiper-slide-duplicate {
-  @include mq(md) {
-    visibility: visible;
-  }
-}
-
-.campaign__swiper-wrapper {
-  @include mq(md) {
-    margin-left: 0;
-  }
-}
-
-.campaign__swiper-btn {
+.campaign__swiper-button {
   @include mq(md) {
     width: rem(240);
     height: rem(80);
@@ -61,15 +49,8 @@
   }
 }
 
-.campaign__swiper-btn .swiper-button-next:after,
-.campaign__swiper-btn .swiper-button-prev:after {
-  @include mq(md) {
-    display: none;
-  }
-}
-
-.campaign__swiper-btn .swiper-button-prev,
-.campaign__swiper-btn .swiper-button-next {
+.campaign__swiper-button-prev,
+.campaign__swiper-button-next {
   @include mq(md) {
     width: rem(80);
     height: rem(80);
@@ -79,27 +60,46 @@
     display: block;
     margin: 0;
     transition: 0.6s;
+    cursor: pointer;
   }
 }
 
-.campaign__swiper-btn .swiper-button-prev:hover,
-.campaign__swiper-btn .swiper-button-next:hover {
+.campaign__swiper-button-next:after,
+.campaign__swiper-button-prev:after {
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.campaign__swiper-button-prev:hover,
+.campaign__swiper-button-next:hover {
   @include mq(md) {
     opacity: 0.6;
   }
 }
 
-.campaign__swiper-btn .swiper-button-prev img,
-.campaign__swiper-btn .swiper-button-next img {
-  @include mq(md) {
-    width: rem(40);
-    margin-top: rem(36);
-    margin-left: rem(20);
-  }
+.campaign__swiper-button-arrow{
+  position: relative;
 }
 
-.campaign__swiper-btn .swiper-button-prev img {
-  @include mq(md) {
-    transform: scale(-1, 1);
-  }
+.campaign__swiper-button-arrow::before{
+  content: "";
+  height: rem(6);
+  position: absolute;
+  width: rem(40);
+  top: rem(37);
+}
+
+.campaign__swiper-button-arrow--prev::before{
+  border-bottom: 1px solid $blue;
+  border-left: 1px solid $blue;
+  transform: skew(-47deg);
+  left: rem(21);
+}
+
+.campaign__swiper-button-arrow--next::before{
+  border-bottom: 1px solid $blue;
+  border-right: 1px solid $blue;
+  transform: skew(47deg);
+  right: rem(-58);
 }
