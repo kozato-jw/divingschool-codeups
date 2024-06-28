@@ -98,9 +98,18 @@
   }
 }
 
-.about__image-pc {
+.about__btn{
+  text-align: center;
+}
+
+.about::before {
   @include mq(md){
+    content: "";
+    background: url(../images/common/about-sango.png);
+    background-repeat: no-repeat;
+    background-size: contain;
     width: rem(194);
+    height: rem(181);
     position: absolute;
     right: calc(50% - min(48vw, rem(637)));
     bottom: rem(-90);

@@ -23,18 +23,6 @@
   }
 }
 
-.blog__title-pc {
-  @include mq(md){
-    color: $white;
-  }
-}
-
-.blog__title-pc::first-letter {
-  @include mq(md){
-    color: $white;
-  }
-}
-
 .blog__card-wrapper {
   margin-bottom: rem(40);
   @include mq(md){
@@ -42,32 +30,35 @@
   }
 }
 
-.blog__bg {
+.blog__btn{
+  text-align: center;
+}
+
+.blog::before {
   @include mq(md){
+    content: "";
+    background: url(../images/common/top-blog-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
     height: rem(500);
     position: absolute;
     top: 0;
     left: 0;
-    object-fit: cover;
     z-index: -1;
   }
 }
 
-.blog__image-whitefish {
+.blog::after {
   @include mq(md){
-    width: min(30.3472vw, rem(437));
+    content: "";
+    background: url(../images/common/fish-white.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: min(30.34vw,rem(437));
+    height: rem(201);
     position: absolute;
     top: rem(24);
-    left: calc(50% - min(48vw, rem(620)));
-  }
-}
-
-.blog__image-bluefish {
-  @include mq(md){
-    width: rem(301);
-    transform: scale(-1, 1);
-    position: absolute;
-    bottom: rem(-155);
     left: calc(50% - min(48vw, rem(620)));
   }
 }

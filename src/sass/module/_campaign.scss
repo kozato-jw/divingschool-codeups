@@ -17,15 +17,17 @@
 }
 
 .campaign .swiper-wrapper{
-  margin-bottom: rem(15);
 }
 
 .campaign__swiper {
-  margin-bottom: rem(25);
+  padding-left: rem(10);
+  margin-left: rem(-10);
+  padding-bottom: rem(15);
+  margin-bottom: calc(rem(40) - rem(15));
   
   @include mq(md) {
     margin-right: calc(50% - 50vw);
-    margin-bottom: rem(65);
+    margin-bottom: calc(rem(80) - rem(15));
   }
 }
 
@@ -102,4 +104,8 @@
   border-right: 1px solid $blue;
   transform: skew(47deg);
   right: rem(-58);
+}
+
+.campaign__btn{
+  text-align: center;
 }

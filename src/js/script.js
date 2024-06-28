@@ -19,9 +19,9 @@ jQuery(function($) {
       }
     `;
       addGlobalStyle(css);
-      $(".hamburger").on("click", function() {
+      $(".js-hamburger").on("click", function() {
           $(this).toggleClass("js-active");
-          $(".header__nav-wrapper").toggleClass("js-active");
+          $(".js-header__nav-wrapper").toggleClass("js-active");
           if ($(this).hasClass("js-active")) {
               $("body").addClass("hidden");
               $("body").css("overflow", "hidden");
@@ -58,9 +58,9 @@ jQuery(function($) {
 });
 /* (MV)ローディングアニメーションとswiper */
 $(document).ready(function() {
-  const $title = $(".mv__title");
-  const $animationContainer = $(".mv__loading-inner");
-  const $header = $(".header");
+  const $title = $(".js-mv__title");
+  const $animationContainer = $(".js-mv__loading-inner");
+  const $header = $(".js-header");
 
   function initialShowAndHideTitle() {
       $title.addClass("js-visible--loading");
@@ -85,7 +85,7 @@ $(document).ready(function() {
   }
 
   function startSwiper() {
-      const mvSwiper = new Swiper(".mv__swiper", {
+      const mvSwiper = new Swiper(".js-mv__swiper", {
           loop: true,
           speed: 1500,
           effect: "fade",
@@ -112,7 +112,7 @@ $(document).ready(function() {
   });
 });
 /* swiper・キャンペーンセクション */
-const campaignSwiper = new Swiper(".campaign__swiper", {
+const campaignSwiper = new Swiper(".js-campaign__swiper", {
   slidesPerView: "auto",
   spaceBetween: 24,
   loop: true,
@@ -158,7 +158,7 @@ $("#page-top").click(function() {
   return false;
 });
 /* 画像に色幕のアニメーション(inview.js使用) */
-var box = $(".colorbox"),
+var box = $(".js-colorbox"),
   speed = 700;
 box.each(function() {
   $(this).append('<div class="js-color"></div>');
