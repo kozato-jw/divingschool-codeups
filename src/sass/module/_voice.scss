@@ -20,9 +20,33 @@
   }
 }
 
-.voice__image-seahorse {
+.voice__btn{
+  text-align: center;
+}
+
+.voice::before {
   @include mq(md){
+    content: "";
+    background: url(../images/common/fish-blue.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: rem(301);
+    height: rem(138);
+    transform: scale(-1, 1);
+    position: absolute;
+    top: rem(-120);
+    left: calc(50% - min(48vw, rem(620)));
+  }
+}
+
+.voice::after {
+  @include mq(md){
+    content: "";
+    background: url(../images/common/seahorse.png);
+    background-repeat: no-repeat;
+    background-size: contain;
     width: rem(71);
+    height: rem(162);
     position: absolute;
     right: calc(50% - min(48vw, rem(540)));
     bottom: rem(-64);

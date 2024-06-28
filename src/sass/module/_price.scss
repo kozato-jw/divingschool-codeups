@@ -61,12 +61,8 @@
   border-bottom: 1px solid $blue;
   color: $dark-green;
   @include mq(md){
-    font-size: rem(16);
-    font-weight: $bold;
     padding-bottom: rem(3);
     margin-bottom: rem(8.1);
-    border-bottom: 1px solid $blue;
-    color: $dark-green;
   }
 }
 
@@ -89,17 +85,26 @@
   margin-bottom: 0;
 }
 
-.price__list-item:last-of-type p:first-of-type {
+.price__list-item dt{
   @include mq(md){
-    letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
   }
 }
 
-.price__image-bluefish {
+.price__btn{
+  text-align: center;
+}
+
+.price::before {
   @include mq(md){
-    width: min(30.3472vw, rem(437));
+    content: "";
+    background: url(../images/common/fish-blue.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: min(30.34vw,rem(437));
+    height: rem(201);
     position: absolute;
     left: calc(50% - min(48vw, rem(620)));
-    bottom: rem(61);
+    bottom: min(4.23vw,rem(61));
   }
 }

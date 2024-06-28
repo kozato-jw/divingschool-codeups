@@ -112,6 +112,14 @@
   }
 }
 
+.common-contact__address-item a[href*="tel:"] {
+  @include mq(md){
+      pointer-events: none;
+      cursor: default;
+      text-decoration: none;
+  }
+}
+
 .common-contact__map {
   width: rem(295);
   aspect-ratio: 295 / 160;
@@ -131,21 +139,67 @@
   }
 }
 
-.common-contact__btn-wrapper {
+.common-contact__title{
+  text-align: center;
+}
+
+.common-contact__title-en{
+  font-family: $english-font;
+  color: $dark-green;
+  margin-bottom: rem(4);
+  font-size: rem(80);
+  line-height: 1;
+  filter: drop-shadow(0px 4px 4px #00000040);
+  display: inline-block;
+}
+
+.common-contact__title-en::first-letter{
+  color: $blue;
+  text-transform: uppercase;
+}
+
+.common-contact__title-ja{
+  font-size: rem(12);
+  line-height: 1.5;
+  color: $blue;
+  font-weight: $regular;
+  filter: drop-shadow(0px 4px 4px #00000040);
+  display: block;
+  margin-top: rem(-10);
+  margin-bottom: rem(8);
+}
+
+.common-contact__text{
+  text-align: center;
+  font-size: rem(14);
+  color: $blue;
+  line-height: calc(18 / 14);
+  margin-bottom: rem(39);
+  filter: drop-shadow(0px 4px 4px #00000040);
+}
+
+.common-contact__btn {
+  text-align: center;
   filter: drop-shadow(0px 4px 4px #00000040);
   @include mq(md){
     filter: none;
   }
 }
 
-.common-contact__image {
+.common-contact::before {
+  content: "";
+  background: url(../images/common/fish-blue.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
   width: rem(109);
+  height: rem(50);
   position: absolute;
   top: rem(-26);
   right: calc(50% - min(48vw, rem(172.5)));
   filter: drop-shadow(0px 4px 4px #00000040);
   @include mq(md){
     width: rem(301);
+    height: rem(138);
     top: rem(-41);
     right: calc(50% - min(48vw, rem(670)))
   }
