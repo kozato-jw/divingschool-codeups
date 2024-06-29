@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.about-gallery {
+  @include mq(md){
+    
+    }
+}
+
+.about-gallery__title{
+  margin-bottom: rem(40);
+}

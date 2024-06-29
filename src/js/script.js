@@ -60,7 +60,7 @@ jQuery(function($) {
 $(document).ready(function() {
   const $title = $(".js-mv__title");
   const $animationContainer = $(".js-mv__loading-inner");
-  const $header = $(".js-header");
+  const $header = $(".js-top-header");
 
   function initialShowAndHideTitle() {
       $title.addClass("js-visible--loading");

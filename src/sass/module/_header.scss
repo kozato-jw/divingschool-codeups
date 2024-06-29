@@ -7,9 +7,13 @@
   left: 0;
   background-color: #0D2936AD;
   z-index: 9997;
-  display: flex;
   opacity: 0;
+  display: flex;
   transition: 0.6s;
+}
+
+.header--sub{
+  opacity: 1;
 }
 
 .header.js-visible {

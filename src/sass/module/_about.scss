@@ -6,6 +6,10 @@
   }
 }
 
+.about--sub{
+  position: relative;
+}
+
 .about__inner {
   @include mq(md){
     position: relative;
@@ -26,6 +30,7 @@
     margin-bottom: 0;
   }
 }
+
 
 .about__image-small {
   width: 37.1%;
@@ -52,6 +57,11 @@
   }
 }
 
+.about__image-big--sub{
+  margin-top: 0;
+  width: 100%;
+}
+
 .about__content {
   @include mq(md){
     display: flex;
@@ -59,6 +69,14 @@
     position: absolute;
     top: rem(306);
     right: rem(71);
+  }
+}
+
+.about__content--sub{
+  @include mq(md){
+    top: rem(200);
+    right: rem(68);
+
   }
 }
 
@@ -74,6 +92,17 @@
     color: $white;
     margin-bottom: 0;
     line-height: 1.25;
+  }
+}
+
+.about__head--sub{
+  position: absolute;
+  top: rem(24);
+  left: rem(38);
+  color: $white;
+  @include mq(md){
+    position: static;
+
   }
 }
 
@@ -98,6 +127,14 @@
   }
 }
 
+.about__text--sub{
+  margin-bottom: rem(35);
+  @include mq(md){
+    margin-top: rem(25);
+    margin-bottom: 0;
+  }
+}
+
 .about__btn{
   text-align: center;
 }
@@ -114,4 +151,27 @@
     right: calc(50% - min(48vw, rem(637)));
     bottom: rem(-90);
   }
+}
+
+.about--sub::before{
+  display: none;
+}
+
+.about--sub::after{
+    content: "";
+    background: url(../images/common/fish-blue.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: rem(120);
+    height: rem(55);
+    transform: scale(-1, 1);
+    position: absolute;
+    top: rem(-24);
+    left: calc(50% - max(36vw, rem(172)));
+    @include mq(md){
+      width: rem(301);
+      height: rem(138);
+    left: calc(50% - min(48vw, rem(620)));
+    top: rem(-70);
+    }
 }

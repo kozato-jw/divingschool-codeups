@@ -18,10 +18,16 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  height: 100%;
+  flex-grow: 1;
   padding: rem(16) rem(16) rem(24);
   @include mq(md){
     padding: rem(24) rem(16) rem(40);
+  }
+}
+
+.campaign-card__content--sub{
+  @include mq(md){
+    padding: rem(23) rem(24) rem(39);
   }
 }
 
@@ -47,10 +53,19 @@
   border-bottom: 1px solid $blue;
   display: flex;
   align-items: flex-end;
+  flex-grow: 1;
   width: 100%;
-  flex-grow: 2;
   @include mq(md){
     margin-bottom: rem(17);
+  }
+}
+
+.campaign-card__title--sub{
+  margin-bottom: rem(7);
+  @include mq(md){
+    font-size: rem(24);
+    padding-bottom: rem(2);
+    margin-bottom: rem(24);
   }
 }
 
@@ -70,6 +85,12 @@
   }
 }
 
+.campaign-card__text--sub{
+  @include mq(md){
+    margin-bottom: rem(8);
+  }
+}
+
 .campaign-card__price {
   font-family: $english-sub-font;
   font-weight: $bold;
@@ -81,6 +102,13 @@
   width: 100%;
   @include mq(md){
     gap: rem(25);
+  }
+}
+
+.campaign-card__price--sub{
+  @include mq(md){
+    margin-bottom: rem(24);
+    gap: rem(40);
   }
 }
 
@@ -117,4 +145,29 @@
   @include mq(md){
     font-size: rem(40);
   }
+}
+
+.campaign-card__description{
+  color: $dark-green;
+  margin-bottom: rem(32);
+}
+
+.campaign-card__description-date{
+  font-size: rem(16);
+  font-weight: $bold;
+  font-family: $english-sub-font;
+  color: $blue;
+  line-height: 1.125;
+  margin: 0 auto rem(7);
+}
+
+.campaign-card__description-cta{
+  font-size: rem(14);
+  color: $blue;
+  line-height: calc(18 / 14);
+  margin: 0 auto rem(16);
+}
+
+.campaign-card__btn{
+  margin: 0 auto;
 }
