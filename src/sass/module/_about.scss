@@ -31,6 +31,11 @@
   }
 }
 
+.about__image--sub{
+  @include mq(md){
+    margin-bottom: rem(120);
+  }
+}
 
 .about__image-small {
   width: 37.1%;
@@ -97,7 +102,7 @@
 
 .about__head--sub{
   position: absolute;
-  top: rem(24);
+  top: rem(25);
   left: rem(38);
   color: $white;
   @include mq(md){
@@ -171,7 +176,7 @@
     @include mq(md){
       width: rem(301);
       height: rem(138);
-    left: calc(50% - min(48vw, rem(620)));
-    top: rem(-70);
+      left: calc(50% - min(48vw, rem(620)));
+      top: rem(-70);
     }
 }

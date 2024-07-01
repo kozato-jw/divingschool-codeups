@@ -1,0 +1,66 @@
+@use "global" as *;
+
+.information-card {
+  display: none;
+  opacity: 0;
+}
+
+.information-card.is-active{
+  display: block;
+  animation-name: displayAnime;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes displayAnime{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.information-card__inner{
+  border: 1px solid $blue;
+  padding: rem(24);
+  @include mq(md){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(48);
+    padding: rem(24) rem(24) rem(23);
+  }
+}
+
+.information-card__text-wrapper{
+  margin-bottom: rem(8);
+  @include mq(md){
+    width: 50%;
+    margin-bottom: 0;
+  }
+}
+
+.information-card__title{
+  font-size: rem(24);
+  line-height: 1;
+  color: $dark-green;
+  padding-bottom: rem(6);
+  margin-bottom: rem(8);
+  border-bottom: 1px solid $blue;
+}
+
+.information-card__text{
+  font-size: rem(16);
+}
+
+.information-card__image{
+  @include mq(md){
+    width: 50%;
+  }
+}
+
+.information-card__image img{
+  aspect-ratio: 297 / 189;
+  object-fit: cover;
+}
