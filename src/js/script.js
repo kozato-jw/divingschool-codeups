@@ -56,11 +56,12 @@ jQuery(function($) {
       });
   });
 });
+
 /* (MV)ローディングアニメーションとswiper */
 $(document).ready(function() {
   const $title = $(".js-mv__title");
   const $animationContainer = $(".js-mv__loading-inner");
-  const $header = $(".js-header");
+  const $header = $(".js-top-header");
 
   function initialShowAndHideTitle() {
       $title.addClass("js-visible--loading");
@@ -111,6 +112,7 @@ $(document).ready(function() {
       }
   });
 });
+
 /* swiper・キャンペーンセクション */
 const campaignSwiper = new Swiper(".js-campaign__swiper", {
   slidesPerView: "auto",
@@ -127,6 +129,7 @@ const campaignSwiper = new Swiper(".js-campaign__swiper", {
       },
   },
 });
+
 //ページトップリンク
 function PageTopAnime() {
   var scroll = $(window).scrollTop();
@@ -157,6 +160,7 @@ $("#page-top").click(function() {
   }, 500);
   return false;
 });
+
 /* 画像に色幕のアニメーション(inview.js使用) */
 var box = $(".js-colorbox"),
   speed = 700;
@@ -185,3 +189,55 @@ box.each(function() {
       }
   });
 });
+
+/* モーダル */
+$(document).ready(function() {
+    $('.gallery__image img').on('click', function() {
+
+        var imgSrc = $(this).attr('src');
+        $('.modal img').attr('src', imgSrc);
+        $('header').hide();
+        $('.modal').fadeIn();
+    });
+
+    $('.modal').on('click', function() {
+
+        $(this).fadeOut(function() {
+            $('header').show();
+        });
+    });
+});
+
+/* インフォメーション・タブ */
+function getHashID(hashIDName) {
+    if (hashIDName) {
+        $('.tab').find('a').each(function() {
+            var idName = $(this).attr('href');
+            if (idName === hashIDName) {
+                var btnElm = $(this); // 現在の .tab__btn 要素を取得
+                $('.tab__btn').removeClass("active"); // 他の .tab__btn から .active を削除
+                btnElm.addClass("active"); // クリックされた .tab__btn に .active を追加
+                $(".information-card").removeClass("is-active");
+                $(hashIDName).addClass("is-active");
+            }
+        });
+    }
+}
+
+$('.tab__btn').on('click', function() {
+    var idName = $(this).attr('href');
+    $('.tab__btn').removeClass("active"); // 他の .tab__btn から .active を削除
+    $(this).addClass("active"); // クリックされた .tab__btn に .active を追加
+    getHashID(idName);
+    return false;
+});
+
+$(window).on('load', function() {
+    $('.tab__btn:first-of-type').addClass("active");
+    $('.information-card:first-of-type').addClass("is-active");
+    var hashName = location.hash;
+    getHashID(hashName);
+});
+
+
+

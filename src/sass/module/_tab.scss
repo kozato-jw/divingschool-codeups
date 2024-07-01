@@ -1,0 +1,98 @@
+@use "global" as *;
+
+.tab {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: rem(19);
+  grid-row-gap: rem(16);
+  @include mq(md){
+    grid-column-gap: rem(32);
+  }
+  @include mq(lg){
+    grid-column-gap: rem(58);
+  }
+  @include mq(xl){
+    grid-column-gap: rem(90);
+  }
+}
+
+.tab__btn {
+  font-size: rem(14);
+  line-height: 1.43;
+  text-align: center;
+  padding: rem(10) rem(10);
+  color: $blue;
+  background-color: $pale-green;
+  transition: 0.3s;
+  box-shadow: 2px 2px 4px 0px #00000040;
+  @include mq(md){
+    font-size: rem(24);
+    text-align: right;
+    padding: rem(29) rem(30) rem(26) 0;
+    position: relative;
+  }
+}
+
+.tab__btn:nth-of-type(2){
+  @include mq(md){
+    padding-right: rem(18);
+  }
+}
+
+.tab__btn:hover{
+  background-color: $blue;
+  color: $white;
+}
+
+.tab__btn:hover::before{
+  filter: brightness(0) invert(1);
+}
+
+.tab__btn::before{
+  @include mq(md){
+    content: "";
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: rem(30);
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    width: rem(64);
+    height: rem(64);
+    transition: 0.3s;
+  }
+}
+
+.tab__btn:first-of-type::before{
+  @include mq(md){
+  background-image: url(../images/common/tab-icon_1.svg);
+  }
+}
+
+.tab__btn:nth-of-type(2)::before{
+  @include mq(md){
+  background-image: url(../images/common/tab-icon_2.svg);
+  left: rem(18);
+  width: rem(63);
+  height: rem(63);
+  }
+}
+
+.tab__btn:last-of-type::before{
+  @include mq(md){
+  background-image: url(../images/common/tab-icon_3.svg);
+  }
+}
+
+
+.tab__btn.active{
+  background-color: $blue;
+  color: $white;
+}
+
+.tab__btn.active::before{
+  filter: brightness(0) invert(1);
+}

@@ -3,7 +3,7 @@
 .information {
   padding-top: rem(80);
   padding-bottom: rem(78);
-  background-color: #DDF0F1;
+  background-color: $pale-green;
   @include mq(md){
     padding-top: rem(102);
     padding-bottom: rem(76);
