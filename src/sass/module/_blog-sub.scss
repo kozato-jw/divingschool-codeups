@@ -1,0 +1,39 @@
+@use "global" as *;
+
+.blog-sub {
+  position: relative;
+  @include mq(md){
+
+  }
+}
+
+.blog-sub::before{
+  content: "";
+  background: url(../images/common/fish-blue.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: rem(120);
+  height: rem(55);
+  transform: scale(-1, 1);
+  position: absolute;
+  top: rem(-24);
+  left: calc(50% - max(36vw, rem(172)));
+  @include mq(md){
+    width: rem(301);
+    height: rem(138);
+    left: calc(50% - min(48vw, rem(620)));
+    top: rem(-70);
+  }
+}
+
+.blog-sub__content{
+  margin-bottom: rem(82);
+}
+
+.blog-sub__cards{
+  margin-left: rem(6);
+  margin-right: rem(6);
+  margin-bottom: rem(81);
+}
+
+

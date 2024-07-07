@@ -1,0 +1,130 @@
+@use "global" as *;
+
+.sidebar {
+  @include mq(md){
+
+  }
+}
+
+.sidebar__inner{
+  max-width: rem(510);
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sidebar__content{
+  margin-bottom: rem(80);
+}
+
+.sidebar__title{
+  font-size: rem(24);
+  font-weight: $regular;
+  line-height: rem(50);
+  padding-left: rem(82);
+  margin-bottom: rem(24);
+  position: relative;
+}
+
+.sidebar__title::before{
+  content: "";
+  width: rem(8);
+  height: 100%;
+  background-color: $blue;
+  position: absolute;
+  top: rem(-2);
+  left: 0;
+}
+
+.sidebar__title::after{
+  content: "";
+  background-image: url('../images/common/sidebar-icon.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: rem(50);
+  height: rem(50);
+  position: absolute;
+  top: rem(-2);
+  left: rem(24);
+}
+
+.sidebar__title--article{
+  margin-bottom: rem(23);
+}
+
+.sidebar__title--campaign{
+  margin-bottom: rem(23);
+}
+
+.sidebar__blog-card{
+  margin-bottom: rem(24);
+}
+
+
+.sidebar__campaign-cards{
+  margin-bottom: rem(40);
+}
+
+.sidebar__campaign-card{
+  margin-bottom: rem(40);
+}
+
+.sidebar__campaign-card:last-of-type{
+  margin-bottom: 0;
+}
+
+
+.sidebar__archive-lists{
+  font-size: rem(24);
+  line-height: 1.48; 
+  color: $blue;
+  margin-left: rem(6);
+}
+
+.sidebar__archive-year,
+.sidebar__archive-month{
+  padding-left: rem(25);
+  position: relative;
+  margin-bottom: rem(4);
+}
+
+.sidebar__archive-year::before,
+.sidebar__archive-month::before{
+  content: "";
+  width: rem(18);
+  height: rem(21);
+  clip-path: polygon(0 0, 0 100%, 100% 50%);
+  background-color: $blue;
+  position: absolute;
+  left: rem(-1);
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+}
+
+.sidebar__archive-months {
+  margin-left: rem(24);
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar__archive-year.js-active::before {
+  transform: rotate(90deg);
+  top: rem(8);
+  left: rem(-4);
+}
+
+.sidebar__archive-months.js-active {
+  display: block;
+}
+
+// .sidebar__archive-month{
+//   margin-bottom: rem(8);
+// }
+
+.sidebar__btn{
+  text-align: center;
+}
