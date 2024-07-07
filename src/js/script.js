@@ -241,3 +241,34 @@ $(window).on('load', function() {
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const yearLinks = document.querySelectorAll('.js-sidebar__archive-year');
+
+    yearLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            // すべての年リンクから js-active クラスを削除
+            yearLinks.forEach(link => {
+                link.classList.remove('js-active');
+            });
+
+            // クリックされた年リンクに js-active クラスを付与
+            this.classList.add('js-active');
+
+            // すべての月リストから js-active クラスを削除
+            document.querySelectorAll('.js-sidebar__archive-months').forEach(monthList => {
+                monthList.classList.remove('js-active');
+            });
+
+            // クリックされた年リンクの次の月リストに js-active クラスを付与
+            const monthList = this.nextElementSibling;
+            if (monthList && monthList.classList.contains('js-sidebar__archive-months')) {
+                monthList.classList.add('js-active');
+            }
+        });
+    });
+});
+
+
+

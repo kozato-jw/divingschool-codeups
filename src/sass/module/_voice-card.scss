@@ -10,6 +10,12 @@
   }
 }
 
+.voice-card--sidebar{
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: rem(40);
+}
+
 .voice-card__head {
   display: flex;
   justify-content: center;
@@ -23,6 +29,12 @@
   }
 }
 
+.voice-card__head--sidebar{
+  margin-bottom: 0;
+  flex-direction: column-reverse;
+  gap: rem(16);
+}
+
 .voice-card__info {
   width: 100%;
   display: flex;
@@ -30,12 +42,7 @@
   height: 100%;
 }
 
-.voice-card__title {
-  font-size: rem(16);
-  display: flex;
-  align-items: flex-end;
-  flex-grow: 1;
-}
+
 
 .voice-card__inner {
   font-size: rem(12);
@@ -50,6 +57,10 @@
 .voice-card__age {
   line-height: 1.5;
   color: $dark-green;
+}
+
+.voice-card__age--sidebar{
+  margin-bottom: rem(8);
 }
 
 .voice-card__category {
@@ -72,9 +83,18 @@
   line-height: 1.46;
   padding-bottom: rem(3.6);
   border-bottom: 1px solid $blue;
+  display: flex;
+  align-items: flex-end;
+  flex-grow: 1;
   @include mq(md){
     font-size: rem(24);
   }
+}
+
+.voice-card__title--sidebar {
+  font-size: rem(24);
+  font-weight: $medium;
+  border-bottom: none;
 }
 
 .voice-card__image {
@@ -85,6 +105,10 @@
   }
 }
 
+.voice-card__image--sidebar{
+  width: 100%;
+}
+
 .voice-card__image img {
   aspect-ratio: 151 / 117;
   object-fit: cover;
@@ -92,6 +116,10 @@
     aspect-ratio: 180 / 140;
     object-fit: cover;
   }
+}
+
+.voice-card__image--sidebar img{
+  aspect-ratio: 294 / 218;
 }
 
 .voice-card__text {

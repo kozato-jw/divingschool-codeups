@@ -14,6 +14,10 @@
   }
 }
 
+.campaign-card__image--sidebar img{
+  aspect-ratio: 294 / 188;
+}
+
 .campaign-card__content {
   display: flex;
   flex-direction: column;
@@ -67,6 +71,10 @@
     padding-bottom: rem(2);
     margin-bottom: rem(24);
   }
+}
+
+.campaign-card__title--sidebar{
+  justify-content: center;
 }
 
 .campaign-card__text {
