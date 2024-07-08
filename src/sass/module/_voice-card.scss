@@ -13,7 +13,11 @@
 .voice-card--sidebar{
   box-shadow: none;
   padding: 0;
-  margin-bottom: rem(40);
+  margin-bottom: rem(43);
+  @include mq(md){
+    padding: 0;
+    margin-bottom: rem(42);
+  }
 }
 
 .voice-card__head {
@@ -33,6 +37,9 @@
   margin-bottom: 0;
   flex-direction: column-reverse;
   gap: rem(16);
+  @include mq(md){
+    margin-bottom: 0;
+  }
 }
 
 .voice-card__info {
@@ -95,6 +102,7 @@
   font-size: rem(24);
   font-weight: $medium;
   border-bottom: none;
+  padding-bottom: 0;
 }
 
 .voice-card__image {
@@ -107,6 +115,9 @@
 
 .voice-card__image--sidebar{
   width: 100%;
+  @include mq(md){
+    width: 100%;
+  }
 }
 
 .voice-card__image img {
@@ -120,6 +131,10 @@
 
 .voice-card__image--sidebar img{
   aspect-ratio: 294 / 218;
+  @include mq(md){
+    aspect-ratio: 294 / 218;
+
+  }
 }
 
 .voice-card__text {

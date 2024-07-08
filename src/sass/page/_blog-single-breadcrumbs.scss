@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.blog-single-breadcrumbs{
+  margin-bottom: rem(52);
+  @include mq(md){
+    margin-bottom: rem(150);
+  }
+}

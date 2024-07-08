@@ -2,13 +2,8 @@
 
 .wp-pagenavi {
   display: flex;
-  // justify-content: space-between;
   justify-content: center;
   gap: rem(12);
-
-  @include mq(md){
-
-  }
 }
 
 .wp-pagenavi a, .wp-pagenavi span {
@@ -19,6 +14,7 @@
 	background-color: $white;
 	border: 1px solid $blue;
   width: rem(38);
+  height: rem(38);
   line-height: calc(36 / 16);
 	transition: 0.3s ease-in-out;
 	text-align: center;
@@ -78,3 +74,17 @@
   border-color: $white;
 }
 
+.blog-sub__post .wp-pagenavi{
+  width: rem(158);
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+}
+
+.blog-sub__post .previouspostslink{
+  margin-right: 0;
+}
+
+.blog-sub__post .nextpostslink{
+  margin-left: 0;
+}

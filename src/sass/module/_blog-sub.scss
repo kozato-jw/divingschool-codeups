@@ -3,7 +3,9 @@
 .blog-sub {
   position: relative;
   @include mq(md){
-
+    display: flex;
+    justify-content: space-between;
+    gap: rem(80);
   }
 }
 
@@ -23,17 +25,31 @@
     height: rem(138);
     left: calc(50% - min(48vw, rem(620)));
     top: rem(-70);
+    z-index: -1;
   }
 }
 
 .blog-sub__content{
   margin-bottom: rem(82);
+  @include mq(md){
+    width: 65.37%;
+    margin-bottom: 0;
+  }
 }
 
-.blog-sub__cards{
-  margin-left: rem(6);
-  margin-right: rem(6);
-  margin-bottom: rem(81);
+.blog-sub__post{
+  margin-bottom: rem(82);
+  @include mq(md){
+    width: 64.82%;
+    margin-bottom: 0;
+  }
 }
+
+.blog-sub__sidebar{
+  @include mq(md){
+    width: 27.2%;
+  }
+}
+
 
 
