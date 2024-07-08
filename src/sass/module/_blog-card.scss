@@ -85,6 +85,10 @@
   }
 }
 
+.blog-card__title--sub{
+  margin-bottom: rem(16);
+}
+
 .blog-card__title--sidebar{
   font-weight: $medium;
   flex-grow: 0;

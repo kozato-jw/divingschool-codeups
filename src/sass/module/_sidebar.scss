@@ -8,13 +8,24 @@
 
 .sidebar__inner{
   max-width: rem(510);
-  width: 85%;
+  width: 85.06%;
   margin-left: auto;
   margin-right: auto;
+  @include mq(md){
+    margin: 0;
+    width: 100%;
+  }
 }
 
 .sidebar__content{
   margin-bottom: rem(80);
+  @include mq(md){
+    margin-bottom: rem(81);
+  }
+}
+
+.sidebar__content:last-of-type{
+  margin-bottom: 0;
 }
 
 .sidebar__title{
