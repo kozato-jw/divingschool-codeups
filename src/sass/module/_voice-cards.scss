@@ -17,7 +17,7 @@
 }
 
 .voice-cards__item:last-of-type {
-  margin-bottom: rem(42);
+  margin-bottom: 0;
   @include mq(md){
     margin-bottom: 0;
   }

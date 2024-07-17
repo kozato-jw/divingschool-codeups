@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.voice-sub-content{
+  margin-bottom: rem(106);
+  @include mq(md){
+    margin-bottom: rem(140);
+  }
+}
