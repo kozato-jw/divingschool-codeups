@@ -1,0 +1,77 @@
+@use "global" as *;
+
+.price-list {
+
+  @include mq(md){
+
+  }
+}
+
+.price-list__title{
+  background-color: $blue;
+  text-align: center;
+
+  @include mq(md){
+
+  }
+}
+
+
+.price-list__title-text{
+  font-size: rem(16);
+  color: $white;
+  line-height: 2.5;
+  display: inline-block;
+  position: relative;
+  @include mq(md){
+  }
+}
+
+.price-list__title-text::before{
+  content: "";
+  background-image: url(../images/common/whale-white.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: rem(24);
+  height: rem(24);
+  position: absolute;
+  left: rem(-32);
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  @include mq(md){
+
+  }
+}
+
+.price-list__list{
+  width: 100%;
+  border-collapse: collapse;
+  @include mq(md){
+
+  }
+}
+.price-list__head{
+  width: 69.5%;
+  height: rem(64);
+  text-align: center;
+  font-weight: $regular;
+  color: $dark-green;
+  padding: rem(7) 0;
+  @include mq(md){
+
+  }
+}
+
+.price-list__price{
+  text-align: right;
+  color: $dark-green;
+  width: 30.5%;
+  padding-right: rem(16);
+}
+
+.price-list__head,
+.price-list__price{
+  border: 1px solid $blue;
+}

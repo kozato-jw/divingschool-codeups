@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.voice-breadcrumbs{
+  margin-bottom: rem(51);
+  @include mq(md){
+    margin-bottom: rem(150);
+  }
+}

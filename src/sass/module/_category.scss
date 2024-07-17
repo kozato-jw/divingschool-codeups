@@ -3,8 +3,8 @@
 .category {
   display: flex;
   flex-wrap: wrap;
-  gap: rem(18) rem(20);
-  justify-content: center;
+  gap: rem(17) rem(21);
+  justify-content: flex-start;
   @include mq(md){
     justify-content: flex-start;
     gap: rem(21) rem(32);
