@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.price-sub-content{
+  margin-bottom: rem(110);
+  @include mq(md){
+    margin-bottom: rem(142);
+  }
+}

@@ -22,7 +22,7 @@
     width: rem(301);
     height: rem(138);
     left: calc(50% - min(48vw, rem(620)));
-    top: rem(-70);
+    top: rem(-75);
     z-index: -1;
   }
 }
@@ -30,7 +30,23 @@
 .price-sub__item{
   margin-bottom: rem(40);
   @include mq(md){
+    max-width: rem(700);
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: rem(80);
+  }
+}
+
+.price-sub__item:first-of-type{
+  @include mq(md){
     margin-bottom: rem(74);
+  }
+}
+
+.price-sub__item:last-of-type{
+  @include mq(md){
+    margin-bottom: rem(0);
   }
 }
 
