@@ -271,4 +271,39 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-box');
+  
+    // 初期状態で最初の答えを開いた状態にする
+    const firstAnswer = faqItems[0].querySelector('.faq-box__answer');
+    const firstQuestion = faqItems[0].querySelector('.faq-box__function');
+    firstAnswer.style.maxHeight = firstAnswer.scrollHeight + 'px';
+    firstQuestion.classList.add('open');
+  
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-box__function');
+      const answer = item.querySelector('.faq-box__answer');
+  
+      question.addEventListener('click', function() {
+        // 他の全ての答えを閉じ、openクラスを削除
+        faqItems.forEach(i => {
+          const ans = i.querySelector('.faq-box__answer');
+          const que = i.querySelector('.faq-box__function');
+          if (ans !== answer) {
+            ans.style.maxHeight = '0';
+            que.classList.remove('open');
+          }
+        });
+  
+        // クリックされた答えを開閉し、openクラスを追加/削除
+        if (answer.style.maxHeight === '0px' || answer.style.maxHeight === '') {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          question.classList.add('open');
+        } else {
+          answer.style.maxHeight = '0';
+          question.classList.remove('open');
+        }
+      });
+    });
+  });
+  
