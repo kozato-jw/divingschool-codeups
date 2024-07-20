@@ -1,10 +1,10 @@
 @use "global" as *;
 
-.price-sub {
+.faq-sub {
   position: relative;
 }
 
-.price-sub::before{
+.faq-sub::before{
   content: "";
   background: url(../images/common/fish-blue.svg);
   background-repeat: no-repeat;
@@ -15,31 +15,23 @@
   position: absolute;
   top: rem(-24);
   left: calc(50% - max(36vw, rem(172)));
+  z-index: -1;
   @include mq(md){
     width: rem(301);
     height: rem(138);
     left: calc(50% - min(48vw, rem(620)));
-    top: rem(-75);
+    top: rem(-70);
     z-index: -1;
   }
 }
 
-.price-sub__item{
-  margin-bottom: rem(40);
+.faq-sub__item{
+  margin-bottom: rem(44);
   @include mq(md){
-    display: flex;
-    margin-bottom: rem(80);
+    margin-bottom: rem(40);
   }
 }
 
-.price-sub__item:first-of-type{
-  @include mq(md){
-    margin-bottom: rem(74);
-  }
-}
-
-.price-sub__item:last-of-type{
-  @include mq(md){
-    margin-bottom: rem(0);
-  }
+.faq-sub__item:last-of-type{
+  margin-bottom: 0;
 }
