@@ -1,0 +1,29 @@
+@use "global" as *;
+
+.contact {
+  position: relative;
+  @include mq(md){
+
+  }
+}
+
+.contact::before{
+  content: "";
+  background: url(../images/common/fish-blue.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: rem(120);
+  height: rem(55);
+  transform: scale(-1, 1);
+  position: absolute;
+  top: rem(-24);
+  left: calc(50% - max(36vw, rem(172)));
+  @include mq(md){
+    width: rem(301);
+    height: rem(138);
+    left: calc(50% - min(48vw, rem(620)));
+    top: rem(-70);
+    z-index: -1;
+  }
+}
+

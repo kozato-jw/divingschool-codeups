@@ -184,54 +184,54 @@
       <div class="breadcrumbs contact-breadcrumbs">
         <div class="breadcrumbs__inner inner">パンくずリストが入る</div>
       </div>
-      <div class="contact">
+      <div class="contact contact-form">
         <div class="inner-sub">
 
 
-          <form action="" method="post" id="">
+          <form action="" method="post" id="" class="contact__form form">
 
 
-            <dl>
-              <dt>
-                お名前
+            <dl class="form__item">
+              <dt class="form__head">
+                お名前<span class="form__required">必須</span>
               </dt>
-              <dd>
-                <input type="text" name="name" value="" />
+              <dd class="form__content">
+                <input type="text" name="name" placeholder="沖縄　太郎" value="" />
               </dd>
             </dl>
 
-            <dl>
-              <dt>
-                メールアドレス
+            <dl class="form__item">
+              <dt class="form__head">
+                メールアドレス<span class="form__required">必須</span>
               </dt>
-              <dd>
-                <input type="email" name="mail_address" value="" class="" />
+              <dd class="form__content">
+                <input type="email" name="mail_address" placeholder="aaa000@ggmail.com" value="" class="" />
               </dd>
             </dl>
 
-            <dl>
-              <dt>
-                電話番号
+            <dl class="form__item">
+              <dt class="form__head">
+                電話番号<span class="form__required">必須</span>
               </dt>
-              <dd>
-                <input type="email" name="tel" value="" class="" />
+              <dd class="form__content">
+                <input type="tel" name="tel" placeholder="000-0000-0000" value="" class="" />
               </dd>
             </dl>
 
             
-            <dl>
-              <dt class="">
-                お問合わせ項目
+            <dl class="form__item">
+              <dt class="form__head">
+                お問合わせ項目<span class="form__required">必須</span>
               </dt>
-              <dd class="">
+              <dd class="form__check">
                 <label><input type="checkbox" name="hoge" value="チェックボックス1" checked/><span>ダイビング講習について</span></label>
                 <label><input type="checkbox" name="hogehoge" value="チェックボックス2" /><span>ファンデイビングについて</span></label>
                 <label><input type="checkbox" name="hogehoge" value="チェックボックス2" /><span>体験ダイビングについて</span></label>
               </dd>
             </dl>
             
-            <dl>
-              <dt>
+            <dl class="form__item">
+              <dt class="form__head">
                 キャンペーン
               </dt>
               <dd class="">
@@ -246,67 +246,38 @@
 
             
 
-            <dl>
-              <dt>
-                お問合せ内容
+            <dl class="form__item">
+              <dt class="form__head">
+                お問合せ内容<span class="form__required">必須</span>
               </dt>
-              <dd>
+              <dd class="form__content">
                 <textarea name="contents"></textarea>
               </dd>
             </dl>
 
 
-              <p class="">
+              <p class="form__consent">
                 <label><input type="checkbox" name="hoge" value="チェックボックス1" /><span>個人情報の取り扱いについて同意のうえ
                   送信します。</span></label>
                 </p>
 
 
+                <div class="form__btn">
+                  <button class="btn">
+                      <span class="btn__inner btn__inner--form">
+                          send
+                      </span>
+                  </button>
+                </div>
 
-            <div class="">
-              <input type="button" class="" value="タイプ：ボタン" />
-            </div>
+
           </form>
 
 
 
         </div>
       </div>
-      <!-- 共通コンタクトエリア -->
-      <section class="common-contact top-contact">
-        <div class="inner">
-          <div class="common-contact__inner">
-            <div class="common-contact__content">
-              <div class="common-contact__logo">
-                <img src="./assets/images/common/logo-blue.svg" alt="コードアップスのロゴ">
-              </div>
-              <div class="common-contact__item">
-                <div class="common-contact__address">
-                  <p class="common-contact__address-item">沖縄県那覇市1-1</p>
-                  <p class="common-contact__address-item">
-                    <a href="tel:01200000000">TEL:0120-000-0000</a>
-                  </p>
-                  <p class="common-contact__address-item">営業時間:8:30-19:00</p>
-                  <p class="common-contact__address-item">定休日:毎週火曜日</p>
-                </div>
-                <iframe class="common-contact__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d128399.76253516936!2d127.7251281218775!3d26.367773122738253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e50e1eac275ad7%3A0x33c571838dc11528!2z5rKW57iE55yM5rKW57iE5biC!5e0!3m2!1sja!2sjp!4v1716380107153!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              </div>
-            </div>
-            <div class="common-contact__title-area">
-              <div class="common-contact__title">
-                <p class="common-contact__title-en">contact</p>
-                <h2 class="common-contact__title-ja">お問い合わせ</h2>
-              </div>
-              <p class="common-contact__text">ご予約・お問い合わせはコチラ</p>
-              <div class="common-contact__btn">
-                <a class="btn" href="#">
-                  <span class="btn__inner">contact&nbsp;us </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
     </main>
     <footer id="footer" class="footer">
       <div class="footer__inner inner">
