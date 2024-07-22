@@ -29,7 +29,6 @@
   font-family: $english-font;
   line-height: 1;
   font-size: rem(14);
-  transition: 0.6s;
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -70,6 +69,14 @@
   transform: skew(47deg);
   transition: 0.6s;
   width: rem(40);
+}
+
+.btn__inner--form{
+  padding-left: rem(52);
+}
+
+.btn__inner--form::after{
+  margin-left: rem(14);
 }
 
 .btn:hover .btn__inner {
