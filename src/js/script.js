@@ -240,7 +240,7 @@ $(window).on('load', function() {
 });
 
 
-
+/*サイドバー・アーカイブ情報 */
 document.addEventListener('DOMContentLoaded', function() {
     const yearLinks = document.querySelectorAll('.js-sidebar__archive-year');
 
@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
+/*FAQアコーディオン*/
 document.addEventListener('DOMContentLoaded', function() {
     const faqItems = document.querySelectorAll('.faq-box');
   
@@ -304,6 +304,75 @@ document.addEventListener('DOMContentLoaded', function() {
           question.classList.remove('open');
         }
       });
+    });
+  });
+
+  
+
+/* チェック入れないと送信不可*/
+document.addEventListener('DOMContentLoaded', function() {
+    const consentCheckbox = document.getElementById('consentCheckbox');
+    const submitButton = document.getElementById('submitButton');
+
+    // チェックボックスの状態が変わるたびに実行されるイベントリスナーを追加
+    consentCheckbox.addEventListener('change', function() {
+        // チェックボックスがチェックされているかどうかを確認
+        if (consentCheckbox.checked) {
+            // チェックされている場合、送信ボタンを有効にし、スタイルを変更
+            submitButton.disabled = false;
+            submitButton.classList.remove('btn--disabled');
+        } else {
+            // チェックされていない場合、送信ボタンを無効にし、スタイルを変更
+            submitButton.disabled = true;
+            submitButton.classList.add('btn--disabled');
+        }
+    });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contactForm');
+    const submitButton = document.getElementById('submitButton');
+    const consentCheckbox = document.getElementById('consentCheckbox');
+    
+    // チェックボックスがチェックされた場合に送信ボタンを有効化する
+    // consentCheckbox.addEventListener('change', function () {
+    //   submitButton.disabled = !this.checked;
+    //   submitButton.classList.toggle('btn--disabled', !this.checked);
+    // });
+  
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      let hasError = false;
+      
+      // フォーム内の全ての必須項目をチェック
+      const requiredFields = form.querySelectorAll('input[required], textarea[required]');
+      requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+          field.classList.add('form__error');
+          const errorMessage = document.createElement('span');
+          errorMessage.textContent = 'この項目は必須です';
+          errorMessage.classList.add('form__error-message');
+          field.parentElement.appendChild(errorMessage);
+          hasError = true;
+        } else {
+          field.classList.remove('form__error');
+          const existingError = field.parentElement.querySelector('.form__error-message');
+          if (existingError) {
+            existingError.remove();
+          }
+        }
+      });
+      
+      // エラーがあれば .form に .form--error を追加
+      if (hasError) {
+        form.classList.add('form--error');
+      } else {
+        form.classList.remove('form--error');
+        // フォーム送信処理
+        form.submit();
+      }
     });
   });
   
