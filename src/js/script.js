@@ -270,109 +270,187 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
 /*FAQアコーディオン*/
 document.addEventListener('DOMContentLoaded', function() {
     const faqItems = document.querySelectorAll('.faq-box');
-  
-    // 初期状態で最初の答えを開いた状態にする
-    const firstAnswer = faqItems[0].querySelector('.faq-box__answer');
-    const firstQuestion = faqItems[0].querySelector('.faq-box__function');
-    firstAnswer.style.maxHeight = firstAnswer.scrollHeight + 'px';
-    firstQuestion.classList.add('open');
-  
-    faqItems.forEach(item => {
-      const question = item.querySelector('.faq-box__function');
-      const answer = item.querySelector('.faq-box__answer');
-  
-      question.addEventListener('click', function() {
-        // 他の全ての答えを閉じ、openクラスを削除
-        faqItems.forEach(i => {
-          const ans = i.querySelector('.faq-box__answer');
-          const que = i.querySelector('.faq-box__function');
-          if (ans !== answer) {
-            ans.style.maxHeight = '0';
-            que.classList.remove('open');
-          }
+
+    if (faqItems.length > 0) {
+        // 初期状態で最初の答えを開いた状態にする
+        const firstAnswer = faqItems[0].querySelector('.faq-box__answer');
+        const firstQuestion = faqItems[0].querySelector('.faq-box__function');
+        
+        if (firstAnswer && firstQuestion) {
+            firstAnswer.style.maxHeight = firstAnswer.scrollHeight + 'px';
+            firstQuestion.classList.add('open');
+        }
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-box__function');
+            const answer = item.querySelector('.faq-box__answer');
+
+            if (question && answer) {
+                question.addEventListener('click', function() {
+                    // 他の全ての答えを閉じ、openクラスを削除
+                    faqItems.forEach(i => {
+                        const ans = i.querySelector('.faq-box__answer');
+                        const que = i.querySelector('.faq-box__function');
+                        if (ans && ans !== answer) {
+                            ans.style.maxHeight = '0';
+                            que.classList.remove('open');
+                        }
+                    });
+
+                    // クリックされた答えを開閉し、openクラスを追加/削除
+                    if (answer.style.maxHeight === '0px' || answer.style.maxHeight === '') {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        question.classList.add('open');
+                    } else {
+                        answer.style.maxHeight = '0';
+                        question.classList.remove('open');
+                    }
+                });
+            }
         });
-  
-        // クリックされた答えを開閉し、openクラスを追加/削除
-        if (answer.style.maxHeight === '0px' || answer.style.maxHeight === '') {
-          answer.style.maxHeight = answer.scrollHeight + 'px';
-          question.classList.add('open');
-        } else {
-          answer.style.maxHeight = '0';
-          question.classList.remove('open');
-        }
-      });
-    });
-  });
-
-  
-
-/* チェック入れないと送信不可*/
-document.addEventListener('DOMContentLoaded', function() {
-    const consentCheckbox = document.getElementById('consentCheckbox');
-    const submitButton = document.getElementById('submitButton');
-
-    // チェックボックスの状態が変わるたびに実行されるイベントリスナーを追加
-    consentCheckbox.addEventListener('change', function() {
-        // チェックボックスがチェックされているかどうかを確認
-        if (consentCheckbox.checked) {
-            // チェックされている場合、送信ボタンを有効にし、スタイルを変更
-            submitButton.disabled = false;
-            submitButton.classList.remove('btn--disabled');
-        } else {
-            // チェックされていない場合、送信ボタンを無効にし、スタイルを変更
-            submitButton.disabled = true;
-            submitButton.classList.add('btn--disabled');
-        }
-    });
+    }
 });
 
 
-
+/*コンタクトフォーム*/ 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contactForm');
     const submitButton = document.getElementById('submitButton');
     const consentCheckbox = document.getElementById('consentCheckbox');
     
-    // チェックボックスがチェックされた場合に送信ボタンを有効化する
-    // consentCheckbox.addEventListener('change', function () {
-    //   submitButton.disabled = !this.checked;
-    //   submitButton.classList.toggle('btn--disabled', !this.checked);
-    // });
-  
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      let hasError = false;
-      
-      // フォーム内の全ての必須項目をチェック
-      const requiredFields = form.querySelectorAll('input[required], textarea[required]');
-      requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-          field.classList.add('form__error');
-          const errorMessage = document.createElement('span');
-          errorMessage.textContent = 'この項目は必須です';
-          errorMessage.classList.add('form__error-message');
-          field.parentElement.appendChild(errorMessage);
-          hasError = true;
-        } else {
-          field.classList.remove('form__error');
-          const existingError = field.parentElement.querySelector('.form__error-message');
-          if (existingError) {
-            existingError.remove();
-          }
+    // イベントリスナーの設定
+    setupEventListeners();
+
+    function setupEventListeners() {
+        // 同意チェックボックスの変更イベント
+        consentCheckbox.addEventListener('change', handleConsentChange);
+
+        // 必須項目の入力イベント
+        const requiredFields = form.querySelectorAll('.form__required');
+        requiredFields.forEach(field => setupFieldInputListener(field));
+
+        // フォームの送信イベント
+        form.addEventListener('submit', handleSubmit);
+    }
+
+    function handleConsentChange() {
+        const isChecked = this.checked;
+        submitButton.disabled = !isChecked;
+        submitButton.classList.toggle('btn--disabled', !isChecked);
+    }
+
+    function setupFieldInputListener(requiredField) {
+        const fieldContainer = requiredField.closest('dl');
+        const input = fieldContainer.querySelector('input, textarea, select');
+        
+        if (input) {
+            input.addEventListener('input', function () {
+                validateField(input, fieldContainer);
+            });
         }
-      });
-      
-      // エラーがあれば .form に .form--error を追加
-      if (hasError) {
-        form.classList.add('form--error');
-      } else {
+    }
+
+    function validateField(input, fieldContainer) {
+        if (input.value.trim()) {
+            input.classList.remove('form__error');
+            fieldContainer.classList.remove('form__item--error');
+        } else {
+            input.classList.add('form__error');
+            fieldContainer.classList.add('form__item--error');
+        }
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        let hasError = false;
+
+        // エラーのリセット
+        resetErrors();
+
+        // 必須項目のバリデーション
+        hasError = validateRequiredFields();
+
+        // チェックボックスグループのバリデーション
+        hasError = validateCheckGroups() || hasError;
+
+        // 同意チェックボックスのバリデーション
+        hasError = validateConsentCheckbox() || hasError;
+
+        // エラーがあれば表示し、ページトップにスクロール
+        if (hasError) {
+            form.classList.add('form--error');
+            window.scrollTo(0, 0);
+        } else {
+            form.classList.remove('form--error');
+            form.submit();
+        }
+    }
+
+    function resetErrors() {
         form.classList.remove('form--error');
-        // フォーム送信処理
-        form.submit();
-      }
-    });
-  });
-  
+        form.querySelectorAll('.form__item--error').forEach(item => item.classList.remove('form__item--error'));
+        form.querySelectorAll('.form__error').forEach(input => input.classList.remove('form__error'));
+    }
+
+    function validateRequiredFields() {
+        let hasError = false;
+        const requiredFields = form.querySelectorAll('.form__required');
+        
+        requiredFields.forEach(field => {
+            const fieldContainer = field.closest('dl');
+            const input = fieldContainer.querySelector('input, textarea, select');
+
+            if (input) {
+                const isEmpty = !input.value.trim();
+                const isEmailInvalid = input.type === 'email' && !input.value.includes('@');
+                
+                if (isEmpty || isEmailInvalid) {
+                    input.classList.add('form__error');
+                    fieldContainer.classList.add('form__item--error');
+                    hasError = true;
+                }
+            }
+        });
+
+        return hasError;
+    }
+
+    function validateCheckGroups() {
+        let hasError = false;
+        const checkGroups = form.querySelectorAll('.form__check');
+        
+        checkGroups.forEach(group => {
+            const checkboxes = Array.from(group.querySelectorAll('input[type="checkbox"]'));
+            const hasChecked = checkboxes.some(checkbox => checkbox.checked);
+
+            if (!hasChecked) {
+                group.classList.add('form__item--error');
+                group.querySelectorAll('label').forEach(label => label.classList.add('form__item--error'));
+                hasError = true;
+            } else {
+                group.classList.remove('form__item--error');
+                group.querySelectorAll('label').forEach(label => label.classList.remove('form__item--error'));
+            }
+        });
+
+        return hasError;
+    }
+
+    function validateConsentCheckbox() {
+        const isConsentChecked = consentCheckbox.checked;
+        
+        if (!isConsentChecked) {
+            consentCheckbox.closest('p').classList.add('form__item--error');
+        } else {
+            consentCheckbox.closest('p').classList.remove('form__item--error');
+        }
+
+        return !isConsentChecked;
+    }
+});
+
+
