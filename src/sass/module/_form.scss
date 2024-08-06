@@ -185,33 +185,6 @@ textarea {
 
 
 
-.form--error textarea,
-.form--error input,
-.form--error .form__check label{
-	color: #DDF0F1;
-	border: 1px solid #C94800;
-	background-color: #C9480033;
-	color: $white;
-}
-.form--error input::placeholder{
-	color: $white;
-
-}
-
-
-// .form__error {
-//   border-color: red;
-// }
-
-// .form__error-message {
-//   color: red;
-//   display: none;
-// }
-
-// .form--error .form__error-message {
-//   display: block;
-// }
-
 
 
 
@@ -284,7 +257,6 @@ textarea {
 		margin-bottom: rem(40);
 		gap: rem(3);
 	}
-
 }
 
 .form__consent{
@@ -317,7 +289,39 @@ textarea {
 	top: rem(10);
 }
 
-
 .form__btn{
 	text-align: center;
+}
+
+/* エラー時のスタイル */
+.form__item--error textarea,
+.form__item--error input,
+label.form__item--error{
+	color: #DDF0F1;
+	border: 1px solid #C94800;
+	background-color: #C9480033;
+	color: $dark-green
+}
+
+.form__item--error input::placeholder{
+	color: $white;
+}
+
+.form__error-text-wrapper{
+	text-align: center;
+	display: none;
+}
+
+.form--error .form__error-text-wrapper{
+	display: block;
+}
+
+.form__error-text{
+	color: #C94800;
+	font-size: rem(14);
+	text-align: left;
+	display: inline-block;
+	text-indent: -1em;
+  padding-left: 1em;
+	margin-bottom: rem(40);
 }
