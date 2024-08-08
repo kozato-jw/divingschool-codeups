@@ -1,0 +1,67 @@
+@use "global" as *;
+
+.privacy {
+  position: relative;
+}
+
+.privacy::before{
+  content: "";
+  background: url(../images/common/fish-blue.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: rem(120);
+  height: rem(55);
+  transform: scale(-1, 1);
+  position: absolute;
+  top: rem(-24);
+  left: calc(50% - max(36vw, rem(172)));
+  z-index: -1;
+  @include mq(md){
+    width: rem(301);
+    height: rem(138);
+    left: calc(50% - min(48vw, rem(620)));
+    top: rem(-70);
+    z-index: -1;
+  }
+}
+
+.privacy__inner{
+  max-width: rem(800);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.privacy h2{
+  color: $dark-green;
+  margin-bottom: rem(40);
+  @include mq(md){
+    font-size: rem(32);
+    margin-bottom: rem(38);
+  }
+}
+
+.privacy h3{
+  color: $dark-green;
+  line-height: 2;
+  margin-bottom: rem(33);
+  font-size: rem(16);
+  font-weight: $regular;
+}
+
+.privacy ol{
+  margin-bottom: rem(32);
+}
+
+.privacy li{
+  list-style-type: decimal;
+  list-style-position: inside;
+  color: $dark-green;
+  line-height: 2;
+  text-indent: -1em;
+  padding-left: 1.4em;
+}
+
+.privacy p{
+  color: $dark-green;
+  line-height: 2;
+}

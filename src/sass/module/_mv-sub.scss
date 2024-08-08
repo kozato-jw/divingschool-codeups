@@ -37,3 +37,27 @@
 .mv-sub__title--faq{
   text-transform: uppercase;
 }
+
+.mv-sub__title-sitemap{
+  text-transform: uppercase;
+  margin-left: rem(8);
+  @include mq(md){
+    margin-left: rem(16);
+  }
+}
+
+.mv-sub__title-privacy{
+  text-transform:uppercase;
+  margin-left: rem(8);
+}
+
+.mv-sub__title-terms{
+  margin-left: rem(8);
+  @include mq(md){
+    margin-left: rem(16);
+  }
+}
+
+.mv-sub__title-terms:last-of-type{
+  text-transform:uppercase;
+}
