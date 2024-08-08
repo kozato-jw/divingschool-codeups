@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.privacy-content{
+  margin-bottom: rem(106);
+  @include mq(md){
+    margin-bottom: rem(140);
+  }
+}

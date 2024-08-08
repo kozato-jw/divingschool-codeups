@@ -15,6 +15,10 @@
   line-height: 1.125;
 }
 
+.gnav__items--sitemap {
+  color: $dark-green;
+}
+
 .gnav__item {
   margin-bottom: rem(24);
 }
@@ -39,6 +43,19 @@
 
 .gnav__item--main::before{
   content: url(../images/common/starfish.svg);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.gnav__item--main-sitemap{
+  font-weight: $bold;
+  position: relative;
+  padding-left: rem(22);
+}
+
+.gnav__item--main-sitemap::before{
+  content: url(../images/common/starfish-black.svg);
   position: absolute;
   left: 0;
   top: 0;
