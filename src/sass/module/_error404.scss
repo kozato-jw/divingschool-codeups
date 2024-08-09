@@ -1,0 +1,70 @@
+@use "global" as *;
+
+.error404{
+  background-color: $blue;
+  padding-top: rem(88);
+  padding-bottom: rem(40);
+  position: relative;
+  @include mq(md) {
+    padding-top: rem(98);
+    padding-bottom: rem(146);
+  }
+}
+
+.error404::before{
+  content: "";
+  background: url(../images/common/404-bg.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: rem(329);
+  height: rem(294);
+  position: absolute;
+  top: rem(106);
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  z-index: 0;
+  @include mq(md) {
+    width: rem(666);
+    height: rem(594);
+    top: rem(140);
+    left: rem(197);
+    transform: none;
+  }
+}
+
+.error404__wrapper{
+  position: relative;
+  z-index: 1;
+}
+
+.error404__title{
+  font-size: rem(80);
+  line-height: 1;
+  letter-spacing: 0.5em;
+  font-family: $english-sub-font;
+  color: $white;
+  text-align: center;
+  font-weight: $regular;
+  text-indent: 0.5em;
+  margin-bottom: rem(4);
+  @include mq(md) {
+    font-size: rem(160);
+    margin-bottom: rem(38);
+}
+}
+
+.error404__text{
+  font-family: $english-sub-font;
+  color: $white;
+  margin-bottom: rem(40);
+  text-align: center;
+  @include mq(md) {
+    margin-bottom: rem(80);
+  }
+}
+
+.error404__btn{
+  text-align: center;
+}
