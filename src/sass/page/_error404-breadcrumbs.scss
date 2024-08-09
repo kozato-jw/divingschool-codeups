@@ -1,0 +1,9 @@
+@use "global" as *;
+
+.error404-breadcrumbs{
+  margin-bottom: rem(60);
+  @include mq(md){
+    margin-bottom: rem(136);
+  }
+}
+
