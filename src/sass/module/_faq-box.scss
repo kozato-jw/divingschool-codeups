@@ -1,15 +1,5 @@
 @use "global" as *;
 
-.faq-box{
-
-  @include mq(md){
-  //   display: flex;
-  //   flex-direction: column;
-  //   gap: rem(16);
-
-  }
-}
-
 .faq-box__function{
   font-size: rem(16);
   font-weight: $regular;
@@ -23,15 +13,8 @@
     font-size: rem(20);
     line-height: 1.4;
     padding: rem(26) rem(100) rem(25) rem(40);
-    // margin-bottom: rem(16);
   }
 }
-
-// .faq-box__function:last-of-type{
-//   @include mq(md){
-//     margin-bottom: 0;
-//   }
-// }
 
 .faq-box__function::before,
 .faq-box__function::after{

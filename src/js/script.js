@@ -272,30 +272,83 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /*FAQアコーディオン*/
+// document.addEventListener('DOMContentLoaded', function() {
+//     const faqItems = document.querySelectorAll('.faq-box');
+
+//     if (faqItems.length > 0) {
+//         // 初期状態で最初の答えを開いた状態にする
+//         const firstAnswer = faqItems[0].querySelector('.faq-box__answer');
+//         const firstQuestion = faqItems[0].querySelector('.faq-box__function');
+        
+//         if (firstAnswer && firstQuestion) {
+//             firstAnswer.style.maxHeight = firstAnswer.scrollHeight + 'px';
+//             firstQuestion.classList.add('open');
+//         }
+
+//         faqItems.forEach(item => {
+//             const question = item.querySelector('.faq-box__function');
+//             const answer = item.querySelector('.faq-box__answer');
+
+//             if (question && answer) {
+//                 question.addEventListener('click', function() {
+//                     // 他の全ての答えを閉じ、openクラスを削除
+//                     faqItems.forEach(i => {
+//                         const ans = i.querySelector('.faq-box__answer');
+//                         const que = i.querySelector('.faq-box__function');
+//                         if (ans && ans !== answer) {
+//                             ans.style.maxHeight = '0';
+//                             que.classList.remove('open');
+//                         }
+//                     });
+
+//                     // クリックされた答えを開閉し、openクラスを追加/削除
+//                     if (answer.style.maxHeight === '0px' || answer.style.maxHeight === '') {
+//                         answer.style.maxHeight = answer.scrollHeight + 'px';
+//                         question.classList.add('open');
+//                     } else {
+//                         answer.style.maxHeight = '0';
+//                         question.classList.remove('open');
+//                     }
+//                 });
+//             }
+//         });
+//     }
+// });
 document.addEventListener('DOMContentLoaded', function() {
-    const faqItems = document.querySelectorAll('.faq-box');
+    let faqItems = document.querySelectorAll('.faq-box');
+
+    // 必須要素が揃っている項目だけを選別
+    faqItems = Array.from(faqItems).filter(item => {
+        const question = item.querySelector('.faq-box__function');
+        const answer = item.querySelector('.faq-box__answer');
+        return question && answer;
+    });
 
     if (faqItems.length > 0) {
         // 初期状態で最初の答えを開いた状態にする
-        const firstAnswer = faqItems[0].querySelector('.faq-box__answer');
-        const firstQuestion = faqItems[0].querySelector('.faq-box__function');
-        
+        const firstItem = faqItems[0];
+        const firstAnswer = firstItem.querySelector('.faq-box__answer');
+        const firstQuestion = firstItem.querySelector('.faq-box__function');
+
         if (firstAnswer && firstQuestion) {
             firstAnswer.style.maxHeight = firstAnswer.scrollHeight + 'px';
             firstQuestion.classList.add('open');
+        } else {
+            console.warn('初期要素が見つかりません: ', { firstAnswer, firstQuestion });
         }
 
-        faqItems.forEach(item => {
+        faqItems.forEach((item, index) => {
             const question = item.querySelector('.faq-box__function');
             const answer = item.querySelector('.faq-box__answer');
 
             if (question && answer) {
+                console.log(`イベントリスナーを追加: ${index}`, { question, answer });
                 question.addEventListener('click', function() {
                     // 他の全ての答えを閉じ、openクラスを削除
                     faqItems.forEach(i => {
                         const ans = i.querySelector('.faq-box__answer');
                         const que = i.querySelector('.faq-box__function');
-                        if (ans && ans !== answer) {
+                        if (ans && que && ans !== answer) {
                             ans.style.maxHeight = '0';
                             que.classList.remove('open');
                         }
@@ -310,10 +363,20 @@ document.addEventListener('DOMContentLoaded', function() {
                         question.classList.remove('open');
                     }
                 });
+            } else {
+                console.warn(`要素が見つかりません: index ${index}`, { question, answer });
             }
         });
+    } else {
+        console.warn('faqItems が見つかりません');
     }
 });
+
+
+
+
+
+
 
 
 /*コンタクトフォーム*/ 
