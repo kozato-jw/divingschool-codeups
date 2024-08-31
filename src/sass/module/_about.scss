@@ -103,8 +103,9 @@
 .about__head--sub{
   position: absolute;
   top: rem(25);
-  left: rem(38);
+  margin-left: rem(24);
   color: $white;
+  margin-bottom: 0;
   @include mq(md){
     position: static;
 
@@ -167,12 +168,13 @@
     background: url(../images/common/fish-blue.svg);
     background-repeat: no-repeat;
     background-size: contain;
-    width: rem(120);
-    height: rem(55);
+    width: max(32vw, rem(120));
+    height: max(14.66vw, rem(55));
     transform: scale(-1, 1);
     position: absolute;
     top: rem(-24);
-    left: calc(50% - max(36vw, rem(172)));
+    left: calc(50% - max(46vw, rem(172)));
+    z-index: -1;
     @include mq(md){
       width: rem(301);
       height: rem(138);

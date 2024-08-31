@@ -24,6 +24,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   letter-spacing: 0.01em;
+  white-space: nowrap;
   @include mq(md){
     font-size: rem(80);
     top: 59%;
@@ -52,12 +53,6 @@
 }
 
 .mv-sub__title-terms{
-  margin-left: rem(8);
-  @include mq(md){
-    margin-left: rem(16);
-  }
-}
-
-.mv-sub__title-terms:last-of-type{
   text-transform:uppercase;
 }
+

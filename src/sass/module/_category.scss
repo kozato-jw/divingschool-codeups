@@ -3,7 +3,7 @@
 .category {
   display: flex;
   flex-wrap: wrap;
-  gap: rem(17) rem(21);
+  gap: rem(16) rem(21);
   justify-content: flex-start;
   @include mq(md){
     justify-content: flex-start;
@@ -21,8 +21,11 @@
   color: $blue;
   background-color: $white;
   border: 1px solid $blue;
-  width: rem(162);
+  width: calc((100% - rem(21)) / 2);
   transition: 0.3s;
+  @include mq(md) {
+    width: rem(162);
+  }
 }
 
 .category__btn:hover{

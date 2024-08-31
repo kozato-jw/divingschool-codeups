@@ -9,12 +9,12 @@
   background: url(../images/common/fish-blue.svg);
   background-repeat: no-repeat;
   background-size: contain;
-  width: rem(120);
-  height: rem(55);
+  width: max(32vw, rem(120));
+  height: max(14.66vw, rem(55));
   transform: scale(-1, 1);
   position: absolute;
-  top: rem(-24);
-  left: calc(50% - max(36vw, rem(172)));
+  top: rem(-26);
+  left: calc(50% - max(46vw, rem(172)));
   z-index: -1;
   @include mq(md){
     content: none;
@@ -22,8 +22,8 @@
 }
 
 .sitemap__nav {
-  grid-template-columns: 1.04fr 1fr;
-  grid-column-gap: rem(16);
+  grid-template-columns: 1.2fr 1fr;
+  grid-column-gap: rem(14);
   grid-row-gap: rem(40);
   @include mq(md){
     justify-content: space-between;

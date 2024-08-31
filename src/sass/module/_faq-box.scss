@@ -39,7 +39,10 @@
 .faq-box__function::before{
   rotate: 90deg;
 }
-.faq-box__function.open::before {
+// .faq-box__function.open::before {
+//   display: none;
+// }
+.faq-box.open .faq-box__function::before {
   display: none;
 }
 
