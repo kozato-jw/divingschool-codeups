@@ -174,11 +174,9 @@
 }
 
 .campaign-card__price-disabled--sidebar::before{
-  @include mq(md){
     @include mq(md){
       width: 100%;
       bottom: rem(9);
-    }
   }
 }
 
