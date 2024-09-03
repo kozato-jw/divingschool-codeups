@@ -14,21 +14,19 @@
 .category__btn {
   font-size: rem(14);
   line-height: 1;
-  padding-top: rem(9);
-  padding-bottom: rem(9);
+  padding: rem(9);
   text-transform: uppercase;
   text-align: center;
   color: $blue;
   background-color: $white;
   border: 1px solid $blue;
-  width: calc((100% - rem(21)) / 2);
+  min-width: rem(162);
+  white-space: nowrap;
   transition: 0.3s;
-  @include mq(md) {
-    width: rem(162);
-  }
 }
 
-.category__btn:hover{
+.category__btn:hover,
+.category__btn.active{
   background-color: $blue;
   color: $white;
 }

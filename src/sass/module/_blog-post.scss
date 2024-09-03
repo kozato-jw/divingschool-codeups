@@ -7,7 +7,7 @@
   }
 }
 
-.blog-post time{
+.blog-post__time{
   font-size: rem(14);
   font-family: $english-font;
   line-height: 1.28;
@@ -17,7 +17,7 @@
   }
 }
 
-.blog-post h1{
+.blog-post__title{
   font-size: rem(24);
   font-weight: $medium;
   line-height: 1.34;
@@ -33,6 +33,7 @@
   }
 }
 
+.blog-post__eyecatch,
 .blog-post figure{
   margin-bottom: rem(24);
   @include mq(md){
@@ -40,6 +41,7 @@
   }
 }
 
+.blog-post__eyecatch,
 .blog-post img{
   aspect-ratio: 345 / 231;
   object-fit: cover;
@@ -83,7 +85,7 @@
   width: rem(18);
   height: rem(18);
   position: absolute;
-  top: 50%;
+  top: 0.75em;
   left: 0;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);

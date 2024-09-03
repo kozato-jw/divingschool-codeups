@@ -38,11 +38,11 @@
 <body>
     <header class="header header--sub">
         <div class="header__inner">
-            <h1 class="header__logo">
+            <div class="header__logo">
                 <a href="index.html">
                     <img src="./assets/images/common/logo-white.png" alt="コードアップス">
                 </a>
-            </h1>
+            </div>
             <nav class="header__menu main-nav u-desktop">
                 <ul class="main-nav__items">
                     <li class="main-nav__item">
@@ -171,6 +171,9 @@
                         <a href="page-terms-of-service.html">利用規約 </a>
                     </li>
                     <li class="gnav__item gnav__item--main gnav__item--mb40">
+                        <a href="page-sitemap.html">サイトマップ</a>
+                    </li>
+                    <li class="gnav__item gnav__item--main gnav__item--mb40">
                         <a href="page-contact.html">お問い合わせ </a>
                     </li>
                 </ul>
@@ -179,10 +182,10 @@
     </header>
     <main>
         <section class="mv-sub blog-mv">
-            <h2 class="mv-sub__title">blog</h2>
+            <div class="mv-sub__title">blog</div>
             <picture>
                 <source media="(min-width:768px)" srcset="./assets/images/common/blog-mv_pc.jpg">
-                <img src="./assets/images/common/blog-mv_sp.jpg" alt="海中を泳ぐ魚の画像">
+                <img class="mv-sub__image" src="./assets/images/common/blog-mv_sp.jpg" alt="海中を泳ぐ魚の画像">
             </picture>
         </section>
         <div class="breadcrumbs blog-single-breadcrumbs">
@@ -191,25 +194,30 @@
         <div class="blog-sub inner blog-sub-content">
             <div class="blog-sub__post">
                 <article id="blog-post" class="blog-post">
-                    <time datetime="2023-11-17">2023.11/17</time>
-                    <h1>ライセンス取得</h1>
-                    <figure>
-                        <img src="./assets/images/common/blog_1.jpg" alt="サンゴ礁の画像">
-                    </figure>
-                    <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                    </p>
-                    <figure>
-                        <img src="./assets/images/common/blog_1.jpg" alt="サンゴ礁の画像">
-                    </figure>
-                    <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                    </p>
-                    <ul>
-                        <li>リスト１</li>
-                        <li>リスト2</li>
-                        <li>リスト3</li>
-                    </ul>
-                    <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                    </p>
+                    <div class="blog-post__data">
+                        <time class="blog-post__time" datetime="2023-11-17">2023.11/17</time>
+                        <h1 class="blog-post__title">ライセンス取得</h1>
+                        <figure class="blog-post__eyecatch">
+                            <img src="./assets/images/common/blog_1.jpg" alt="サンゴ礁の画像">
+                        </figure>
+                    </div>
+                    <!-- 以下よりthe content -->
+                    <div class="blog-post__content">
+                        <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                        </p>
+                        <figure>
+                            <img src="./assets/images/common/blog_1.jpg" alt="サンゴ礁の画像">
+                        </figure>
+                        <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                        </p>
+                        <ul>
+                            <li>リスト1</li>
+                            <li>リスト2</li>
+                            <li>リスト3長くなった場合の確認用長くなった場合の確認用長くなった場合の確認用長くなった場合の確認用長くなった場合の確認用</li>
+                        </ul>
+                        <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                        </p>
+                    </div>
                 </article>
                 <!-- Wp-PageNavi -->
                 <div class="wp-pagenavi">
@@ -500,6 +508,9 @@
                     </li>
                     <li class="gnav__item gnav__item--main gnav__item--mb40">
                         <a href="page-terms-of-service.html">利用規約</a>
+                    </li>
+                    <li class="gnav__item gnav__item--main gnav__item--mb40">
+                        <a href="page-sitemap.html">サイトマップ</a>
                     </li>
                     <li class="gnav__item gnav__item--main gnav__item--mb40">
                         <a href="page-contact.html">お問い合わせ</a>

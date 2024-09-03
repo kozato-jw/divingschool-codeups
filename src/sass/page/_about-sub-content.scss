@@ -1,0 +1,7 @@
+@use "global" as *;
+
+.about-sub-content{
+  @include mq(md){
+    margin-bottom: rem(120);
+  }
+}
