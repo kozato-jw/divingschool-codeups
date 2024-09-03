@@ -308,82 +308,199 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function validateField(input, fieldContainer) {
-        if (input.value.trim()) {
-            input.classList.remove('form__error');
-            fieldContainer.classList.remove('form__item--error');
-        } else {
-            input.classList.add('form__error');
-            fieldContainer.classList.add('form__item--error');
-        }
-    }
+    // function validateField(input, fieldContainer) {
+    //     if (input.value.trim()) {
+    //         input.classList.remove('form__error');
+    //         fieldContainer.classList.remove('form__item--error');
+    //     } else {
+    //         input.classList.add('form__error');
+    //         fieldContainer.classList.add('form__item--error');
+    //     }
+    // }
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        let hasError = false;
-        resetErrors();
-        hasError = validateRequiredFields();
-        hasError = validateCheckGroups() || hasError;
-        hasError = validateConsentCheckbox() || hasError;
-        if (hasError) {
-            form.classList.add('form--error');
-            window.scrollTo(0, 0);
-        } else {
-            form.classList.remove('form--error');
-            form.submit();
-        }
-    }
+    // function handleSubmit(event) {
+    //     event.preventDefault();
+    //     let hasError = false;
+    //     resetErrors();
+    //     hasError = validateRequiredFields();
+    //     hasError = validateCheckGroups() || hasError;
+    //     hasError = validateConsentCheckbox() || hasError;
+    //     if (hasError) {
+    //         form.classList.add('form--error');
+    //         window.scrollTo(0, 0);
+    //     } else {
+    //         form.classList.remove('form--error');
+    //         form.submit();
+    //     }
+    // }
 
-    function resetErrors() {
-        form.classList.remove('form--error');
-        form.querySelectorAll('.form__item--error').forEach(item => item.classList.remove('form__item--error'));
-        form.querySelectorAll('.form__error').forEach(input => input.classList.remove('form__error'));
-    }
+    // function resetErrors() {
+    //     form.classList.remove('form--error');
+    //     form.querySelectorAll('.form__item--error').forEach(item => item.classList.remove('form__item--error'));
+    //     form.querySelectorAll('.form__error').forEach(input => input.classList.remove('form__error'));
+    // }
 
-    function validateRequiredFields() {
-        let hasError = false;
-        const requiredFields = form.querySelectorAll('.form__required');
-        requiredFields.forEach(field => {
-            const fieldContainer = field.closest('dl');
-            const input = fieldContainer.querySelector('input, textarea, select');
-            if (input) {
-                const isEmpty = !input.value.trim();
-                const isEmailInvalid = input.type === 'email' && !input.value.includes('@');
-                if (isEmpty || isEmailInvalid) {
-                    input.classList.add('form__error');
-                    fieldContainer.classList.add('form__item--error');
-                    hasError = true;
-                }
-            }
+    // function validateRequiredFields() {
+    //     let hasError = false;
+    //     const requiredFields = form.querySelectorAll('.form__required');
+    //     requiredFields.forEach(field => {
+    //         const fieldContainer = field.closest('dl');
+    //         const input = fieldContainer.querySelector('input, textarea, select');
+    //         if (input) {
+    //             const isEmpty = !input.value.trim();
+    //             const isEmailInvalid = input.type === 'email' && !input.value.includes('@');
+    //             if (isEmpty || isEmailInvalid) {
+    //                 input.classList.add('form__error');
+    //                 fieldContainer.classList.add('form__item--error');
+    //                 hasError = true;
+    //             }
+    //         }
+    //     });
+    //     return hasError;
+    // }
+
+    // function validateCheckGroups() {
+    //     let hasError = false;
+    //     const checkGroups = form.querySelectorAll('.form__check');
+    //     checkGroups.forEach(group => {
+    //         const checkboxes = Array.from(group.querySelectorAll('input[type="checkbox"]'));
+    //         const hasChecked = checkboxes.some(checkbox => checkbox.checked);
+    //         if (!hasChecked) {
+    //             group.classList.add('form__item--error');
+    //             group.querySelectorAll('label').forEach(label => label.classList.add('form__item--error'));
+    //             hasError = true;
+    //         } else {
+    //             group.classList.remove('form__item--error');
+    //             group.querySelectorAll('label').forEach(label => label.classList.remove('form__item--error'));
+    //         }
+    //     });
+    //     return hasError;
+    // }
+
+    // function validateConsentCheckbox() {
+    //     const isConsentChecked = consentCheckbox.checked;
+    //     if (!isConsentChecked) {
+    //         consentCheckbox.closest('p').classList.add('form__item--error');
+    //     } else {
+    //         consentCheckbox.closest('p').classList.remove('form__item--error');
+    //     }
+    //     return !isConsentChecked;
+    // }
+});
+
+//ボイスページとキャンペーンページのカテゴリータブ
+// $(document).ready(function() {
+//     // 画面ロード時にallの内容を表示し、allボタンにactiveクラスを付与
+//     filterArticles('js-all');
+//     $('.js-all').addClass('active');
+
+//     // カテゴリーボタンをクリックしたときの処理
+//     $('.category__btn').on('click', function(e) {
+//         e.preventDefault(); // デフォルトのリンク動作をキャンセル
+
+//         // クリックされたボタンのクラスを取得
+//         var filterClass = $(this).attr('class').split(' ').pop(); // 最後のクラス名を取得
+
+//         // フィルターを適用
+//         filterArticles(filterClass);
+
+//         // すべてのボタンからactiveクラスを削除し、クリックされたボタンに付与
+//         $('.category__btn').removeClass('active');
+//         $(this).addClass('active');
+//     });
+
+//     function filterArticles(filterClass) {
+//         // 全てのarticleをフェードアウトで非表示にする
+//         $('.voice-cards__item').fadeOut(200); // 200ミリ秒でフェードアウト
+
+//         // フェードアウトが完了した後に、該当する記事をフェードインで表示
+//         setTimeout(function() {
+//             if (filterClass === 'js-all') {
+//                 // 'all'が選ばれたら全てのarticleをフェードインで表示
+//                 $('.voice-cards__item').fadeIn(400); // 400ミリ秒でフェードイン
+//             } else {
+//                 // 該当するクラス名を持つarticleをフェードインで表示
+//                 $('.voice-cards__item.' + filterClass).fadeIn(400); // 400ミリ秒でフェードイン
+//             }
+//         }, 200); // フェードアウトが完了するのを待ってからフェードイン
+//     }
+// });
+
+
+
+// $(document).ready(function() {
+//     // 画面ロード時にallの内容を表示し、allボタンにactiveクラスを付与
+//     filterArticles('js-all');
+//     $('.js-all').addClass('active');
+
+//     // カテゴリーボタンをクリックしたときの処理
+//     $('.category__btn').on('click', function(e) {
+//         e.preventDefault(); // デフォルトのリンク動作をキャンセル
+
+//         // クリックされたボタンのクラスを取得
+//         var filterClass = $(this).attr('class').split(' ').pop(); // 最後のクラス名を取得
+
+//         // フィルターを適用
+//         filterArticles(filterClass);
+
+//         // すべてのボタンからactiveクラスを削除し、クリックされたボタンに付与
+//         $('.category__btn').removeClass('active');
+//         $(this).addClass('active');
+//     });
+
+//     function filterArticles(filterClass) {
+//         // 全てのarticleをフェードアウトで非表示にする
+//         $('.campaign-card').fadeOut(200); // 200ミリ秒でフェードアウト
+
+//         // フェードアウトが完了した後に、該当する記事をフェードインで表示
+//         setTimeout(function() {
+//             if (filterClass === 'js-all') {
+//                 // 'all'が選ばれたら全てのarticleをフェードインで表示
+//                 $('.campaign-card').fadeIn(400); // 400ミリ秒でフェードイン
+//             } else {
+//                 // 該当するクラス名を持つarticleをフェードインで表示
+//                 $('.campaign-card.' + filterClass).fadeIn(400); // 400ミリ秒でフェードイン
+//             }
+//         }, 200); // フェードアウトが完了するのを待ってからフェードイン
+//     }
+// });
+
+
+
+//ボイスページとキャンペーンページのカテゴリータブ出し分け
+$(document).ready(function() {
+    initializeFilter('.voice-sub', '.category__btn', '.voice-cards__item');
+    initializeFilter('.campaign-sub', '.category__btn', '.campaign-card');
+
+    function initializeFilter(container, buttonSelector, itemSelector) {
+    
+        filterArticles('js-all', itemSelector);
+        $(container + ' .js-all').addClass('active');
+
+    
+        $(container + ' ' + buttonSelector).on('click', function(e) {
+            e.preventDefault();
+
+            
+            var filterClass = $(this).attr('class').split(' ').pop();
+
+            
+            filterArticles(filterClass, itemSelector);
+
+            $(container + ' ' + buttonSelector).removeClass('active');
+            $(this).addClass('active');
         });
-        return hasError;
     }
 
-    function validateCheckGroups() {
-        let hasError = false;
-        const checkGroups = form.querySelectorAll('.form__check');
-        checkGroups.forEach(group => {
-            const checkboxes = Array.from(group.querySelectorAll('input[type="checkbox"]'));
-            const hasChecked = checkboxes.some(checkbox => checkbox.checked);
-            if (!hasChecked) {
-                group.classList.add('form__item--error');
-                group.querySelectorAll('label').forEach(label => label.classList.add('form__item--error'));
-                hasError = true;
+    function filterArticles(filterClass, itemSelector) {
+        $(itemSelector).fadeOut(200);
+
+        setTimeout(function() {
+            if (filterClass === 'js-all') {
+                $(itemSelector).fadeIn(400); 
             } else {
-                group.classList.remove('form__item--error');
-                group.querySelectorAll('label').forEach(label => label.classList.remove('form__item--error'));
+                $(itemSelector + '.' + filterClass).fadeIn(400); 
             }
-        });
-        return hasError;
-    }
-
-    function validateConsentCheckbox() {
-        const isConsentChecked = consentCheckbox.checked;
-        if (!isConsentChecked) {
-            consentCheckbox.closest('p').classList.add('form__item--error');
-        } else {
-            consentCheckbox.closest('p').classList.remove('form__item--error');
-        }
-        return !isConsentChecked;
+        }, 200);
     }
 });

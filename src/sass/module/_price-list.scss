@@ -75,7 +75,7 @@
   text-align: center;
   font-weight: $regular;
   color: $dark-green;
-  padding: 0;
+  padding: rem(6);
   @include mq(md){
     width: 64%;
     text-align: left;

@@ -133,7 +133,6 @@
   aspect-ratio: 294 / 218;
   @include mq(md){
     aspect-ratio: 294 / 218;
-
   }
 }
 
@@ -143,11 +142,4 @@
   line-height: 1.5;
   margin: 0;
   font-weight: $regular;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 10;
-  @include mq(md){
-    -webkit-line-clamp: 7; 
-  }
 }

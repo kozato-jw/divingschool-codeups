@@ -38,11 +38,11 @@
 <body>
     <header class="header header--sub">
         <div class="header__inner">
-            <h1 class="header__logo">
+            <div class="header__logo">
                 <a href="index.html">
                     <img src="./assets/images/common/logo-white.png" alt="コードアップス">
                 </a>
-            </h1>
+            </div>
             <nav class="header__menu main-nav u-desktop">
                 <ul class="main-nav__items">
                     <li class="main-nav__item">
@@ -171,6 +171,9 @@
                         <a href="page-terms-of-service.html">利用規約 </a>
                     </li>
                     <li class="gnav__item gnav__item--main gnav__item--mb40">
+                        <a href="page-sitemap.html">サイトマップ</a>
+                    </li>
+                    <li class="gnav__item gnav__item--main gnav__item--mb40">
                         <a href="page-contact.html">お問い合わせ </a>
                     </li>
                 </ul>
@@ -179,10 +182,10 @@
     </header>
     <main>
         <section class="mv-sub voice-mv">
-            <h2 class="mv-sub__title">voice</h2>
+            <h1 class="mv-sub__title">voice</h1>
             <picture>
                 <source media="(min-width:768px)" srcset="./assets/images/common/voice-mv_pc.jpg">
-                <img src="./assets/images/common/voice-mv_sp.jpg" alt="ダイビングをしている人の画像">
+                <img class="mv-sub__image" src="./assets/images/common/voice-mv_sp.jpg" alt="ダイビングをしている人の画像">
             </picture>
         </section>
         <div class="breadcrumbs voice-breadcrumbs">
@@ -192,14 +195,15 @@
             <div class="inner">
                 <!-- カスタムタクソノミー/Custom Post Type UI -->
                 <div class="voice-sub__category category">
-                    <a href="" class="category__btn">all</a>
-                    <a href="" class="category__btn">ライセンス講習</a>
-                    <a href="" class="category__btn">ファンダイビング</a>
-                    <a href="" class="category__btn">体験ダイビング</a>
+                    <a href="#all" class="category__btn js-all active">all</a>
+                    <a href="#license" class="category__btn js-license">ライセンス講習</a>
+                    <a href="#fundiving" class="category__btn js-fundiving">ファンダイビング</a>
+                    <a href="#trialdiving" class="category__btn js-trialdiving">体験ダイビング</a>
                 </div>
                 <!-- カスタムタクソノミー/Custom Post Type UI/ここまで -->
                 <div class="voice-sub__card-wrapper voice-cards">
-                    <article class="voice-cards__item voice-card">
+                    <!-- ループ多分ここから -->
+                    <article class="voice-cards__item voice-card js-license">
                         <div class="voice-card__head">
                             <div class="voice-card__info">
                                 <div class="voice-card__inner">
@@ -217,7 +221,7 @@
                             <br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
                         </p>
                     </article>
-                    <article class="voice-cards__item voice-card">
+                    <article class="voice-cards__item voice-card js-fundiving">
                         <div class="voice-card__head">
                             <div class="voice-card__info">
                                 <div class="voice-card__inner">
@@ -235,7 +239,25 @@
                             <br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
                         </p>
                     </article>
-                    <article class="voice-cards__item voice-card">
+                    <article class="voice-cards__item voice-card js-trialdiving">
+                        <div class="voice-card__head">
+                            <div class="voice-card__info">
+                                <div class="voice-card__inner">
+                                    <p class="voice-card__age">30代(女性)</p>
+                                    <p class="voice-card__category">体験ダイビング</p>
+                                </div>
+                                <h3 class="voice-card__title">ここにタイトルが入ります。ここにタイトル</h3>
+                            </div>
+                            <div class="voice-card__image colorbox js-colorbox">
+                                <img src="./assets/images/common/voice_2.jpg" alt="男性の画像">
+                            </div>
+                        </div>
+                        <p class="voice-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                            <br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                            <br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                        </p>
+                    </article>
+                    <article class="voice-cards__item voice-card js-fundiving">
                         <div class="voice-card__head">
                             <div class="voice-card__info">
                                 <div class="voice-card__inner">
@@ -253,12 +275,12 @@
                             <br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
                         </p>
                     </article>
-                    <article class="voice-cards__item voice-card">
+                    <article class="voice-cards__item voice-card js-license">
                         <div class="voice-card__head">
                             <div class="voice-card__info">
                                 <div class="voice-card__inner">
                                     <p class="voice-card__age">30代(女性)</p>
-                                    <p class="voice-card__category">ファンダイビング</p>
+                                    <p class="voice-card__category">ライセンス講習</p>
                                 </div>
                                 <h3 class="voice-card__title">ここにタイトルが入ります。ここにタイトル</h3>
                             </div>
@@ -271,30 +293,12 @@
                             <br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
                         </p>
                     </article>
-                    <article class="voice-cards__item voice-card">
+                    <article class="voice-cards__item voice-card js-license">
                         <div class="voice-card__head">
                             <div class="voice-card__info">
                                 <div class="voice-card__inner">
                                     <p class="voice-card__age">30代(女性)</p>
-                                    <p class="voice-card__category">ファンダイビング</p>
-                                </div>
-                                <h3 class="voice-card__title">ここにタイトルが入ります。ここにタイトル</h3>
-                            </div>
-                            <div class="voice-card__image colorbox js-colorbox">
-                                <img src="./assets/images/common/voice_2.jpg" alt="男性の画像">
-                            </div>
-                        </div>
-                        <p class="voice-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                            <br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                            <br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                        </p>
-                    </article>
-                    <article class="voice-cards__item voice-card">
-                        <div class="voice-card__head">
-                            <div class="voice-card__info">
-                                <div class="voice-card__inner">
-                                    <p class="voice-card__age">30代(女性)</p>
-                                    <p class="voice-card__category">ファンダイビング</p>
+                                    <p class="voice-card__category">ライセンス講習</p>
                                 </div>
                                 <h3 class="voice-card__title">ここにタイトルが入ります。ここにタイトル</h3>
                             </div>
@@ -442,6 +446,9 @@
                     </li>
                     <li class="gnav__item gnav__item--main gnav__item--mb40">
                         <a href="page-terms-of-service.html">利用規約</a>
+                    </li>
+                    <li class="gnav__item gnav__item--main gnav__item--mb40">
+                        <a href="page-sitemap.html">サイトマップ</a>
                     </li>
                     <li class="gnav__item gnav__item--main gnav__item--mb40">
                         <a href="page-contact.html">お問い合わせ</a>

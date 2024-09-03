@@ -56,3 +56,9 @@
   text-transform:uppercase;
 }
 
+.mv-sub__image{
+    height: rem(460);
+  @include mq(md) {
+    height: rem(500);
+  }
+}

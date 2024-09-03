@@ -52,7 +52,7 @@ textarea {
 	background-image: none;
 	font-family: inherit;
 	/*↓カスタム */
-  margin-bottom: rem(24);
+  // margin-bottom: rem(24);
 	font-size: $fz;
 	line-height: 1.3;
 	padding: rem(8) rem(16) rem(9);
@@ -62,14 +62,14 @@ textarea {
 	border: 1px solid $border-cr-default;
 	border-radius: $border-r;
 	&:hover {
-		border: 1px solid $border-cr;
+		border: 1px solid $blue;
 	}
 	&:focus {
-		border: 1px solid $border-cr;
+		border: 1px solid $blue;
 	}
   @include mq(md){
 		width: rem(480);
-		margin-bottom: rem(40);
+		// margin-bottom: rem(40);
 	}
 }
 
@@ -130,7 +130,7 @@ button,
 			/*チェックマークじゃない場合は以下を変更する*/
 			transform: translateY(-50%) rotate(-35deg);
 			width: calc($check-size * 0.8);
-			height: calc($check-size * 0.3);
+			height: rem(7);
 			margin-top: -0.1em;
 			margin-left: 0.1em;
 			border-left: $check-weight solid $check-bg-cr-inner;
@@ -154,7 +154,7 @@ select {
 	line-height: 1.3;
 	padding: rem(11) rem(8) rem(12);
 	margin-top: rem(-2);
-	margin-bottom: rem(24);
+	// margin-bottom: rem(24);
 	background-color: $back-cr;
   border: 1px solid $border-cr-default;
   border-radius: $border-r;
@@ -162,12 +162,12 @@ select {
 	background-position: right rem(7) top rem(12);
 	background-repeat: no-repeat;
 	&:focus {
-		border: 1px solid $border-cr;
+		border: 1px solid $blue;
 	}
   @include mq(md){
 		width: rem(480);
 		margin-top: 0;
-		margin-bottom: rem(34);
+		// margin-bottom: rem(34);
 		padding: rem(7) rem(8) rem(6);
 	}
 }
@@ -193,10 +193,12 @@ textarea {
 .form__item{
 	border-bottom: 1px dashed $blue;
 	margin-bottom: rem(24);
+	padding-bottom: rem(24);
 	@include mq(md){
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: rem(40);
+		padding-bottom: rem(40);
 	}
 }
 .form__item:last-of-type{
@@ -205,6 +207,12 @@ textarea {
 		margin-bottom: rem(80);
 	}
 }
+// .form__item--check{
+// 	padding-bottom: 0;
+// 	@include mq(md) {
+// 		padding-bottom: 0;
+// 	}
+// }
 .form__head{
 	position: relative;
 	display: inline-block;
@@ -238,23 +246,21 @@ textarea {
 }
 
 .form__content{
-
   @include mq(md){
-
 	max-width: rem(480);
 	}
 }
 
 .form__check{
 	margin-top: rem(-4);
-	margin-bottom: rem(24);
+	// margin-bottom: rem(24);
 	display: flex;
 	flex-direction: column;
 	gap: rem(4);
   @include mq(md){
 		width: rem(480);
 		margin-top: rem(2);
-		margin-bottom: rem(40);
+		// margin-bottom: rem(40);
 		gap: rem(3);
 	}
 }
@@ -294,34 +300,34 @@ textarea {
 }
 
 /* エラー時のスタイル */
-.form__item--error textarea,
-.form__item--error input,
-label.form__item--error{
-	color: #DDF0F1;
-	border: 1px solid #C94800;
-	background-color: #C9480033;
-	color: $dark-green
-}
+// .form__item--error textarea,
+// .form__item--error input,
+// label.form__item--error{
+// 	color: #DDF0F1;
+// 	border: 1px solid #C94800;
+// 	background-color: #C9480033;
+// 	color: $dark-green
+// }
 
-.form__item--error input::placeholder{
-	color: $white;
-}
+// .form__item--error input::placeholder{
+// 	color: $white;
+// }
 
-.form__error-text-wrapper{
-	text-align: center;
-	display: none;
-}
+// .form__error-text-wrapper{
+// 	text-align: center;
+// 	display: none;
+// }
 
-.form--error .form__error-text-wrapper{
-	display: block;
-}
+// .form--error .form__error-text-wrapper{
+// 	display: block;
+// }
 
-.form__error-text{
-	color: #C94800;
-	font-size: rem(14);
-	text-align: left;
-	display: inline-block;
-	text-indent: -1em;
-  padding-left: 1em;
-	margin-bottom: rem(40);
-}
+// .form__error-text{
+// 	color: #C94800;
+// 	font-size: rem(14);
+// 	text-align: left;
+// 	display: inline-block;
+// 	text-indent: -1em;
+//   padding-left: 1em;
+// 	margin-bottom: rem(40);
+// }

@@ -31,11 +31,7 @@
   }
 }
 
-.about__image--sub{
-  @include mq(md){
-    margin-bottom: rem(120);
-  }
-}
+
 
 .about__image-small {
   width: 37.1%;
@@ -81,7 +77,6 @@
   @include mq(md){
     top: rem(200);
     right: rem(68);
-
   }
 }
 
@@ -108,7 +103,6 @@
   margin-bottom: 0;
   @include mq(md){
     position: static;
-
   }
 }
 
