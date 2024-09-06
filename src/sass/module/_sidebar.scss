@@ -1,11 +1,4 @@
 @use "global" as *;
-
-.sidebar {
-  @include mq(md){
-
-  }
-}
-
 .sidebar__inner{
   max-width: rem(510);
   width: 85.06%;
@@ -71,7 +64,6 @@
   margin-bottom: rem(24);
 }
 
-
 .sidebar__campaign-cards{
   margin-bottom: rem(40);
 }
@@ -83,7 +75,6 @@
 .sidebar__campaign-card:last-of-type{
   margin-bottom: 0;
 }
-
 
 .sidebar__archive-lists{
   font-size: rem(24);
@@ -112,6 +103,7 @@
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
+  transition: 0.3s;
 }
 
 .sidebar__archive-months {
@@ -122,19 +114,15 @@
   padding: 0;
 }
 
-.sidebar__archive-year.js-active::before {
+.sidebar__archive-list.js-open .sidebar__archive-year::before {
   transform: rotate(90deg);
   top: rem(8);
   left: rem(-4);
 }
 
-.sidebar__archive-months.js-active {
-  display: block;
+.sidebar__archive-month{
+  margin-bottom: rem(8);
 }
-
-// .sidebar__archive-month{
-//   margin-bottom: rem(8);
-// }
 
 .sidebar__btn{
   text-align: center;

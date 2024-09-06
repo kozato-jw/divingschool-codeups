@@ -57,7 +57,7 @@ jQuery(function($) {
     });
 });
 
-/* モーダル */
+/* ギャラリーのモーダル */
 $(document).ready(function() {
     $('.gallery__image img').on('click', function() {
         var imgSrc = $(this).attr('src');
@@ -72,30 +72,15 @@ $(document).ready(function() {
     });
 });
 
-/*FAQアコーディオン*/
-$(document).ready(function() {
-    // 最初の .faq-box に .open クラスを付与し、答えを表示
-    var $firstItem = $('.faq-box').first();
-    var $firstAnswer = $firstItem.find('.faq-box__answer');
-    $firstItem.addClass('open');
-    $firstAnswer.css('max-height', $firstAnswer.prop('scrollHeight') + 'px');
-    $('.faq-box__function').on('click', function() {
-        var $currentItem = $(this).closest('.faq-box');
-        var $currentAnswer = $currentItem.find('.faq-box__answer');
-        // 他のすべての項目を閉じる
-        $('.faq-box').not($currentItem).removeClass('open').find('.faq-box__answer').css('max-height', 0);
-        // クリックされた項目をトグル開閉
-        $currentItem.toggleClass('open');
-        if ($currentItem.hasClass('open')) {
-            var answerHeight = $currentAnswer.prop('scrollHeight');
-            $currentAnswer.css('max-height', answerHeight + 'px');
-        } else {
-            $currentAnswer.css('max-height', 0);
-        }
-    });
+/* FAQアコーディオン */
+$(document).ready(function () {
+$(".faq-box__function").click(function () {
+    $(this).next(".faq-box__answer").slideToggle();
+    $(this).toggleClass("js-close");
+});
 });
 
-/* (MV)ローディングアニメーションとswiper */
+/* (トップページMV)ローディングアニメーションとswiper */
 $(document).ready(function() {
     const $title = $(".js-mv__title");
     const $animationContainer = $(".js-mv__loading-inner");
@@ -197,7 +182,7 @@ box.each(function() {
     });
 });
 
-//ページトップリンク
+/* ページトップリンク */
 function PageTopAnime() {
     var scroll = $(window).scrollTop();
     var wH = window.innerHeight;
@@ -258,27 +243,25 @@ $(window).on('load', function() {
 });
 
 /*サイドバー・アーカイブ情報 */
-document.addEventListener('DOMContentLoaded', function() {
-    const yearLinks = document.querySelectorAll('.js-sidebar__archive-year');
-    yearLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            yearLinks.forEach(link => {
-                link.classList.remove('js-active');
-            });
-            this.classList.add('js-active');
-            document.querySelectorAll('.js-sidebar__archive-months').forEach(monthList => {
-                monthList.classList.remove('js-active');
-            });
-            const monthList = this.nextElementSibling;
-            if (monthList && monthList.classList.contains('js-sidebar__archive-months')) {
-                monthList.classList.add('js-active');
-            }
-        });
+$(document).ready(function() {
+    const firstYear = $('.sidebar__archive-list').first();
+    firstYear.find('.sidebar__archive-months').show();
+    firstYear.find('.sidebar__archive-year').on('click', function(e) {
+        e.preventDefault();
+        firstYear.find('.sidebar__archive-months').slideToggle();
+        firstYear.toggleClass('js-open');
+    });
+
+    const secondYear = $('.sidebar__archive-list').eq(1);
+    secondYear.find('.sidebar__archive-months').hide();
+    secondYear.find('.sidebar__archive-year').on('click', function(e) {
+        e.preventDefault();
+        secondYear.find('.sidebar__archive-months').slideToggle();
+        secondYear.toggleClass('js-open');
     });
 });
 
-/*コンタクトフォーム*/
+/* コンタクトフォーム */
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contactForm');
     const submitButton = document.getElementById('submitButton');

@@ -1,0 +1,72 @@
+@use "global" as *;
+.icon-fish{
+  position: relative;
+}
+
+.icon-fish::before,
+.icon-fish--about::after {
+  content: "";
+  background: url(../images/common/fish-blue.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: max(32vw, rem(120));
+  height: max(14.66vw, rem(55));
+  transform: scale(-1, 1);
+  position: absolute;
+  top: rem(-24);
+  left: calc(50% - max(46vw, rem(172)));
+  z-index: -1;
+  @include mq(md) {
+    width: rem(301);
+    height: rem(138);
+    left: calc(50% - min(48vw, rem(620)));
+    top: rem(-70);
+    z-index: -1;
+  }
+}
+
+.icon-fish--information::before{
+  top: rem(-95);
+  @include mq(md) {
+    top: rem(-70);
+  }
+}
+
+.icon-fish--price::before{
+  @include mq(md) {
+    top: rem(-75);
+  }
+}
+
+.icon-fish--contact::before{
+  @include mq(md) {
+    top: rem(-56);
+  }
+}
+
+.icon-fish--complete::before{
+  @include mq(md) {
+    top: rem(-72);
+    }
+}
+.icon-fish--sitemap::before{
+  @include mq(md) {
+    content: none;
+    }
+}
+
+.icon-fish--voice::before{
+  content: none;
+  @include mq(md) {
+      content: "";
+      background: url(../images/common/fish-blue.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: rem(301);
+      height: rem(138);
+      transform: scale(-1, 1);
+      position: absolute;
+      top: rem(-120);
+      left: calc(50% - min(48vw, rem(620)));
+    }
+}

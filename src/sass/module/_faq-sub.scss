@@ -1,30 +1,4 @@
 @use "global" as *;
-
-.faq-sub {
-  position: relative;
-}
-
-.faq-sub::before{
-  content: "";
-  background: url(../images/common/fish-blue.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: max(32vw, rem(120));
-  height: max(14.66vw, rem(55));
-  transform: scale(-1, 1);
-  position: absolute;
-  top: rem(-24);
-  left: calc(50% - max(46vw, rem(172)));
-  z-index: -1;
-  @include mq(md){
-    width: rem(301);
-    height: rem(138);
-    left: calc(50% - min(48vw, rem(620)));
-    top: rem(-70);
-    z-index: -1;
-  }
-}
-
 .faq-sub__item{
   margin-bottom: rem(44);
   @include mq(md){
