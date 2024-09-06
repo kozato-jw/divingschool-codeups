@@ -36,22 +36,13 @@
   }
 }
 
-.faq-box__function::before{
+.faq-box__function.js-close::before{
   rotate: 90deg;
-}
-// .faq-box__function.open::before {
-//   display: none;
-// }
-.faq-box.open .faq-box__function::before {
-  display: none;
+  display: block;
 }
 
-.faq-box__answer{
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
-  @include mq(md){
-  }
+.faq-box__function::before{
+  display: none;
 }
 
 .faq-box__answer-text{

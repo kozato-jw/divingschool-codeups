@@ -6,7 +6,6 @@
   }
 }
 
-
 .gallery::before{
   @include mq(md){
     content: "";
@@ -23,7 +22,6 @@
 
 .gallery__title {
   margin-bottom: rem(37);
-
   @include mq(md) {
     margin-bottom: rem(80);
   }
@@ -33,13 +31,12 @@
   display: flex;
   flex-direction: column;
   gap: rem(8);
-
   @include mq(md) {
     display: grid;
-    grid-template-columns: 0.85fr 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: rem(8);
-    grid-row-gap: rem(8);
+    grid-template-rows: 1fr;
+    grid-template-columns: calc(492 / 1080 * 100%) calc(80 / 1080 * 100%) 1fr;
+    gap: rem(8);
+    grid-auto-flow: dense;
   }
 }
 
@@ -47,64 +44,32 @@
   cursor: pointer;
 }
 
-.gallery__images--top {
-  margin-bottom: rem(8);
+.gallery__image:nth-of-type(6n+1),
+.gallery__image:nth-of-type(6n){
+  grid-row: span 2;
+  grid-column: span 1;
 }
 
-.gallery__images--bottom {
-  @include mq(md) {
-    grid-template-columns: 1fr 0.85fr;
-  }
+.gallery__image:nth-of-type(6n+2),
+.gallery__image:nth-of-type(6n+3),
+.gallery__image:nth-of-type(6n+4),
+.gallery__image:nth-of-type(6n+5){
+  grid-row: span 1;
+  grid-column: span 2;
 }
 
 .gallery__image img {
   object-fit: cover;
 }
 
-.gallery__image--big {
-  @include mq(md) {
-    grid-area: 1 / 1 / 3 / 2;
-  }
+.gallery__image:nth-of-type(6n) img,
+.gallery__image:nth-of-type(6n+1) img{
+  aspect-ratio: 492 / 746;
 }
 
-.gallery__image--big img {
-  aspect-ratio: 345 / 523;
-}
-
-.gallery__image--small-top {
-  @include mq(md) {
-    grid-area: 1 / 2 / 2 / 3;
-  }
-}
-
-.gallery__image--small-top img {
-  aspect-ratio: 345 / 219;
-}
-
-.gallery__image--small-bottom {
-  @include mq(md) {
-    grid-area: 2 / 2 / 3 / 3;
-  }
-}
-
-.gallery__image--small-bottom img {
-  aspect-ratio: 345 / 219;
-}
-
-.gallery__image--small-top-left {
-  @include mq(md) {
-    grid-area: 1 / 1 / 2 / 2;
-  }
-}
-
-.gallery__image--small-bottom-left {
-  @include mq(md) {
-    grid-area: 2 / 1 / 3 / 2;
-  }
-}
-
-.gallery__image--big-right {
-  @include mq(md) {
-    grid-area: 1 / 2 / 3 / 3;
-  }
+.gallery__image:nth-of-type(6n+2) img,
+.gallery__image:nth-of-type(6n+3) img,
+.gallery__image:nth-of-type(6n+4) img,
+.gallery__image:nth-of-type(6n+5) img{
+  aspect-ratio: 580 / 369;
 }

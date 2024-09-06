@@ -1,29 +1,4 @@
 @use "global" as *;
-
-.price-sub {
-  position: relative;
-}
-
-.price-sub::before{
-  content: "";
-  background: url(../images/common/fish-blue.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: max(32vw, rem(120));
-  height: max(14.66vw, rem(55));
-  transform: scale(-1, 1);
-  position: absolute;
-  top: rem(-24);
-  left: calc(50% - max(46vw, rem(172)));
-  @include mq(md){
-    width: rem(301);
-    height: rem(138);
-    left: calc(50% - min(48vw, rem(620)));
-    top: rem(-75);
-    z-index: -1;
-  }
-}
-
 .price-sub__item{
   margin-bottom: rem(40);
   @include mq(md){
