@@ -242,7 +242,7 @@ $(window).on('load', function() {
     getHashID(hashName);
 });
 
-/*サイドバー・アーカイブ情報 */
+/*サイドバー・アーカイブ情報のトグル */
 $(document).ready(function() {
     const firstYear = $('.sidebar__archive-list').first();
     firstYear.find('.sidebar__archive-months').show();
@@ -371,119 +371,74 @@ document.addEventListener('DOMContentLoaded', function() {
     // }
 });
 
-//ボイスページとキャンペーンページのカテゴリータブ
-// $(document).ready(function() {
-//     // 画面ロード時にallの内容を表示し、allボタンにactiveクラスを付与
-//     filterArticles('js-all');
-//     $('.js-all').addClass('active');
+/* カテゴリータブとナビメニューからのダイレクトリンク */
 
-//     // カテゴリーボタンをクリックしたときの処理
-//     $('.category__btn').on('click', function(e) {
-//         e.preventDefault(); // デフォルトのリンク動作をキャンセル
-
-//         // クリックされたボタンのクラスを取得
-//         var filterClass = $(this).attr('class').split(' ').pop(); // 最後のクラス名を取得
-
-//         // フィルターを適用
-//         filterArticles(filterClass);
-
-//         // すべてのボタンからactiveクラスを削除し、クリックされたボタンに付与
-//         $('.category__btn').removeClass('active');
-//         $(this).addClass('active');
-//     });
-
-//     function filterArticles(filterClass) {
-//         // 全てのarticleをフェードアウトで非表示にする
-//         $('.voice-cards__item').fadeOut(200); // 200ミリ秒でフェードアウト
-
-//         // フェードアウトが完了した後に、該当する記事をフェードインで表示
-//         setTimeout(function() {
-//             if (filterClass === 'js-all') {
-//                 // 'all'が選ばれたら全てのarticleをフェードインで表示
-//                 $('.voice-cards__item').fadeIn(400); // 400ミリ秒でフェードイン
-//             } else {
-//                 // 該当するクラス名を持つarticleをフェードインで表示
-//                 $('.voice-cards__item.' + filterClass).fadeIn(400); // 400ミリ秒でフェードイン
-//             }
-//         }, 200); // フェードアウトが完了するのを待ってからフェードイン
-//     }
-// });
-
-
-
-// $(document).ready(function() {
-//     // 画面ロード時にallの内容を表示し、allボタンにactiveクラスを付与
-//     filterArticles('js-all');
-//     $('.js-all').addClass('active');
-
-//     // カテゴリーボタンをクリックしたときの処理
-//     $('.category__btn').on('click', function(e) {
-//         e.preventDefault(); // デフォルトのリンク動作をキャンセル
-
-//         // クリックされたボタンのクラスを取得
-//         var filterClass = $(this).attr('class').split(' ').pop(); // 最後のクラス名を取得
-
-//         // フィルターを適用
-//         filterArticles(filterClass);
-
-//         // すべてのボタンからactiveクラスを削除し、クリックされたボタンに付与
-//         $('.category__btn').removeClass('active');
-//         $(this).addClass('active');
-//     });
-
-//     function filterArticles(filterClass) {
-//         // 全てのarticleをフェードアウトで非表示にする
-//         $('.campaign-card').fadeOut(200); // 200ミリ秒でフェードアウト
-
-//         // フェードアウトが完了した後に、該当する記事をフェードインで表示
-//         setTimeout(function() {
-//             if (filterClass === 'js-all') {
-//                 // 'all'が選ばれたら全てのarticleをフェードインで表示
-//                 $('.campaign-card').fadeIn(400); // 400ミリ秒でフェードイン
-//             } else {
-//                 // 該当するクラス名を持つarticleをフェードインで表示
-//                 $('.campaign-card.' + filterClass).fadeIn(400); // 400ミリ秒でフェードイン
-//             }
-//         }, 200); // フェードアウトが完了するのを待ってからフェードイン
-//     }
-// });
-
-
-
-//ボイスページとキャンペーンページのカテゴリータブ出し分け
 $(document).ready(function() {
-    initializeFilter('.voice-sub', '.category__btn', '.voice-cards__item');
-    initializeFilter('.campaign-sub', '.category__btn', '.campaign-card');
-
-    function initializeFilter(container, buttonSelector, itemSelector) {
-    
-        filterArticles('js-all', itemSelector);
-        $(container + ' .js-all').addClass('active');
-
-    
-        $(container + ' ' + buttonSelector).on('click', function(e) {
-            e.preventDefault();
-
-            
-            var filterClass = $(this).attr('class').split(' ').pop();
-
-            
-            filterArticles(filterClass, itemSelector);
-
-            $(container + ' ' + buttonSelector).removeClass('active');
-            $(this).addClass('active');
-        });
+  // 初回ロード時にページのハッシュをチェックするために、window.loadイベントを使う
+  $(window).on('load', function() {
+    let hash = window.location.hash;
+    if (hash && $(`[data-tab="${hash.replace('#', '')}"]`).length) {
+      activateTab(hash.replace('#', ''));
+    } else {
+      activateTab('tab-1'); // 初回ロード時は「all」（tab-1）を表示
     }
+  });
 
-    function filterArticles(filterClass, itemSelector) {
-        $(itemSelector).fadeOut(200);
-
-        setTimeout(function() {
-            if (filterClass === 'js-all') {
-                $(itemSelector).fadeIn(400); 
-            } else {
-                $(itemSelector + '.' + filterClass).fadeIn(400); 
-            }
-        }, 200);
+  // category__btnクリック時の処理
+  $('.category__btn').on('click', function(e) {
+    e.preventDefault();
+    let tabId = $(this).data('tab');
+    
+    // 同じタブが押されたか確認
+    if ($(this).hasClass('active')) {
+      // ハッシュを一時的に削除してから再度設定する
+      window.location.hash = ''; // ハッシュをリセット
+      window.location.hash = tabId; // 再設定して強制的にスクロールをトリガー
+      scrollToTop(); // スクロールのみ発生
+    } else {
+      activateTab(tabId);
+      window.location.hash = tabId; // URLのハッシュを更新
+      scrollToTop(); // タブ切り替え時もスクロール
     }
+  });
+
+  // 外部リンクで特定タブにアクセスした場合の対応（URLハッシュが変わったとき）
+  $(window).on('hashchange', function() {
+    let hash = window.location.hash.replace('#', '');
+    if ($(`[data-tab="${hash}"]`).length) {
+      activateTab(hash);
+      scrollToTop(); // ハッシュ変更時にトップにスクロール
+    }
+  });
+
+  // タブの表示・非表示とactiveクラスの管理
+  function activateTab(tabId) {
+    // すべてのボタンからactiveクラスを外す
+    $('.category__btn').removeClass('active');
+    
+    // クリックされたボタンにactiveクラスを追加
+    $(`[data-tab="${tabId}"]`).addClass('active');
+    
+    // すべてのカードを非表示にする
+    $('.campaign-card, .voice-card').css('display', 'none'); // .hide()の代わりに瞬時に非表示
+    
+    // 対応するcampaign-cardのみ表示
+    if (tabId === 'tab-1') {
+      // "all" タブの場合はすべて表示
+      $('.campaign-card, .voice-card').css('display', 'block'); // .show()の代わりに瞬時に表示
+    } else {
+      // 指定のクラスを持つカードを表示
+      $(`.js-${tabId}`).css('display', 'block'); // 瞬時に表示
+    }
+  }
+
+  // トップにスムーススクロールする関数
+  function scrollToTop() {
+    $('html, body').animate({ scrollTop: 0 }, 300); // 300ms かけてトップにスクロール
+  }
 });
+
+
+
+
+
