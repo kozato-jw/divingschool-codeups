@@ -213,34 +213,65 @@ $("#page-top").click(function() {
     return false;
 });
 
-/* インフォメーション・タブ */
+
+/* インフォメーション・カテゴリータブ */
+// ハッシュIDでタブを切り替える関数
 function getHashID(hashIDName) {
-    if (hashIDName) {
+    if (hashIDName && hashIDName.startsWith("#tab-")) { // ハッシュが"tab-"で始まるか確認
         $('.tab').find('a').each(function() {
             var idName = $(this).attr('href');
             if (idName === hashIDName) {
                 var btnElm = $(this);
+                // タブボタンのactiveクラス管理
                 $('.tab__btn').removeClass("active");
                 btnElm.addClass("active");
+                // 情報カードの表示管理
                 $(".information-card").removeClass("is-active");
                 $(hashIDName).addClass("is-active");
             }
         });
     }
 }
+
+// タブボタンがクリックされたときのイベント
 $('.tab__btn').on('click', function() {
     var idName = $(this).attr('href');
-    $('.tab__btn').removeClass("active");
-    $(this).addClass("active");
-    getHashID(idName);
+    if (idName.startsWith('#tab-')) {
+        $('.tab__btn').removeClass("active");
+        $(this).addClass("active");
+        getHashID(idName);
+    }
     return false;
 });
+
 $(window).on('load', function() {
-    $('.tab__btn:first-of-type').addClass("active");
-    $('.information-card:first-of-type').addClass("is-active");
     var hashName = location.hash;
-    getHashID(hashName);
+    if (hashName && hashName.startsWith("#tab-")) {
+        getHashID(hashName);
+        scrollToTab();
+    } else {
+        $('.tab__btn:first-of-type').addClass("active");
+        $('.information-card:first-of-type').addClass("is-active");
+    }
 });
+
+// ハッシュ変更時にタブを切り替える
+$(window).on('hashchange', function() {
+    var hashName = location.hash;
+    if (hashName && hashName.startsWith("#tab-")) {
+        getHashID(hashName);
+        scrollToTab();
+    }
+});
+
+// タブメニューの位置までスクロールする関数
+function scrollToTab() {
+    var targetOffset = $('.tab').offset().top - 200;
+    $('html, body').animate({
+        scrollTop: targetOffset
+    }, 500);
+}
+
 
 /*サイドバー・アーカイブ情報のトグル */
 $(document).ready(function() {
@@ -371,74 +402,88 @@ document.addEventListener('DOMContentLoaded', function() {
     // }
 });
 
-/* カテゴリータブとナビメニューからのダイレクトリンク */
 
+/* 指定のカテゴリータブを開いた状態でリンクを開く（下層キャンペーンと下層インフォメーション） */
 $(document).ready(function() {
-  // 初回ロード時にページのハッシュをチェックするために、window.loadイベントを使う
   $(window).on('load', function() {
     let hash = window.location.hash;
-    if (hash && $(`[data-tab="${hash.replace('#', '')}"]`).length) {
-      activateTab(hash.replace('#', ''));
+    if (hash && hash.startsWith('#category-') && $(`[data-tab="${hash.replace('#category-', '')}"]`).length) {
+      activateTab(hash.replace('#category-', ''));
     } else {
-      activateTab('tab-1'); // 初回ロード時は「all」（tab-1）を表示
+      activateTab('tab-1'); // デフォルトで「all」（tab-1）を表示
     }
   });
 
-  // category__btnクリック時の処理
+  // カテゴリーボタンがクリックされたときのイベント
   $('.category__btn').on('click', function(e) {
     e.preventDefault();
     let tabId = $(this).data('tab');
     
-    // 同じタブが押されたか確認
+    // 既にアクティブなタブが押された場合
     if ($(this).hasClass('active')) {
-      // ハッシュを一時的に削除してから再度設定する
-      window.location.hash = ''; // ハッシュをリセット
-      window.location.hash = tabId; // 再設定して強制的にスクロールをトリガー
-      scrollToTop(); // スクロールのみ発生
+      window.location.hash = '';
+      window.location.hash = 'category-' + tabId;
+      scrollToTop();
     } else {
       activateTab(tabId);
-      window.location.hash = tabId; // URLのハッシュを更新
-      scrollToTop(); // タブ切り替え時もスクロール
+      window.location.hash = 'category-' + tabId;
+      scrollToTop();
     }
   });
 
-  // 外部リンクで特定タブにアクセスした場合の対応（URLハッシュが変わったとき）
+  // ハッシュが変更されたとき（外部リンクなどから遷移）
   $(window).on('hashchange', function() {
-    let hash = window.location.hash.replace('#', '');
+    let hash = window.location.hash.replace('#category-', '');
     if ($(`[data-tab="${hash}"]`).length) {
       activateTab(hash);
-      scrollToTop(); // ハッシュ変更時にトップにスクロール
+      scrollToTop();
     }
   });
 
   // タブの表示・非表示とactiveクラスの管理
   function activateTab(tabId) {
-    // すべてのボタンからactiveクラスを外す
     $('.category__btn').removeClass('active');
-    
-    // クリックされたボタンにactiveクラスを追加
     $(`[data-tab="${tabId}"]`).addClass('active');
-    
-    // すべてのカードを非表示にする
-    $('.campaign-card, .voice-card').css('display', 'none'); // .hide()の代わりに瞬時に非表示
-    
-    // 対応するcampaign-cardのみ表示
+    $('.campaign-card, .voice-card').css('display', 'none');
+    // "all"タブが選択された場合はすべて表示
     if (tabId === 'tab-1') {
-      // "all" タブの場合はすべて表示
-      $('.campaign-card, .voice-card').css('display', 'block'); // .show()の代わりに瞬時に表示
+      $('.campaign-card, .voice-card').css('display', 'block');
     } else {
-      // 指定のクラスを持つカードを表示
-      $(`.js-${tabId}`).css('display', 'block'); // 瞬時に表示
+      // 選択されたタブに対応するカードのみ表示
+      $(`.js-${tabId}`).css('display', 'block');
     }
   }
 
-  // トップにスムーススクロールする関数
-  function scrollToTop() {
-    $('html, body').animate({ scrollTop: 0 }, 300); // 300ms かけてトップにスクロール
-  }
+  // ページトップにスムーススクロールする関数
+function scrollToTop() {
+  var targetOffset = $('.category').offset().top - 200;
+  
+  $('html, body').animate({
+    scrollTop: targetOffset
+  }, 300);
+}
 });
 
 
+/* プライスページへのリンクのスクロール位置指定 */
+$(document).ready(function() {
+  var scrollOffset = 200;
 
+  function scrollToHash() {
+    var hash = window.location.hash; // URLのハッシュを取得
+    if (hash) {
+      var $target = $(hash);
 
+      // ターゲット要素が .price-sub セクション内にあるか確認
+      if ($target.length && $target.closest('.price-sub').length) {
+        var offset = $target.offset().top;
+        $('html, body').animate({
+          scrollTop: offset - scrollOffset
+        }, 600);
+      }
+    }
+  }
+  scrollToHash();
+  $(window).on('hashchange', scrollToHash);
+});
 
