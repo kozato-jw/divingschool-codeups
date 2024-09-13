@@ -42,13 +42,17 @@
 }
 
 .voice-card__info {
-  width: 47.6%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  width: 47.5%;
   height: 100%;
   @include mq(md) {
     width: 58.5%;
+  }
+}
+
+.voice-card__info--sidebar{
+  width: 100%;
+  @include mq(md) {
+    width: 100%;
   }
 }
 
