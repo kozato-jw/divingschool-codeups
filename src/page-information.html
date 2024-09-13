@@ -109,19 +109,19 @@
       <nav class="header__nav gnav inner">
         <ul class="gnav__items">
           <li class="gnav__item gnav__item--main">
-            <a href="archive-campaign.html">キャンペーン </a>
+            <a href="archive-campaign.html#category-tab-1">キャンペーン</a>
           </li>
           <li class="gnav__item gnav__item--sub">
-            <a href="#">ライセンス取得</a>
+            <a href="archive-campaign.html#category-tab-2">ライセンス取得</a>
           </li>
           <li class="gnav__item gnav__item--sub">
-            <a href="#">貸切体験ダイビング</a>
+            <a href="archive-campaign.html#category-tab-3">貸切体験ダイビング</a>
           </li>
           <li class="gnav__item gnav__item--sub gnav__item--mb40">
-            <a href="#">ナイトダイビング</a>
+            <a href="archive-campaign.html#category-tab-4">ファンダイビング</a>
           </li>
           <li class="gnav__item gnav__item--main">
-            <a href="page-about-us.html">私たちについて </a>
+            <a href="page-about-us.html">私たちについて</a>
           </li>
         </ul>
         <ul class="gnav__items">
@@ -132,35 +132,35 @@
             <a href="page-price.html">料金一覧 </a>
           </li>
           <li class="gnav__item gnav__item--sub">
-            <a href="#">ライセンス講習</a>
+            <a href="page-price.html#licensediving">ライセンス講習</a>
           </li>
           <li class="gnav__item gnav__item--sub">
-            <a href="#">体験ダイビング</a>
+            <a href="page-price.html#trialdiving">体験ダイビング</a>
           </li>
           <li class="gnav__item gnav__item--sub gnav__item--mb40">
-            <a href="#">ファンダイビング</a>
+            <a href="page-price.html#fundiving">ファンダイビング</a>
           </li>
         </ul>
         <ul class="gnav__items">
           <li class="gnav__item gnav__item--main">
-            <a href="#">ダイビング情報 </a>
+            <a href="page-information.html">ダイビング情報 </a>
           </li>
           <li class="gnav__item gnav__item--sub">
-            <a href="#">ライセンス講習</a>
+            <a href="page-information.html#tab-license">ライセンス講習</a>
           </li>
           <li class="gnav__item gnav__item--sub">
-            <a href="#">体験ダイビング</a>
+            <a href="page-information.html#tab-trialdiving">体験ダイビング</a>
           </li>
           <li class="gnav__item gnav__item--sub gnav__item--mb40">
-            <a href="#">ファンダイビング</a>
+            <a href="page-information.html#tab-fundiving">ファンダイビング</a>
           </li>
           <li class="gnav__item gnav__item--main">
-            <a href="home.html">ブログ </a>
+            <a href="home.html">ブログ</a>
           </li>
         </ul>
         <ul class="gnav__items">
           <li class="gnav__item gnav__item--main gnav__item--mb40">
-            <a href="page-faq.html">よくある質問 </a>
+            <a href="page-faq.html">よくある質問</a>
           </li>
           <li class="gnav__item gnav__item--main gnav__item--mb40">
             <a href="page-privacypolicy.html">プライバシー
@@ -168,13 +168,13 @@
             </a>
           </li>
           <li class="gnav__item gnav__item--main gnav__item--mb40">
-            <a href="page-terms-of-service.html">利用規約 </a>
+            <a href="page-terms-of-service.html">利用規約</a>
           </li>
           <li class="gnav__item gnav__item--main gnav__item--mb40">
             <a href="page-sitemap.html">サイトマップ</a>
           </li>
           <li class="gnav__item gnav__item--main gnav__item--mb40">
-            <a href="page-contact.html">お問い合わせ </a>
+            <a href="page-contact.html">お問い合わせ</a>
           </li>
         </ul>
       </nav>
@@ -194,18 +194,15 @@
     <section class="information-sub information-sub-content icon-fish icon-fish--information">
       <div class="inner">
         <div class="information-sub__tab tab">
-          <a href="#info-license" class="tab__btn active">ライセンス
-            <br class="u-mobile">講習
-          </a>
-          <a href="#info-fundiving" class="tab__btn">ファン
-            <br class="u-mobile">ダイビング
-          </a>
-          <a href="#info-trialdiving" class="tab__btn">体験
-            <br class="u-mobile">ダイビング
-          </a>
+          <!-- タブボタンの href を #tab- プレフィックスに変更 -->
+          <a href="#tab-license" class="tab__btn active">ライセンス<br class="u-mobile">講習</a>
+          <a href="#tab-fundiving" class="tab__btn">ファン<br class="u-mobile">ダイビング</a>
+          <a href="#tab-trialdiving" class="tab__btn">体験<br class="u-mobile">ダイビング</a>
         </div>
+    
         <div class="information-sub__cards">
-          <div id="info-license" class="information-sub__card information-card">
+          <!-- カードの id を #tab- プレフィックスに変更 -->
+          <div id="tab-license" class="information-sub__card information-card">
             <div class="information-card__inner">
               <div class="information-card__text-wrapper">
                 <h2 class="information-card__title">ライセンス講習</h2>
@@ -218,33 +215,39 @@
               </div>
             </div>
           </div>
-          <div id="info-fundiving" class="information-sub__card information-card">
+    
+          <div id="tab-fundiving" class="information-sub__card information-card">
             <div class="information-card__inner">
               <div class="information-card__text-wrapper">
                 <h2 class="information-card__title">ファンダイビング</h2>
                 <p class="information-card__text">
-                  ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！ </p>
+                  ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
+                </p>
               </div>
               <div class="information-card__image">
                 <img src="./assets/images/common/info-diving.jpg" alt="海中で無数の小魚が泳いでいる画像">
               </div>
             </div>
           </div>
-          <div id="info-trialdiving" class="information-sub__card information-card">
+    
+          <div id="tab-trialdiving" class="information-sub__card information-card">
             <div class="information-card__inner">
               <div class="information-card__text-wrapper">
                 <h2 class="information-card__title">体験ダイビング</h2>
                 <p class="information-card__text">
-                  ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！ </p>
+                  ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
+                </p>
               </div>
               <div class="information-card__image">
                 <img src="./assets/images/common/info-experience.jpg" alt="海中を泳ぐ魚の画像">
               </div>
             </div>
           </div>
+    
         </div>
       </div>
     </section>
+
     <!-- 共通コンタクトエリア -->
     <section class="common-contact top-contact">
       <div class="inner">
@@ -304,16 +307,16 @@
       <nav class="footer__nav gnav">
         <ul class="gnav__items">
           <li class="gnav__item gnav__item--main">
-            <a href="archive-campaign.html">キャンペーン</a>
+            <a href="archive-campaign.html#category-tab-1">キャンペーン</a>
           </li>
           <li class="gnav__item gnav__item--sub">
-            <a href="archive-campaign.html#license">ライセンス取得</a>
+            <a href="archive-campaign.html#category-tab-2">ライセンス取得</a>
           </li>
           <li class="gnav__item gnav__item--sub">
-            <a href="archive-campaign.html#trialdiving">貸切体験ダイビング</a>
+            <a href="archive-campaign.html#category-tab-3">貸切体験ダイビング</a>
           </li>
           <li class="gnav__item gnav__item--sub gnav__item--mb40">
-            <a href="archive-campaign.html#fundiving">ファンダイビング</a>
+            <a href="archive-campaign.html#category-tab-4">ファンダイビング</a>
           </li>
           <li class="gnav__item gnav__item--main">
             <a href="page-about-us.html">私たちについて</a>
@@ -341,13 +344,13 @@
             <a href="page-information.html">ダイビング情報 </a>
           </li>
           <li class="gnav__item gnav__item--sub">
-            <a href="page-information.html#info-license">ライセンス講習</a>
+            <a href="page-information.html#tab-license">ライセンス講習</a>
           </li>
           <li class="gnav__item gnav__item--sub">
-            <a href="page-information.html#info-trialdiving">体験ダイビング</a>
+            <a href="page-information.html#tab-trialdiving">体験ダイビング</a>
           </li>
           <li class="gnav__item gnav__item--sub gnav__item--mb40">
-            <a href="page-information.html#info-fundiving">ファンダイビング</a>
+            <a href="page-information.html#tab-fundiving">ファンダイビング</a>
           </li>
           <li class="gnav__item gnav__item--main">
             <a href="home.html">ブログ</a>
