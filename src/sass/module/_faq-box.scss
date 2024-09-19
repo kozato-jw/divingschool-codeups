@@ -30,19 +30,20 @@
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
+  transition: all 0.3s;
   @include mq(md){
     width: rem(32);
     margin-right: rem(40);
   }
 }
 
-.faq-box__function.js-close::before{
-  rotate: 90deg;
-  display: block;
+.faq-box__function::before{
+  visibility: hidden;
 }
 
-.faq-box__function::before{
-  display: none;
+.faq-box__function.js-close::before{
+  transform: rotate(-90deg);
+  visibility: visible;
 }
 
 .faq-box__answer-text{

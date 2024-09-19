@@ -1,12 +1,5 @@
 @use "global" as *;
 
-.blog-post {
-  margin-bottom: rem(40);
-  @include mq(md){
-    margin-bottom: rem(80);
-  }
-}
-
 .blog-post__time{
   font-size: rem(14);
   font-family: $english-font;
@@ -33,16 +26,14 @@
   }
 }
 
-.blog-post__eyecatch,
-.blog-post figure{
+.blog-post__content figure{
   margin-bottom: rem(24);
   @include mq(md){
     margin-bottom: rem(40);
   }
 }
 
-.blog-post__eyecatch,
-.blog-post img{
+.blog-post__content img{
   aspect-ratio: 345 / 231;
   object-fit: cover;
   @include mq(md){

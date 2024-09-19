@@ -1,8 +1,7 @@
 @use "global" as *;
 
-.blog-sub {
-  position: relative;
-  @include mq(md){
+.blog-sub__inner{
+  @include mq(md) {
     display: flex;
     justify-content: space-between;
     gap: rem(80);
@@ -17,11 +16,21 @@
   }
 }
 
-.blog-sub__post{
+.blog-sub__cards{
+  margin-bottom: rem(79);
+}
+
+.blog-sub__post-wrapper{
   margin-bottom: rem(82);
   @include mq(md){
     width: 64.82%;
     margin-bottom: 0;
+  }
+}
+.blog-sub__post{
+  margin-bottom: rem(40);
+  @include mq(md) {
+    margin-bottom: rem(80);
   }
 }
 

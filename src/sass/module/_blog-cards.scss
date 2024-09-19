@@ -12,7 +12,6 @@
 .blog-cards--sub{
   margin-left: rem(6);
   margin-right: rem(6);
-  margin-bottom: rem(79);
   @include mq(md){
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: rem(40);
