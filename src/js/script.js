@@ -58,19 +58,23 @@ jQuery(function($) {
 });
 
 /* ギャラリーのモーダル */
+
 $(document).ready(function() {
+    // 画像クリック時にモーダルを表示
     $('.gallery__image img').on('click', function() {
         var imgSrc = $(this).attr('src');
         $('.modal img').attr('src', imgSrc);
-        $('header').hide();
         $('.modal').fadeIn();
+        $('body').css('overflow', 'hidden');
     });
+    // モーダルをクリック時に閉じる
     $('.modal').on('click', function() {
         $(this).fadeOut(function() {
-            $('header').show();
+            $('body').css('overflow', '');
         });
     });
 });
+
 
 /* FAQアコーディオン */
 $(document).ready(function () {

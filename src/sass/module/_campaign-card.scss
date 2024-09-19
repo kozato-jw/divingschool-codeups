@@ -209,6 +209,7 @@
   color: $blue;
   line-height: 1.125;
   margin: 0 auto rem(7);
+  text-align: center;
 }
 
 .campaign-card__description-cta{
@@ -216,10 +217,12 @@
   color: $blue;
   line-height: calc(18 / 14);
   margin: 0 auto rem(16);
+  text-align: center;
 }
 
 .campaign-card__btn{
   margin: 0 auto;
+  text-align: center;
 }
 
 
