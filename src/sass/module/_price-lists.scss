@@ -1,5 +1,5 @@
 @use "global" as *;
-.price-sub__item{
+.price-lists__item{
   margin-bottom: rem(40);
   @include mq(md){
     display: flex;
@@ -7,13 +7,13 @@
   }
 }
 
-.price-sub__item:first-of-type{
+.price-lists__item:first-of-type{
   @include mq(md){
     margin-bottom: rem(74);
   }
 }
 
-.price-sub__item:last-of-type{
+.price-lists__item:last-of-type{
   margin-bottom: 0;
   @include mq(md){
     margin-bottom: rem(0);
