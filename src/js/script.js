@@ -57,23 +57,43 @@ jQuery(function($) {
     });
 });
 
-/* ギャラリーのモーダル */
 
-$(document).ready(function() {
-    // 画像クリック時にモーダルを表示
-    $('.gallery__image img').on('click', function() {
-        var imgSrc = $(this).attr('src');
-        $('.modal img').attr('src', imgSrc);
-        $('.modal').fadeIn();
-        $('body').css('overflow', 'hidden');
+/* ギャラリーのモーダル */
+document.addEventListener('DOMContentLoaded', function () {
+  const images = document.querySelectorAll('.gallery__image img');
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modalimage');
+
+  if (modal && modalImg) {
+    images.forEach(image => {
+      image.addEventListener('click', function() {
+        // スクロールバーの幅を取得し、その分だけbodyにpaddingを追加
+        const scrollbarWidth = getScrollbarWidth();
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+
+        modal.style.display = 'block';
+        setTimeout(() => modal.classList.add('show'), 10);
+        modalImg.src = this.src;
+        document.body.classList.add('js-modal-open');
+      });
     });
-    // モーダルをクリック時に閉じる
-    $('.modal').on('click', function() {
-        $(this).fadeOut(function() {
-            $('body').css('overflow', '');
-        });
+
+    modal.addEventListener('click', function() {
+      modal.classList.remove('show');
+      setTimeout(() => {
+        modal.style.display = 'none';
+        document.body.style.paddingRight = '';
+        document.body.classList.remove('js-modal-open');
+      }, 500);
     });
+  }
+
+  // スクロールバーの幅を計算する関数
+  function getScrollbarWidth() {
+    return window.innerWidth - document.documentElement.clientWidth;
+  }
 });
+
 
 
 /* FAQアコーディオン */
@@ -83,6 +103,7 @@ $(".faq-box__function").click(function () {
     $(this).toggleClass("js-close");
 });
 });
+
 
 /* (トップページMV)ローディングアニメーションとswiper */
 $(document).ready(function() {

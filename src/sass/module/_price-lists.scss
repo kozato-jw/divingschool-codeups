@@ -2,7 +2,6 @@
 .price-lists__item{
   margin-bottom: rem(40);
   @include mq(md){
-    display: flex;
     margin-bottom: rem(80);
   }
 }
