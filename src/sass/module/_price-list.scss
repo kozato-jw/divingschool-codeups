@@ -1,16 +1,14 @@
 @use "global" as *;
 
 .price-list {
-
   @include mq(md){
-
+    display: flex;
   }
 }
 
 .price-list__title{
   background-color: $blue;
   text-align: center;
-
   @include mq(md){
     max-width: rem(200);
     width: 100%;
